@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 1270eff82b34ac649803d9d7e328b230
+timeCreated: 1499861858
+licenseType: Pro
+ShaderImporter:
+  defaultTextures:
+  - _BaseRGBA: {instanceID: 0}
+  - _Normalmap: {instanceID: 0}
+  - _SpecularmapRGBA: {instanceID: 0}
+  - _ReflectionSouceCubemap: {instanceID: 0}
+  - _MatMaskRGBR_SkinG_ReflectionB_Flake: {instanceID: 0}
+  - _AdditionTex: {instanceID: 0}
+  - _AdditionNormal: {instanceID: 0}
+  - _AdditionSpecular: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

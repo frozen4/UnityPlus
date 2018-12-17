@@ -1,0 +1,547 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!200 &20000000
+ShaderVariantCollection:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: svc1
+  m_Shaders:
+    data:
+      first: {fileID: 2, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 10703, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 10704, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 10705, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 10720, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 020d31f82f3d7c349b55ed146c24aab1, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 02d9c26d90f4fb54792633160eb316d9, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 4
+    data:
+      first: {fileID: 4800000, guid: 02e02a389020fef4abaed26d46d4de53, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 0ee89da579393cb4bbcd1732138c4f74, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 4
+    data:
+      first: {fileID: 4800000, guid: 110612a06483bb448ba074d78c1679af, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 1221dacf182a1074b98fed2687eca95d, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 1270eff82b34ac649803d9d7e328b230, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 4
+    data:
+      first: {fileID: 4800000, guid: 14a84b94c8f9c4f43a74c54fab58830f, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 4
+    data:
+      first: {fileID: 4800000, guid: 1b825fcc8bc8201408882fa0e43f1147, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 2077f07c898ebb64ca43ca01d6f59a0f, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 23d8111a24fc08749b6904dbaf86b7ec, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 264949a1c8507014a854517f6baee4b2, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 2677d062f9c359642b010848b1aa56da, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 289750519e185954d9c625e0aa8c2df3, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 2a9a49cb251edae41b32373f89413e99, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 2bbb6a8903046bc408580854defecb91, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 2f4a967e044ee524ca2ed57073befea6, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 3173a4dcddb0f2e47a44c36ec0420f94, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 326968d3a133e864fa4b42fa90bef1bc, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 33aec8d7e0fb580458b7d5df1d17e96f, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 3510fd06ed67dcf4a83cad7ee8e0b06c, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 359ee1b0bcb61c54885565acdd27fa0b, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 4
+    data:
+      first: {fileID: 4800000, guid: 375ec2003b8ab2546bf5420e183a67a8, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 37deafbe27fdb1846b3c3ea001a9d089, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 387fd71526873034b879ca672ca44212, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 4
+    data:
+      first: {fileID: 4800000, guid: 3a12d7ed106c50041aed55af711cd7ea, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 4
+    data:
+      first: {fileID: 4800000, guid: 41caea6d583889148881bbd83109134c, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 486541f64ca1b2c479e9441d2e822cc2, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 4f726be83ba72084792ae45251375596, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 50609c7cf7955e44a80a9d58099d5657, type: 3}
+      second:
+        variants:
+        - keywords: BlendAdd Clip_OFF
+          passType: 1
+        - keywords: BlendAlpha Clip_OFF
+          passType: 1
+        - keywords: BlendMul Clip_OFF
+          passType: 1
+        - keywords: BlendMul2 Clip_OFF
+          passType: 1
+        - keywords: BlendAdd Clip_ON
+          passType: 1
+        - keywords: BlendAlpha Clip_ON
+          passType: 1
+        - keywords: BlendMul Clip_ON
+          passType: 1
+        - keywords: BlendMul2 Clip_ON
+          passType: 1
+        - keywords: BlendAlpha Clip_ON_Alpha
+          passType: 1
+    data:
+      first: {fileID: 4800000, guid: 51695196499e2994199bb0afcee27427, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 56531d77e1bd3e747a110fd2f85e1ec2, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 5e1b561ee80cda847877ac01aff4ff95, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 5f30feb850bd57245bf2fa4ed62c2dcd, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 62d9b97f00bac4b4889febba201495d3, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 66cd9209ef8f6dc46ba7043ac9c7b8ff, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 67fb9c0f5c0269d4ba1f227b2cc23429, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 4
+    data:
+      first: {fileID: 4800000, guid: 6931148e363dc514790c95be04496a1b, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 6e32dc3aa18c8e646b25d8435f753839, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 769ac4a872f9e8340aeb20f8035dee8a, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 77a64b0351e9f844e83d3567cea083ed, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 7da9ab1048d0e8147ac2961f5e734284, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 7e06240809d161349b1d418d81b3ec6f, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 7ec4846febede394eb1f347d8f181172, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 4
+    data:
+      first: {fileID: 4800000, guid: 81e7b505e49592642874738531f07c4b, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 4
+    data:
+      first: {fileID: 4800000, guid: 830d938420ecde2458ae7056de233f23, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 4
+    data:
+      first: {fileID: 4800000, guid: 88015b231da2f06429a13c729dbac65a, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 890e3a56fdf110d439999f44ed9e4353, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 93de32ed7e26c804f9eac9d5bce8d3f5, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 4
+    data:
+      first: {fileID: 4800000, guid: a1f11c3d7677fd24ab1027d26f7fd8bc, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 4
+    data:
+      first: {fileID: 4800000, guid: a9890cd34fa975e469959870c5b2570c, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 4
+    data:
+      first: {fileID: 4800000, guid: b22bd964333d8174da305afc274a5d6a, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: b2a0a758d0610e44ab0241854c43adfa, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 4
+    data:
+      first: {fileID: 4800000, guid: c015348dc55a1964b8a843023f8f048d, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: c6401c735e0911449bb00fa1e3e17a08, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: c6c8a112215a7b147a3fcc7153810704, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 4
+    data:
+      first: {fileID: 4800000, guid: d345e666465662641b6aece6c6566e0e, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: d42e5f84e590d4e45862170c4cda387c, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 4
+    data:
+      first: {fileID: 4800000, guid: d42f8b2e947658c4896a7d6238a1ed6d, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: d5f47f623ad7eb24190481eff52eece9, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: d7f6fa0b48dae4b45ad9b96a786fdda6, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 4
+    data:
+      first: {fileID: 4800000, guid: d9927335a9e8c9c4dbdd46902c7cf6d8, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: dc7d058c53bb6f04f9e044cbbf83f9d7, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 4
+    data:
+      first: {fileID: 4800000, guid: dc8a9d0862a1bd54fb23e715afbb889a, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: de4d14e6f83eef24b87554de14ab8256, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: e09a8e85e53d3be4f93dac99577b86bc, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: e1cbb19759c85a646bb6d917ff2f8319, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: e1e03383f8c3a594985382c1e2a38d39, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 4
+    data:
+      first: {fileID: 4800000, guid: f13f49278f7546c48a25f9933ab3e0a2, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: f29bb33b840baba4e9f02157976c5d45, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: ffd592f97a53aff40bd0835079f0ba54, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 4
+    data:
+      first: {fileID: 4800000, guid: 856ac50ac9a0a6440911b31284348dba, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 4
+    data:
+      first: {fileID: 4800000, guid: 307544c641f136d4c9f03717fd0213f4, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: d44f74cba3a929a41b102d878aa0c3d1, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: c513b8a93543af24eb3024c1a44530cf, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 4
+    data:
+      first: {fileID: 4800000, guid: 38ca0b83fec85da45a63eb19714246cf, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 4
+    data:
+      first: {fileID: 4800000, guid: bae03dd83b0ed6448a1af87218ff9eca, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 4
+    data:
+      first: {fileID: 4800000, guid: 553a667a1f1b7fa489973a95a169cec4, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: b7fc05100477f124d89c21356087b38f, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 4
+    data:
+      first: {fileID: 4800000, guid: 1f18ddbebdbb1e24486696ea29772557, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 4
+    data:
+      first: {fileID: 4800000, guid: f9f566963ea1f7c4ea1b643c6a328754, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
