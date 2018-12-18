@@ -1387,21 +1387,14 @@ public class BuildScript
         TextLogger.Path = Path.Combine(dirAssetBundles, "BuildBundle日志.log");
         File.Delete(TextLogger.Path);
 
-        //if (bSyncInterfaces)
-        //{
-        //    SyncInterfaces();
-        //}
-
-        TextLogger.Instance.WriteLine("ExportEquipInfos...");
+        TextLogger.Instance.WriteLine("ExportEquipInfos...");       //重新导出装备信息
         if (bRebuild)
         {
-            //SyncInterfaces();
             ExportEquipInfos();
         }
 
-        //GenerateAllUI();
+        //创建目录
         DirectoryInfo dir = new DirectoryInfo(outputPath);
-
         if (dir.Exists)
         {
             if (bRebuild)
@@ -1429,7 +1422,6 @@ public class BuildScript
 
         string rootPath = Application.dataPath + "/Outputs";
         string[] directoryEntries = Directory.GetFileSystemEntries(rootPath);
-        //List<string> assetbundleNameArray = new List<string>();//即文件夹名称
         AssetbundleNameArray.Clear();
         TextLogger.Instance.WriteLine(string.Format("directories in {0}:", rootPath));
         foreach (string item in directoryEntries)
@@ -1455,8 +1447,8 @@ public class BuildScript
         {
             TextLogger.Instance.WriteLine(string.Format("\t{0}", name));
         }
-        List<AssetBundleBuild> scenesCommonRes = new List<AssetBundleBuild>();
 
+        List<AssetBundleBuild> scenesCommonRes = new List<AssetBundleBuild>();
         if (bRebuild)
         {
             scenesCommonRes.Clear();
@@ -1485,7 +1477,6 @@ public class BuildScript
         List<AssetBundleBuild> bundleList = new List<AssetBundleBuild>();
         for (int index = 0; index < AssetbundleNameArray.Count; index++)
         {
-            //Debug.LogError(AssetbundleNameArray[index]);
             AssetBundleBuild[] temp = CollectBasicBuildInfo(AssetbundleNameArray[index], bRebuild);
             for (int innerIndex = 0; innerIndex < temp.Length; innerIndex++)
             {
@@ -1541,104 +1532,6 @@ public class BuildScript
         }
         List<AssetBundleBuild> finallyBuildList = new List<AssetBundleBuild>();
 
-#if FuckBundle
-		List<string> collectFolderList = new List<string>();
-		for (int index = 0; index < assetbundleNameArray.Count; index++)
-		{
-		if (assetbundleNameArray[index].Contains("Scenes") || assetbundleNameArray[index].Contains("Blocks"))
-		{
-		collectFolderList.Add(assetbundleNameArray[index]);
-		}
-		}
-
-		List<UnityEngine.Object> ObjectList = new List<UnityEngine.Object>();
-
-		for (int i = 0; i < collectFolderList.Count; i++)
-		{
-		string folderName = "";
-		folderName = collectFolderList[i];
-
-		string path = Path.Combine(Application.dataPath, "Outputs/" + folderName + "/");
-#if UNITY_EDITOR_WIN
-		string path2 = path.Replace("/", @"\");
-#else
-		string path2 = path;
-#endif
-		string[] fileList = Directory.GetFiles(path2, "*.*", SearchOption.AllDirectories);
-		string finnallyPath = "";
-		for (int innerIndex = 0; innerIndex < fileList.Length; innerIndex++)
-		{
-		if (fileList[innerIndex].EndsWith("prefab"))
-		{
-		finnallyPath = "Assets/Outputs/" + folderName + "/" + fileList[innerIndex].Replace(path2, "");
-		ObjectList.Add(AssetDatabase.LoadAssetAtPath<GameObject>(finnallyPath));
-		}
-		}
-		}
-		Selection.objects = ObjectList.ToArray();
-		EditorUtility.DisplayCancelableProgressBar("资源检索", "Searching Assets", 0.3f);
-		UnityEngine.Object[] outPutsAssets = Selection.GetFiltered(typeof(UnityEngine.Object), SelectionMode.DeepAssets);
-		UnityEngine.Object[] collectObjs = EditorUtility.CollectDependencies(outPutsAssets);
-
-		Dictionary<UnityEngine.Object, int> collectInfoDic = new Dictionary<UnityEngine.Object, int>();
-		int collectCount = collectObjs.Length;
-		if (0 == collectCount)
-		{
-		EditorUtility.DisplayDialog("Error", "没有收集到任何信息", "OK");
-		EditorUtility.ClearProgressBar();
-		return;
-		}
-		int collectProgress = 0;
-		int tempCount = 0;
-		int texCount = 0;
-		foreach (UnityEngine.Object o in collectObjs)
-		{
-		if (null == o)
-		{
-		continue;
-		}
-		EditorUtility.DisplayCancelableProgressBar("资源整理", o.name, (float)collectProgress / (float)collectCount);
-		if (o is Texture && !o.name.Contains("SplatAlpha"))
-		{
-		texCount++;
-		if (collectInfoDic.ContainsKey(o))
-		{
-		tempCount = collectInfoDic[o];
-		collectInfoDic[o] = tempCount + 1;
-		}
-		else
-		{
-		collectInfoDic.Add(o, 1);
-		}
-		}
-		collectProgress++;
-		}
-
-		List<AssetBundleBuild> buildTextureList = new List<AssetBundleBuild>();
-
-		int assetsInBundleCount = 1;
-		int assetsInBundelIndex = 0;
-		foreach (KeyValuePair<UnityEngine.Object, int> kv in collectInfoDic)
-		{
-		string assetPath = AssetDatabase.GetAssetPath(kv.Key);
-		//sw.WriteLine(string.Format("{0},{1},{2}", kv.Key.name, kv.Value, assetPath));
-		AssetBundleBuild bundle = new AssetBundleBuild();
-		if (assetsInBundleCount > 1024)
-		{
-		assetsInBundelIndex++;
-		}
-		bundle.assetBundleName = "Common" + assetsInBundelIndex;
-		bundle.assetNames = new string[] { assetPath };
-
-		//buildMaps[mapIndex] = bundle;
-		buildTextureList.Add(bundle);
-		assetsInBundleCount++;
-		}
-		foreach (var item in buildTextureList)
-		{
-		finallyBuildList.Add(item);
-		}
-#endif
         foreach (var item in bundleList)
         {
             finallyBuildList.Add(item);
@@ -1860,17 +1753,21 @@ public class BuildScript
 
         for (int i = 0; i < fileList.Length; i++)
         {
-            if (fileList[i].EndsWith("prefab") || fileList[i].EndsWith("png") || fileList[i].EndsWith("shader") || fileList[i].EndsWith("WAV") || fileList[i].EndsWith("shadervariants") ||
-                fileList[i].EndsWith("asset") || fileList[i].EndsWith("wav")
-                || fileList[i].EndsWith("mp3") || fileList[i].EndsWith("MP3")
-                || fileList[i].EndsWith("mat") || fileList[i].EndsWith("TTF")
-                || fileList[i].EndsWith("xml") || fileList[i].EndsWith("cubemap"))
+            if (fileList[i].EndsWith("prefab") ||
+                fileList[i].EndsWith("png") ||
+                fileList[i].EndsWith("shader") ||
+                fileList[i].EndsWith("WAV") || 
+                fileList[i].EndsWith("shadervariants") ||
+                fileList[i].EndsWith("asset") ||
+                fileList[i].EndsWith("wav") ||
+                fileList[i].EndsWith("mp3") || 
+                fileList[i].EndsWith("MP3") ||
+                fileList[i].EndsWith("mat") ||
+                fileList[i].EndsWith("TTF") ||
+                fileList[i].EndsWith("xml") ||
+                fileList[i].EndsWith("cubemap"))
             {
                 assetPath = fileList[i].Replace(path2, "");
-                //if (assetPath.Contains("atlas_CommonBg_02.png"))
-                //{
-                //    UnityEngine.Debug.LogError(assetPath);
-                //}
 
                 toBuildList.Add(assetPath);
                 //EditorUtility.DisplayCancelableProgressBar("资源计算", string.Format("{0}/{1}", i, fileList.Length), (float)i / (float)fileList.Length);

@@ -19,7 +19,6 @@ public class AutoLocalizationTools : Editor
 
     static void SyncInterfaces()
     {
-#if UNITY_EDITOR
         //TextLogger.Instance.WriteLine(string.Format("准备BuildAssetBundles Output: {0}", outputPath));
         TextLogger.Instance.WriteLine("开始同步Interfaces 文件夹 至 Interface_KR 文件夹:");
         string sourcePath = "Assets/Outputs/Interfaces";
@@ -31,8 +30,6 @@ public class AutoLocalizationTools : Editor
         TextLogger.Instance.WriteLine("开始进行本地化文本自动导入");
         string exportText = Application.dataPath + "/../Localization/LocalizationText.csv";
         LanguageImport(exportText, 2, targetPath);
-
-#endif
     }
 
     static void LanguageImport(string csvFileName, int column, string targetPath)
