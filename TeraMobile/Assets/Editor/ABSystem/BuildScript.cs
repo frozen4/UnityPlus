@@ -882,6 +882,9 @@ public class BuildScript
 #else
 		string path2 = path;
 #endif
+        if (!Directory.Exists(path2))
+            return;
+
         string[] wavList = Directory.GetFiles(path2, "*.prefab", SearchOption.AllDirectories);
         List<string> toBuildList = new List<string>();
         string assetPath = null;
@@ -1448,6 +1451,7 @@ public class BuildScript
             TextLogger.Instance.WriteLine(string.Format("\t{0}", name));
         }
 
+        //把block依赖项都加到 scenecommonres
         List<AssetBundleBuild> scenesCommonRes = new List<AssetBundleBuild>();
         if (bRebuild)
         {
@@ -1497,7 +1501,8 @@ public class BuildScript
         {
             AssetbundleNameArray.Add(item);
         }
-        //return;
+     
+        //把Characters中的animation打包到 animations
         var clips = AssetDatabase.FindAssets("t:Prefab", new string[] { "Assets/Outputs/Characters" });
         //var clips = AssetDatabase.FindAssets("t:Prefab", new string[] { "Assets/Outputs/Characters/Players" });
         List<string> tmpPaths = new List<string>();
@@ -1531,11 +1536,8 @@ public class BuildScript
             //options = BuildAssetBundleOptions.ForceRebuildAssetBundle | BuildAssetBundleOptions.ChunkBasedCompression ;
         }
         List<AssetBundleBuild> finallyBuildList = new List<AssetBundleBuild>();
+        finallyBuildList.AddRange(bundleList);
 
-        foreach (var item in bundleList)
-        {
-            finallyBuildList.Add(item);
-        }
         AssetBundleBuild[] finallyBuildMaps = finallyBuildList.ToArray();
 
         TextLogger.Instance.WriteLine(string.Format("准备BuildAssetBundles Output: {0}", outputPath));
@@ -1549,7 +1551,7 @@ public class BuildScript
         BuildPipeline.BuildAssetBundles(outputPath, finallyBuildMaps, options, bt);
 
         TextLogger.Instance.WriteLine(string.Format("BuildAssetBundles完毕 Output: {0}", outputPath));
-        //return;
+
         if (bRebuild)
         {
             GenMD5File(outputPath, bRebuild);
@@ -1864,7 +1866,6 @@ public class BuildScript
             }
         }
 
-        //EditorUtility.ClearProgressBar();
         return finallyBuildMap.ToArray();
     }
 
@@ -1952,7 +1953,7 @@ public class BuildScript
         }
     }
 
-    [MenuItem("Hoba Tools/TestCreatePrefab")]
+    [MenuItem("Hoba Tools/TEST/TestCreatePrefab")]
     public static void TestCreatePrefab()
     {
         string path = "Assets/Outputs/zheshiyigeceshi.prefab";

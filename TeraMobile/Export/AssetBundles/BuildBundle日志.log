@@ -1,0 +1,197 @@
+[18:15:16.3313609]	ExportEquipInfos...
+[18:15:16.3353611]	ReadMD5File...
+[18:15:16.3363612]	ReadBundleInfo...
+[18:15:16.3383613]	directories in D:/UnityPlus/TeraMobile/Assets/Outputs:
+[18:15:16.3383613]		D:/UnityPlus/TeraMobile/Assets/Outputs\Shader
+[18:15:16.3393614]		D:/UnityPlus/TeraMobile/Assets/Outputs\Shader.meta
+[18:15:16.3393614]	assetbundleNameArray:
+[18:15:16.3403614]		Shader
+[18:15:16.6063766]	准备BuildAssetBundles Output: D:/UnityPlus/TeraMobile/Assets/../Export/AssetBundles/Android
+[18:15:16.6063766]	finallyBuildMaps:
+[18:15:16.6073767]		name: shader, asset: Assets/Outputs/Shader/ShaderList.prefab
+[18:15:16.6083768]		name: shader, asset: Assets/Outputs/Shader/svc.shadervariants
+[18:15:16.6083768]		name: shader, asset: Assets/Outputs/Shader/svc1.shadervariants
+[18:15:16.6093768]		name: shader, asset: Assets/Outputs/Shader/AQUAS/BiColored.shader
+[18:15:16.6093768]		name: shader, asset: Assets/Outputs/Shader/BuildinShaders/Alpha-Diffuse.shader
+[18:15:16.6103769]		name: shader, asset: Assets/Outputs/Shader/BuildinShaders/Alpha-VertexLit.shader
+[18:15:16.6103769]		name: shader, asset: Assets/Outputs/Shader/BuildinShaders/AlphaTest-Bumped.shader
+[18:15:16.6113769]		name: shader, asset: Assets/Outputs/Shader/BuildinShaders/AlphaTest-Diffuse.shader
+[18:15:16.6113769]		name: shader, asset: Assets/Outputs/Shader/BuildinShaders/AlphaTest-VertexLit.shader
+[18:15:16.6123770]		name: shader, asset: Assets/Outputs/Shader/BuildinShaders/Mobile-Particle-Add.shader
+[18:15:16.6123770]		name: shader, asset: Assets/Outputs/Shader/BuildinShaders/Normal-BumpSpec.shader
+[18:15:16.6133770]		name: shader, asset: Assets/Outputs/Shader/BuildinShaders/Normal-Glossy.shader
+[18:15:16.6133770]		name: shader, asset: Assets/Outputs/Shader/BuildinShaders/Particle Add.shader
+[18:15:16.6143771]		name: shader, asset: Assets/Outputs/Shader/BuildinShaders/Particle AddSmooth.shader
+[18:15:16.6143771]		name: shader, asset: Assets/Outputs/Shader/BuildinShaders/Particle Alpha Blend.shader
+[18:15:16.6153772]		name: shader, asset: Assets/Outputs/Shader/BuildinShaders/Particle Premultiply Blend.shader
+[18:15:16.6153772]		name: shader, asset: Assets/Outputs/Shader/BuildinShaders/Skybox-Cubed.shader
+[18:15:16.6163772]		name: shader, asset: Assets/Outputs/Shader/BuildinShaders/Specular-AddPass.shader
+[18:15:16.6163772]		name: shader, asset: Assets/Outputs/Shader/BuildinShaders/Specular-Base.shader
+[18:15:16.6173773]		name: shader, asset: Assets/Outputs/Shader/BuildinShaders/TreeSoftOcclusionLeavesRendertex.shader
+[18:15:16.6173773]		name: shader, asset: Assets/Outputs/Shader/Character/CharacterHair.shader
+[18:15:16.6183773]		name: shader, asset: Assets/Outputs/Shader/Character/CharacterPass.shader
+[18:15:16.6183773]		name: shader, asset: Assets/Outputs/Shader/Character/Character_Eagleeye.shader
+[18:15:16.6193774]		name: shader, asset: Assets/Outputs/Shader/Character/Character_Eagleeye2.shader
+[18:15:16.6203774]		name: shader, asset: Assets/Outputs/Shader/Character/Character_Heroic.shader
+[18:15:16.6203774]		name: shader, asset: Assets/Outputs/Shader/Character/Character_Heroic2.shader
+[18:15:16.6213775]		name: shader, asset: Assets/Outputs/Shader/Character/Character_Heroic3.shader
+[18:15:16.6213775]		name: shader, asset: Assets/Outputs/Shader/Character/Character_Heroic_creat.shader
+[18:15:16.6223776]		name: shader, asset: Assets/Outputs/Shader/Character/Character_Heroic_Face.shader
+[18:15:16.6223776]		name: shader, asset: Assets/Outputs/Shader/Character/Character_Heroic_Face2.shader
+[18:15:16.6233776]		name: shader, asset: Assets/Outputs/Shader/Character/Character_Heroic_Face3.shader
+[18:15:16.6233776]		name: shader, asset: Assets/Outputs/Shader/Character/Character_Heroic_Face_back.shader
+[18:15:16.6243777]		name: shader, asset: Assets/Outputs/Shader/Character/Character_Heroic_Face_Creat.shader
+[18:15:16.6243777]		name: shader, asset: Assets/Outputs/Shader/Character/Character_Heroic_Fashion.shader
+[18:15:16.6253777]		name: shader, asset: Assets/Outputs/Shader/Character/Character_Heroic_Fashion_Transparent.shader
+[18:15:16.6253777]		name: shader, asset: Assets/Outputs/Shader/Character/Character_Heroic_Fx.shader
+[18:15:16.6263778]		name: shader, asset: Assets/Outputs/Shader/Character/Character_Heroic_Hair.shader
+[18:15:16.6263778]		name: shader, asset: Assets/Outputs/Shader/Character/Character_Heroic_Hair_Creat.shader
+[18:15:16.6273778]		name: shader, asset: Assets/Outputs/Shader/Character/Character_Heroic_Hair_test 1.shader
+[18:15:16.6273778]		name: shader, asset: Assets/Outputs/Shader/Character/Character_Heroic_Hair_test.shader
+[18:15:16.6283779]		name: shader, asset: Assets/Outputs/Shader/Character/Character_Heroic_Weapon.shader
+[18:15:16.6293780]		name: shader, asset: Assets/Outputs/Shader/Character/Character_Heroic_Weapon_Creat.shader
+[18:15:16.6293780]		name: shader, asset: Assets/Outputs/Shader/Character/Character_NPC.shader
+[18:15:16.6303780]		name: shader, asset: Assets/Outputs/Shader/Character/Character_NPC_ip.shader
+[18:15:16.6303780]		name: shader, asset: Assets/Outputs/Shader/Character/Character_NPC_vp.shader
+[18:15:16.6313781]		name: shader, asset: Assets/Outputs/Shader/Character/Etc_Markers.shader
+[18:15:16.6313781]		name: shader, asset: Assets/Outputs/Shader/Character/MCShadowMap.shader
+[18:15:16.6323781]		name: shader, asset: Assets/Outputs/Shader/Client/BrightnessContrastGamma.shader
+[18:15:16.6323781]		name: shader, asset: Assets/Outputs/Shader/Client/FirstPass.shader
+[18:15:16.6333782]		name: shader, asset: Assets/Outputs/Shader/Client/HideGeo.shader
+[18:15:16.6333782]		name: shader, asset: Assets/Outputs/Shader/Client/IMShadow.shader
+[18:15:16.6343782]		name: shader, asset: Assets/Outputs/Shader/Client/ShadowsMidtonesHighlights.shader
+[18:15:16.6353783]		name: shader, asset: Assets/Outputs/Shader/Client/UIGray.shader
+[18:15:16.6353783]		name: shader, asset: Assets/Outputs/Shader/Client/UIGuideMask.shader
+[18:15:16.6363784]		name: shader, asset: Assets/Outputs/Shader/Environment/Env_Dstveiw_TransparentCutout.shader
+[18:15:16.6363784]		name: shader, asset: Assets/Outputs/Shader/Environment/Env_Fadeable.shader
+[18:15:16.6373784]		name: shader, asset: Assets/Outputs/Shader/Environment/Fx_DistortADD_4UVscroll.shader
+[18:15:16.6373784]		name: shader, asset: Assets/Outputs/Shader/Environment/FX_Waterflow_4UVscroll.shader
+[18:15:16.6383785]		name: shader, asset: Assets/Outputs/Shader/Environment/FX_Waterflow_4UVscroll_queue.shader
+[18:15:16.6383785]		name: shader, asset: Assets/Outputs/Shader/Environment/FX_Water_Distortadd_masked.shader
+[18:15:16.6393785]		name: shader, asset: Assets/Outputs/Shader/Environment/SkySphere_Strato.shader
+[18:15:16.6393785]		name: shader, asset: Assets/Outputs/Shader/Environment/Tera_MobileCamtrans.shader
+[18:15:16.6403786]		name: shader, asset: Assets/Outputs/Shader/Environment/Tera_MobileCamtransOpaque.shader
+[18:15:16.6403786]		name: shader, asset: Assets/Outputs/Shader/Environment/TeraMobile/FoamyBiColor.shader
+[18:15:16.6413786]		name: shader, asset: Assets/Outputs/Shader/Environment/TeraMobile/Invisible.shader
+[18:15:16.6413786]		name: shader, asset: Assets/Outputs/Shader/Environment/TeraMobile/MobileDiffuseBumpDir.shader
+[18:15:16.6423787]		name: shader, asset: Assets/Outputs/Shader/Environment/TeraMobile/MobileDiffuseBumpDirEnvMap.shader
+[18:15:16.6423787]		name: shader, asset: Assets/Outputs/Shader/Environment/TeraMobile/MobileDiffuseBumpDirEnvMapTwoSide.shader
+[18:15:16.6433788]		name: shader, asset: Assets/Outputs/Shader/Environment/TeraMobile/MobileDiffuseBumpDirPartLighted.shader
+[18:15:16.6443788]		name: shader, asset: Assets/Outputs/Shader/Environment/TeraMobile/MobileDiffuseBumpDirreflection.shader
+[18:15:16.6443788]		name: shader, asset: Assets/Outputs/Shader/Environment/TeraMobile/MobileDiffuseBumpDirRimed.shader
+[18:15:16.6453789]		name: shader, asset: Assets/Outputs/Shader/Environment/TeraMobile/MobileDiffuseBumpDirTwoSide.shader
+[18:15:16.6453789]		name: shader, asset: Assets/Outputs/Shader/Environment/TeraMobile/MobileDiffuseDir.shader
+[18:15:16.6463789]		name: shader, asset: Assets/Outputs/Shader/Environment/TeraMobile/MobileDiffuseDirTwoSide.shader
+[18:15:16.6463789]		name: shader, asset: Assets/Outputs/Shader/Environment/TeraMobile/MobileDiffuseDirTwoSideEms.shader
+[18:15:16.6473790]		name: shader, asset: Assets/Outputs/Shader/Environment/TeraMobile/MobileDiffuseDirTwoSideEmsVertexAnim.shader
+[18:15:16.6473790]		name: shader, asset: Assets/Outputs/Shader/Environment/TeraMobile/MobileDiffuseDirTwoSideVertexAnim.shader
+[18:15:16.6483790]		name: shader, asset: Assets/Outputs/Shader/Environment/TeraMobile/MobileShadowCaster.shader
+[18:15:16.6493791]		name: shader, asset: Assets/Outputs/Shader/Environment/TeraMobile/MobileSimpleFX.shader
+[18:15:16.6493791]		name: shader, asset: Assets/Outputs/Shader/Environment/TeraMobile/MobileTransparentGlassy.shader
+[18:15:16.6503792]		name: shader, asset: Assets/Outputs/Shader/Environment/TeraMobile/MobileTransparentObject.shader
+[18:15:16.6503792]		name: shader, asset: Assets/Outputs/Shader/Environment/TeraMobile/MobileWater_BiColored.shader
+[18:15:16.6513792]		name: shader, asset: Assets/Outputs/Shader/Environment/TeraMobile/SkySphere.shader
+[18:15:16.6513792]		name: shader, asset: Assets/Outputs/Shader/Environment/TeraMobile/Standard-Base.shader
+[18:15:16.6523793]		name: shader, asset: Assets/Outputs/Shader/Environment/TeraMobile/Standard-FirstPass.shader
+[18:15:16.6523793]		name: shader, asset: Assets/Outputs/Shader/Environment/TeraMobile/Standard_Terrain.shader
+[18:15:16.6533793]		name: shader, asset: Assets/Outputs/Shader/PostEffects/BloomHD.shader
+[18:15:16.6543794]		name: shader, asset: Assets/Outputs/Shader/PostEffects/Copy.shader
+[18:15:16.6543794]		name: shader, asset: Assets/Outputs/Shader/PostEffects/DepthOfField.shader
+[18:15:16.6543794]		name: shader, asset: Assets/Outputs/Shader/PostEffects/Fog.shader
+[18:15:16.6553794]		name: shader, asset: Assets/Outputs/Shader/PostEffects/HSV.shader
+[18:15:16.6553794]		name: shader, asset: Assets/Outputs/Shader/PostEffects/MotionBlur_2.shader
+[18:15:16.6563795]		name: shader, asset: Assets/Outputs/Shader/PostEffects/SimpleRadialBlur.shader
+[18:15:16.6563795]		name: shader, asset: Assets/Outputs/Shader/PostEffects/SpecialVision.shader
+[18:15:16.6573796]		name: shader, asset: Assets/Outputs/Shader/Sfx/AdditiveCore.shader
+[18:15:16.6573796]		name: shader, asset: Assets/Outputs/Shader/Sfx/Dissolve_add.shader
+[18:15:16.6583796]		name: shader, asset: Assets/Outputs/Shader/Sfx/Dissolve_AlphaBlend.shader
+[18:15:16.6583796]		name: shader, asset: Assets/Outputs/Shader/Sfx/DistortADD.shader
+[18:15:16.6593797]		name: shader, asset: Assets/Outputs/Shader/Sfx/DistortADD_Freezen.shader
+[18:15:16.6593797]		name: shader, asset: Assets/Outputs/Shader/Sfx/DistortADD_UI.shader
+[18:15:16.6603797]		name: shader, asset: Assets/Outputs/Shader/Sfx/DistortAlpha.shader
+[18:15:16.6603797]		name: shader, asset: Assets/Outputs/Shader/Sfx/effect_Rim_particle.shader
+[18:15:16.6613798]		name: shader, asset: Assets/Outputs/Shader/Sfx/FX_Additive.shader
+[18:15:16.6613798]		name: shader, asset: Assets/Outputs/Shader/Sfx/FX_AlphaBlend.shader
+[18:15:16.6623798]		name: shader, asset: Assets/Outputs/Shader/Sfx/MADFINGER-Unlit-Scroll2Layers-Sine-Add.shader
+[18:15:16.6623798]		name: shader, asset: Assets/Outputs/Shader/Sfx/MADFINGER-Unlit-Scroll2Layers-Sine-Add_UVc2.shader
+[18:15:16.6633799]		name: shader, asset: Assets/Outputs/Shader/Sfx/MergeAlpha_Test.shader
+[18:15:16.6633799]		name: shader, asset: Assets/Outputs/Shader/Sfx/ParticleCook-Transparent-AlphaBlend-Diffuse-Z.shader
+[18:15:16.6643800]		name: shader, asset: Assets/Outputs/Shader/Sfx/DeclMaterial/Decl_displacement-dissolve_additive.shader
+[18:15:16.6643800]		name: shader, asset: Assets/Outputs/Shader/Sfx/DeclMaterial/Decl_displacement-flow_additive.shader
+[18:15:16.6653800]		name: shader, asset: Assets/Outputs/Shader/Sfx/DeclMaterial/Decl_displacement_additive.shader
+[18:15:16.6653800]		name: shader, asset: Assets/Outputs/Shader/Sfx/DeclMaterial/Decl_Dissolve_add.shader
+[18:15:16.6653800]		name: shader, asset: Assets/Outputs/Shader/Sfx/DeclMaterial/Decl_Dissolve_AlphaBlend.shader
+[18:15:16.6663801]		name: shader, asset: Assets/Outputs/Shader/Sfx/DeclMaterial/Decl_DistortAlpha.shader
+[18:15:16.6663801]		name: shader, asset: Assets/Outputs/Shader/Sfx/DeclMaterial/Decl_Particle Add.shader
+[18:15:16.6673801]		name: shader, asset: Assets/Outputs/Shader/Sfx/DeclMaterial/Decl_Particle Blend.shader
+[18:15:16.6673801]		name: shader, asset: Assets/Outputs/Shader/Sfx/DeclMaterial/decl_ring_indicator.shader
+[18:15:16.6683802]		name: shader, asset: Assets/Outputs/Shader/Sfx/DeclMaterial/Decl_Unlit-Scroll2Layers-Sine-Add.shader
+[18:15:16.6683802]		name: shader, asset: Assets/Outputs/Shader/Sfx/DeclMaterial/Decl_Unlit-Scroll2Layers-Sine-Add_UVc.shader
+[18:15:16.6693802]		name: shader, asset: Assets/Outputs/Shader/Sfx/DeclMaterial/Decl_Unlit-Scroll2Layers-Sine-AlphaBlend.shader
+[18:15:16.6693802]		name: shader, asset: Assets/Outputs/Shader/Sfx/DeclMaterial/TeraProjector.shader
+[18:15:16.6703803]		name: shader, asset: Assets/Outputs/Shader/Sfx/GenaralFXtex/daoguang07.png
+[18:15:16.6763806]		name: shader, asset: Assets/Outputs/Shader/Sfx/GenaralFXtex/Smoke01Normal.png
+[18:15:16.6773807]		name: shader, asset: Assets/Outputs/Shader/Sfx/HDR/Dissolve_add.shader
+[18:15:16.6783808]		name: shader, asset: Assets/Outputs/Shader/Sfx/HDR/Dissolve_AlphaBlend.shader
+[18:15:16.6783808]		name: shader, asset: Assets/Outputs/Shader/Sfx/HDR/DistortADD.shader
+[18:15:16.6793808]		name: shader, asset: Assets/Outputs/Shader/Sfx/HDR/DistortAlpha.shader
+[18:15:16.6793808]		name: shader, asset: Assets/Outputs/Shader/Sfx/HDR/effect_Rim_particle.shader
+[18:15:16.6803809]		name: shader, asset: Assets/Outputs/Shader/Sfx/HDR/FX_Additive.shader
+[18:15:16.6803809]		name: shader, asset: Assets/Outputs/Shader/Sfx/HDR/FX_AlphaBlend.shader
+[18:15:16.6813809]		name: shader, asset: Assets/Outputs/Shader/Sfx/HDR/Particle Add.shader
+[18:15:16.6813809]		name: shader, asset: Assets/Outputs/Shader/Sfx/HDR/Particle Alpha Blend.shader
+[18:15:16.6823810]		name: shader, asset: Assets/Outputs/Shader/Sfx/HDR/ParticleOffset3.shader
+[18:15:16.6823810]		name: shader, asset: Assets/Outputs/Shader/Sfx/HDR/ParticleOffset4.shader
+[18:15:16.6833810]		name: shader, asset: Assets/Outputs/Shader/Sfx/HDR/xft_displacement-dissolve_additive.shader
+[18:15:16.6843811]		name: shader, asset: Assets/Outputs/Shader/Sfx/HDR/xft_displacement-flow_additive.shader
+[18:15:16.6843811]		name: shader, asset: Assets/Outputs/Shader/Sfx/HDR/xft_displacement_additive.shader
+[18:15:16.6853812]		name: shader, asset: Assets/Outputs/Shader/Sfx/HDR/xft_displacement_additive3.shader
+[18:15:16.6853812]		name: shader, asset: Assets/Outputs/Shader/Sfx/HDR/xft_displacement_blend.shader
+[18:15:16.6863812]		name: shader, asset: Assets/Outputs/Shader/Sfx/HDR/xft_displacement_blend_a.shader
+[18:15:16.6863812]		name: shader, asset: Assets/Outputs/Shader/Sfx/HDR/xft_displacement_blend_Z.shader
+[18:15:16.6873813]		name: shader, asset: Assets/Outputs/Shader/Sfx/HDR/xft_mask_additive.shader
+[18:15:16.6873813]		name: shader, asset: Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/RFX4_CutoutBorder.shader
+[18:15:16.6883813]		name: shader, asset: Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/RFX4_DepthMask.shader
+[18:15:16.6883813]		name: shader, asset: Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/RFX4_DistortionParticles.shader
+[18:15:16.6893814]		name: shader, asset: Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/RFX4_DistortionParticlesAdd.shader
+[18:15:16.6903815]		name: shader, asset: Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/RFX4_Ice.shader
+[18:15:16.6903815]		name: shader, asset: Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/RFX4_Lava.shader
+[18:15:16.6913815]		name: shader, asset: Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/RFX4_Lightning.shader
+[18:15:16.6913815]		name: shader, asset: Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/RFX4_MobileDiffuse.shader
+[18:15:16.6923816]		name: shader, asset: Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/RFX4_Particle.shader
+[18:15:16.6933816]		name: shader, asset: Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/RFX4_Tornado.shader
+[18:15:16.6933816]		name: shader, asset: Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/Decal/RFX4_DecalDistortMask.shader
+[18:15:16.6943817]		name: shader, asset: Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/Decal/RFX4_DecalDistortMaskMul.shader
+[18:15:16.6943817]		name: shader, asset: Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/Decal/RFX4_DecalMask.shader
+[18:15:16.6953817]		name: shader, asset: Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/Decal/RFX4_IceDecal.shader
+[18:15:16.6963818]		name: shader, asset: Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/Decal/RFX4_ProjectorBlended.shader
+[18:15:16.6963818]		name: shader, asset: Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/Water/RFX4_WaterSplash.shader
+[18:15:16.6973819]		name: shader, asset: Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/Water/RFX4_WaterSplashMobile.shader
+[18:15:16.6983819]		name: shader, asset: Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/Water/RFX4_WaterSplashTex.shader
+[18:15:16.6983819]		name: shader, asset: Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/Water/RFX4_WaterSplashTexMobile.shader
+[18:15:16.6993820]		name: shader, asset: Assets/Outputs/Shader/Sfx/TrailMaterial/Trail_displacement-dissolve_additive.shader
+[18:15:16.6993820]		name: shader, asset: Assets/Outputs/Shader/Sfx/TrailMaterial/Trail_displacement-flow_additive.shader
+[18:15:16.7003820]		name: shader, asset: Assets/Outputs/Shader/Sfx/TrailMaterial/Trail_displacement_additive.shader
+[18:15:16.7003820]		name: shader, asset: Assets/Outputs/Shader/Sfx/TrailMaterial/Trail_displacement_blend.shader
+[18:15:16.7003820]		name: shader, asset: Assets/Outputs/Shader/Sfx/TrailMaterial/Trail_DistortADD.shader
+[18:15:16.7013821]		name: shader, asset: Assets/Outputs/Shader/Sfx/TrailMaterial/Trail_DistortAlpha.shader
+[18:15:16.7013821]		name: shader, asset: Assets/Outputs/Shader/Sfx/TrailMaterial/Trail_Unlit-Scroll2Layers-Sine-Add.shader
+[18:15:16.7023821]		name: shader, asset: Assets/Outputs/Shader/Sfx/TrailMaterial/Trail_Unlit-Scroll2Layers-Sine-AlphaBlend.shader
+[18:15:16.7023821]		name: shader, asset: Assets/Outputs/Shader/Sfx/UIFx/additive_ui2.shader
+[18:15:16.7033822]		name: shader, asset: Assets/Outputs/Shader/Sfx/UIFx/hdx_additive_ui2.shader
+[18:15:16.7033822]		name: shader, asset: Assets/Outputs/Shader/Sfx/UIFx/xft_displacement_additive_ui2.shader
+[18:15:16.7043823]		name: shader, asset: Assets/Outputs/Shader/Sfx/UIFx/xft_mask_additive_ui2.shader
+[18:15:16.7043823]		name: shader, asset: Assets/Outputs/Shader/Sfx/Xffect_Shaders/AdvanceShader/xft_displacement-dissolve_additive.shader
+[18:15:16.7053823]		name: shader, asset: Assets/Outputs/Shader/Sfx/Xffect_Shaders/AdvanceShader/xft_displacement_additive.shader
+[18:15:16.7063824]		name: shader, asset: Assets/Outputs/Shader/Sfx/Xffect_Shaders/AdvanceShader/xft_displacement_additive_ui.shader
+[18:15:16.7063824]		name: shader, asset: Assets/Outputs/Shader/Sfx/Xffect_Shaders/AdvanceShader/xft_displacement_blend.shader
+[18:15:16.7073824]		name: shader, asset: Assets/Outputs/Shader/Sfx/Xffect_Shaders/AdvanceShader/xft_displacement_blend_Z.shader
+[18:15:16.7073824]		name: shader, asset: Assets/Outputs/Shader/Sfx/Xffect_Shaders/AdvanceShader/xft_displacement_screen.shader
+[18:15:16.7083825]		name: shader, asset: Assets/Outputs/Shader/Sfx/Xffect_Shaders/AdvanceShader/xft_mask_additive.shader
+[18:15:16.7083825]		name: shader, asset: Assets/Outputs/Shader/UI/Circular.shader
+[18:15:16.7093825]		name: shader, asset: Assets/Outputs/Shader/UI/SimpleCamReflection.shader
+[18:15:16.7093825]		name: shader, asset: Assets/Outputs/Shader/UI/UIAlphaSplit.shader
+[18:15:16.7103826]		name: shader, asset: Assets/Outputs/Shader/UI/UIBlur.shader
+[18:15:16.7103826]		name: shader, asset: Assets/Outputs/Shader/UI/UIDispAdd.shader
+[18:15:16.7113827]	options: 304
+[18:16:39.3851113]	BuildAssetBundles完毕 Output: D:/UnityPlus/TeraMobile/Assets/../Export/AssetBundles/Android

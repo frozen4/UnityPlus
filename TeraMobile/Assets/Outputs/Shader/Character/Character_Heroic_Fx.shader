@@ -31,7 +31,7 @@ Shader "Character/Character_Heroic_withFX" {
         _DispX  ("Displacement Strength X", Float) = 0
         _DispY  ("Displacement Strength Y", Float) = 0.2
         [Header(Rim Effect)]
-        _RimColor ("Rim Color", Color) = (1,1,1,1)
+        [HDR]_RimColor ("Rim Color", Color) = (1,1,1,1)
         _RimPower ("Rim Power", Range(0, 5)) = 0
     }
     SubShader {

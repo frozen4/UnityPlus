@@ -7,7 +7,6 @@ Shader "Tera/MobileDiffuseBumpNight"
 		_BumpMap("Normalmap", 2D) = "bump" {}
 		_Shininess("Shininess", Range(0.03, 1)) = 1
 		_lmfb("Lightmap Feedback", Range(0,1)) = 0
-		_Masktex("Lighted Mask R = Lighted", 2D) = "black" {}
 	}
 	SubShader
 	{
@@ -51,12 +50,12 @@ Shader "Tera/MobileDiffuseBumpNight"
 #if defined(MOBILE_DYNAMIC_DIRLIGHT_ON)
 				fixed3 ambient = _SunAmbientColor.rgb * _SunAmbientColor.a;
 
-				final_color.rgb = ShadeWithDynamicLight_mdbdn(i, diffuse.rgb, diffuse.a, light_color, atten, ambient,_Masktex);
+				final_color.rgb = ShadeWithDynamicLight_mdbdn(i, diffuse.rgb, diffuse.a, light_color, atten, ambient);
 #else
 				final_color.rgb = diffuse.rgb * light_color;
 #endif
 #else
-				final_color.rgb = ShadeWithDynamicLight_mdbdn(i, diffuse.rgb, diffuse.a, light_color, atten, i.sh,_Masktex);
+				final_color.rgb = ShadeWithDynamicLight_mdbdn(i, diffuse.rgb, diffuse.a, light_color, atten, i.sh);
 #endif
 				UNITY_APPLY_FOG(i.fogCoord, final_color);
 //				final_color.rgb = decodelightmap(UNITY_SAMPLE_TEX2D(unity_Lightmap, i.lmuv.xy));

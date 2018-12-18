@@ -207,11 +207,12 @@ fixed3 ShadeWithDynamicLight_mdd_t(v2f_mdd i,
 //	light_color *= reflColor;
 
 	half3 p1 = max(half3(0, 0, 0), aa_light_color * nl + (sh*0.5) + (sh*0.5*light_color));
-//	half3 p2 = max(half3(0, 0, 0), light_color * light_spec * atten);
 #ifdef RAIN_SURFACE_ON
+    half3 p2 = max(half3(0, 0, 0), light_color * light_spec * atten);
 	p2 *= factor;
 #endif
 #ifdef SNOW_SURFACE_ON
+    half3 p2 = max(half3(0, 0, 0), light_color * light_spec * atten);
 	p2 *= saturate(1 - _SnowDensity * 1.6);
 #endif
 	return max(fixed3(0.01,0.01,0.01),diffuse * p1);
@@ -675,8 +676,7 @@ fixed3 ShadeWithDynamicLight_mdbdn(v2f_mdbdn i,
 	float spec_factor,
 	half3 light_color,
 	half atten,
-	fixed3 sh,
-	sampler2D night_mask)
+	fixed3 sh)
 {
 //	fixed mask = tex2D(night_mask,i.uv2).r;
 	fixed mask = i.lt.a;
@@ -783,10 +783,10 @@ fixed3 ShadeWithLevel200(v2f_mdd200 i,
 
 
 // with vertex animation
-vector _Wind;
-float _Windnoise;
-float _Windfreq;
-vector _Disturb;
+uniform half4 _Wind;
+uniform float _Windnoise;
+uniform float _Windfreq;
+uniform half4 _Disturb;
 
 struct appdata_mddva
 {
