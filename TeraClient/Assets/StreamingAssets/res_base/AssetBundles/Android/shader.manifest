@@ -1,0 +1,212 @@
+ManifestFileVersion: 0
+CRC: 4135987369
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d30db335d310ee8027bd0862174cd905
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: e1349f9685334311cd830b7398b4b19e
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5a16784153227a14a92bfa9fc8511d79, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 200
+  Script: {instanceID: 0}
+Assets:
+- Assets/Outputs/Shader/Sfx/HDR/FX_AlphaBlend.shader
+- Assets/Outputs/Shader/PostEffects/DepthOfField.shader
+- Assets/Outputs/Shader/BuildinShaders/AlphaTest-VertexLit.shader
+- Assets/Outputs/Shader/Environment/TeraMobile/MobileDiffuseDirTwoSideVertexAnim.shader
+- Assets/Outputs/Shader/Client/ShadowsMidtonesHighlights.shader
+- Assets/Outputs/Shader/Character/CharacterPass.shader
+- Assets/Outputs/Shader/Character/Character_Heroic_Fx.shader
+- Assets/Outputs/Shader/Sfx/Xffect_Shaders/AdvanceShader/xft_displacement_blend.shader
+- Assets/Outputs/Shader/Sfx/DeclMaterial/Decl_Dissolve_AlphaBlend.shader
+- Assets/Outputs/Shader/UI/SimpleCamReflection.shader
+- Assets/Outputs/Shader/Sfx/HDR/effect_Rim_particle.shader
+- Assets/Outputs/Shader/Sfx/DeclMaterial/Decl_displacement-dissolve_additive.shader
+- Assets/Outputs/Shader/Character/Character_Heroic_Face_Creat.shader
+- Assets/Outputs/Shader/BuildinShaders/Mobile-Particle-Add.shader
+- Assets/Outputs/Shader/Sfx/DeclMaterial/Decl_Particle Blend.shader
+- Assets/Outputs/Shader/Environment/FX_Water_Distortadd_masked.shader
+- Assets/Outputs/Shader/Sfx/DeclMaterial/Decl_Dissolve_add.shader
+- Assets/Outputs/Shader/BuildinShaders/AlphaTest-Bumped.shader
+- Assets/Outputs/Shader/BuildinShaders/TreeSoftOcclusionLeavesRendertex.shader
+- Assets/Outputs/Shader/BuildinShaders/Particle Add.shader
+- Assets/Outputs/Shader/Sfx/Xffect_Shaders/AdvanceShader/xft_displacement-dissolve_additive.shader
+- Assets/Outputs/Shader/Character/MCShadowMap.shader
+- Assets/Outputs/Shader/BuildinShaders/Specular-Base.shader
+- Assets/Outputs/Shader/Character/CharacterHair.shader
+- Assets/Outputs/Shader/Environment/TeraMobile/MobileDiffuseBumpDirEnvMap.shader
+- Assets/Outputs/Shader/Sfx/MADFINGER-Unlit-Scroll2Layers-Sine-Add_UVc2.shader
+- Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/RFX4_Tornado.shader
+- Assets/Outputs/Shader/Sfx/HDR/FX_Additive.shader
+- Assets/Outputs/Shader/Environment/TeraMobile/Invisible.shader
+- Assets/Outputs/Shader/Sfx/TrailMaterial/Trail_Unlit-Scroll2Layers-Sine-Add.shader
+- Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/RFX4_DepthMask.shader
+- Assets/Outputs/Shader/UI/UIDispAdd.shader
+- Assets/Outputs/Shader/Client/BrightnessContrastGamma.shader
+- Assets/Outputs/Shader/Environment/SkySphere_Strato.shader
+- Assets/Outputs/Shader/Sfx/DeclMaterial/TeraProjector.shader
+- Assets/Outputs/Shader/svc.shadervariants
+- Assets/Outputs/Shader/Sfx/ParticleCook-Transparent-AlphaBlend-Diffuse-Z.shader
+- Assets/Outputs/Shader/Sfx/MADFINGER-Unlit-Scroll2Layers-Sine-Add.shader
+- Assets/Outputs/Shader/PostEffects/MotionBlur_2.shader
+- Assets/Outputs/Shader/Sfx/FX_Additive.shader
+- Assets/Outputs/Shader/Sfx/TrailMaterial/Trail_displacement_additive.shader
+- Assets/Outputs/Shader/Environment/Env_Dstveiw_TransparentCutout.shader
+- Assets/Outputs/Shader/Environment/TeraMobile/MobileDiffuseBumpDirEnvMapTwoSide.shader
+- Assets/Outputs/Shader/Character/Character_Heroic2.shader
+- Assets/Outputs/Shader/Sfx/UIFx/xft_displacement_additive_ui2.shader
+- Assets/Outputs/Shader/Environment/TeraMobile/MobileDiffuseBumpDirPartLighted.shader
+- Assets/Outputs/Shader/Sfx/DeclMaterial/Decl_Unlit-Scroll2Layers-Sine-Add.shader
+- Assets/Outputs/Shader/Character/Character_Heroic_Hair.shader
+- Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/RFX4_MobileDiffuse.shader
+- Assets/Outputs/Shader/Sfx/UIFx/additive_ui2.shader
+- Assets/Outputs/Shader/Sfx/HDR/Particle Add.shader
+- Assets/Outputs/Shader/PostEffects/SpecialVision.shader
+- Assets/Outputs/Shader/Character/Character_Heroic_Hair_Creat.shader
+- Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/Decal/RFX4_DecalMask.shader
+- Assets/Outputs/Shader/BuildinShaders/Alpha-Diffuse.shader
+- Assets/Outputs/Shader/Sfx/TrailMaterial/Trail_Unlit-Scroll2Layers-Sine-AlphaBlend.shader
+- Assets/Outputs/Shader/Character/Etc_Markers.shader
+- Assets/Outputs/Shader/Environment/TeraMobile/Standard-FirstPass.shader
+- Assets/Outputs/Shader/Environment/TeraMobile/MobileWater_BiColored.shader
+- Assets/Outputs/Shader/PostEffects/HSV.shader
+- Assets/Outputs/Shader/Character/Character_Heroic_Hair_test 1.shader
+- Assets/Outputs/Shader/BuildinShaders/Normal-BumpSpec.shader
+- Assets/Outputs/Shader/Sfx/DeclMaterial/Decl_Particle Add.shader
+- Assets/Outputs/Shader/Environment/TeraMobile/MobileDiffuseBumpDirTwoSide.shader
+- Assets/Outputs/Shader/Environment/TeraMobile/MobileDiffuseDirTwoSide.shader
+- Assets/Outputs/Shader/Sfx/HDR/xft_displacement_blend.shader
+- Assets/Outputs/Shader/Sfx/TrailMaterial/Trail_displacement-flow_additive.shader
+- Assets/Outputs/Shader/UI/UIBlur.shader
+- Assets/Outputs/Shader/UI/Circular.shader
+- Assets/Outputs/Shader/Sfx/Xffect_Shaders/AdvanceShader/xft_displacement_additive.shader
+- Assets/Outputs/Shader/Environment/TeraMobile/MobileDiffuseDirTwoSideEms.shader
+- Assets/Outputs/Shader/Environment/TeraMobile/MobileDiffuseBumpDirreflection.shader
+- Assets/Outputs/Shader/Character/Character_Heroic_Face_back.shader
+- Assets/Outputs/Shader/Sfx/DeclMaterial/Decl_displacement_additive.shader
+- Assets/Outputs/Shader/BuildinShaders/Specular-AddPass.shader
+- Assets/Outputs/Shader/Sfx/Xffect_Shaders/AdvanceShader/xft_mask_additive.shader
+- Assets/Outputs/Shader/Character/Character_Heroic_Face3.shader
+- Assets/Outputs/Shader/Sfx/HDR/xft_displacement_additive.shader
+- Assets/Outputs/Shader/Sfx/DistortADD.shader
+- Assets/Outputs/Shader/Sfx/HDR/DistortAlpha.shader
+- Assets/Outputs/Shader/Sfx/HDR/xft_displacement_blend_a.shader
+- Assets/Outputs/Shader/svc1.shadervariants
+- Assets/Outputs/Shader/Sfx/HDR/ParticleOffset3.shader
+- Assets/Outputs/Shader/Sfx/UIFx/xft_mask_additive_ui2.shader
+- Assets/Outputs/Shader/Character/Character_NPC_ip.shader
+- Assets/Outputs/Shader/Client/FirstPass.shader
+- Assets/Outputs/Shader/Sfx/HDR/Dissolve_AlphaBlend.shader
+- Assets/Outputs/Shader/Sfx/HDR/Dissolve_add.shader
+- Assets/Outputs/Shader/Environment/TeraMobile/MobileShadowCaster.shader
+- Assets/Outputs/Shader/Environment/FX_Waterflow_4UVscroll.shader
+- Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/RFX4_DistortionParticlesAdd.shader
+- Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/Water/RFX4_WaterSplash.shader
+- Assets/Outputs/Shader/Sfx/DeclMaterial/decl_ring_indicator.shader
+- Assets/Outputs/Shader/BuildinShaders/Particle Alpha Blend.shader
+- Assets/Outputs/Shader/Environment/TeraMobile/MobileTransparentObject.shader
+- Assets/Outputs/Shader/Environment/Tera_MobileCamtrans.shader
+- Assets/Outputs/Shader/Sfx/HDR/xft_displacement-dissolve_additive.shader
+- Assets/Outputs/Shader/Sfx/TrailMaterial/Trail_displacement_blend.shader
+- Assets/Outputs/Shader/Sfx/HDR/xft_displacement-flow_additive.shader
+- Assets/Outputs/Shader/Character/Character_Heroic_Fashion.shader
+- Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/Decal/RFX4_DecalDistortMaskMul.shader
+- Assets/Outputs/Shader/Sfx/FX_AlphaBlend.shader
+- Assets/Outputs/Shader/Sfx/HDR/xft_displacement_blend_Z.shader
+- Assets/Outputs/Shader/Character/Character_Heroic_Face2.shader
+- Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/RFX4_CutoutBorder.shader
+- Assets/Outputs/Shader/Character/Character_Heroic_creat.shader
+- Assets/Outputs/Shader/Sfx/HDR/Particle Alpha Blend.shader
+- Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/Decal/RFX4_ProjectorBlended.shader
+- Assets/Outputs/Shader/Sfx/Xffect_Shaders/AdvanceShader/xft_displacement_additive_ui.shader
+- Assets/Outputs/Shader/Client/HideGeo.shader
+- Assets/Outputs/Shader/Client/UIGray.shader
+- Assets/Outputs/Shader/Sfx/DeclMaterial/Decl_DistortAlpha.shader
+- Assets/Outputs/Shader/Sfx/Dissolve_add.shader
+- Assets/Outputs/Shader/Sfx/GenaralFXtex/Smoke01Normal.png
+- Assets/Outputs/Shader/Environment/TeraMobile/MobileDiffuseBumpDirRimed.shader
+- Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/Decal/RFX4_IceDecal.shader
+- Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/RFX4_Lava.shader
+- Assets/Outputs/Shader/Character/Character_Heroic_Face.shader
+- Assets/Outputs/Shader/Environment/TeraMobile/MobileDiffuseBumpDir.shader
+- Assets/Outputs/Shader/Environment/TeraMobile/Standard_Terrain.shader
+- Assets/Outputs/Shader/Sfx/AdditiveCore.shader
+- Assets/Outputs/Shader/Sfx/DeclMaterial/Decl_Unlit-Scroll2Layers-Sine-Add_UVc.shader
+- Assets/Outputs/Shader/PostEffects/BloomHD.shader
+- Assets/Outputs/Shader/Environment/TeraMobile/MobileTransparentGlassy.shader
+- Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/Water/RFX4_WaterSplashMobile.shader
+- Assets/Outputs/Shader/Environment/Fx_DistortADD_4UVscroll.shader
+- Assets/Outputs/Shader/Sfx/HDR/xft_displacement_additive3.shader
+- Assets/Outputs/Shader/BuildinShaders/Alpha-VertexLit.shader
+- Assets/Outputs/Shader/Character/Character_NPC_vp.shader
+- Assets/Outputs/Shader/ShaderList.prefab
+- Assets/Outputs/Shader/Sfx/HDR/DistortADD.shader
+- Assets/Outputs/Shader/Environment/Env_Fadeable.shader
+- Assets/Outputs/Shader/PostEffects/Fog.shader
+- Assets/Outputs/Shader/Client/UIGuideMask.shader
+- Assets/Outputs/Shader/BuildinShaders/Skybox-Cubed.shader
+- Assets/Outputs/Shader/Sfx/MergeAlpha_Test.shader
+- Assets/Outputs/Shader/Sfx/TrailMaterial/Trail_DistortADD.shader
+- Assets/Outputs/Shader/Sfx/HDR/ParticleOffset4.shader
+- Assets/Outputs/Shader/Sfx/Xffect_Shaders/AdvanceShader/xft_displacement_blend_Z.shader
+- Assets/Outputs/Shader/Sfx/UIFx/hdx_additive_ui2.shader
+- Assets/Outputs/Shader/AQUAS/BiColored.shader
+- Assets/Outputs/Shader/Sfx/DistortADD_UI.shader
+- Assets/Outputs/Shader/BuildinShaders/AlphaTest-Diffuse.shader
+- Assets/Outputs/Shader/Environment/TeraMobile/FoamyBiColor.shader
+- Assets/Outputs/Shader/Sfx/Dissolve_AlphaBlend.shader
+- Assets/Outputs/Shader/Sfx/DeclMaterial/Decl_displacement-flow_additive.shader
+- Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/RFX4_Particle.shader
+- Assets/Outputs/Shader/Environment/TeraMobile/MobileDiffuseDir.shader
+- Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/Decal/RFX4_DecalDistortMask.shader
+- Assets/Outputs/Shader/Environment/TeraMobile/MobileDiffuseDirTwoSideEmsVertexAnim.shader
+- Assets/Outputs/Shader/BuildinShaders/Particle Premultiply Blend.shader
+- Assets/Outputs/Shader/Environment/TeraMobile/SkySphere.shader
+- Assets/Outputs/Shader/Sfx/TrailMaterial/Trail_DistortAlpha.shader
+- Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/Water/RFX4_WaterSplashTexMobile.shader
+- Assets/Outputs/Shader/Character/Character_Heroic.shader
+- Assets/Outputs/Shader/Character/Character_NPC.shader
+- Assets/Outputs/Shader/Sfx/HDR/xft_mask_additive.shader
+- Assets/Outputs/Shader/Environment/FX_Waterflow_4UVscroll_queue.shader
+- Assets/Outputs/Shader/Sfx/TrailMaterial/Trail_displacement-dissolve_additive.shader
+- Assets/Outputs/Shader/PostEffects/SimpleRadialBlur.shader
+- Assets/Outputs/Shader/Sfx/GenaralFXtex/daoguang07.png
+- Assets/Outputs/Shader/Character/Character_Heroic_Weapon.shader
+- Assets/Outputs/Shader/UI/UIAlphaSplit.shader
+- Assets/Outputs/Shader/Client/IMShadow.shader
+- Assets/Outputs/Shader/Character/Character_Eagleeye2.shader
+- Assets/Outputs/Shader/PostEffects/Copy.shader
+- Assets/Outputs/Shader/Sfx/Xffect_Shaders/AdvanceShader/xft_displacement_screen.shader
+- Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/RFX4_Lightning.shader
+- Assets/Outputs/Shader/BuildinShaders/Particle AddSmooth.shader
+- Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/RFX4_DistortionParticles.shader
+- Assets/Outputs/Shader/Sfx/DistortAlpha.shader
+- Assets/Outputs/Shader/Environment/Tera_MobileCamtransOpaque.shader
+- Assets/Outputs/Shader/Environment/TeraMobile/MobileSimpleFX.shader
+- Assets/Outputs/Shader/Sfx/DistortADD_Freezen.shader
+- Assets/Outputs/Shader/Sfx/DeclMaterial/Decl_Unlit-Scroll2Layers-Sine-AlphaBlend.shader
+- Assets/Outputs/Shader/Character/Character_Heroic3.shader
+- Assets/Outputs/Shader/Character/Character_Eagleeye.shader
+- Assets/Outputs/Shader/BuildinShaders/Normal-Glossy.shader
+- Assets/Outputs/Shader/Character/Character_Heroic_Weapon_Creat.shader
+- Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/Water/RFX4_WaterSplashTex.shader
+- Assets/Outputs/Shader/Character/Character_Heroic_Fashion_Transparent.shader
+- Assets/Outputs/Shader/Sfx/effect_Rim_particle.shader
+- Assets/Outputs/Shader/Environment/TeraMobile/Standard-Base.shader
+- Assets/Outputs/Shader/Character/Character_Heroic_Hair_test.shader
+- Assets/Outputs/Shader/Sfx/KriptoFX_Shaders/RFX4_Ice.shader
+Dependencies: []
