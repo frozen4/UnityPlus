@@ -53,11 +53,11 @@ public partial class EntryPoint : MonoBehaviour
 
         HobaDebuger.GameLogLevel = _WriteLogLevel;
 
-#if !UNITY_ANDROID
-        //_DocPath = LuaDLL.HOBA_GetDocumentDirString();
-        //_LibPath = LuaDLL.HOBA_GetLibraryDirString();
-        //_TmpPath = LuaDLL.HOBA_GetTmpDirString();
-#else
+#if UNITY_IOS
+        _DocPath = Path.Combine(Application.persistentDataPath, "Doc");
+        _LibPath = Path.Combine(Application.temporaryCachePath, "updateres");
+        _TmpPath = Path.Combine(Application.persistentDataPath, "tmp");
+#elif UNITY_ANDROID
         _DocPath = Path.Combine(Application.persistentDataPath, "Doc");
         _LibPath = Path.Combine(Application.persistentDataPath, "Library/Caches/updateres");
         _TmpPath = Path.Combine(Application.persistentDataPath, "tmp");
