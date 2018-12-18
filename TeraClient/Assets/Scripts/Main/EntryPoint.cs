@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Common;
+using System.IO;
 
 public partial class EntryPoint : MonoBehaviour
 {
@@ -24,7 +25,17 @@ public partial class EntryPoint : MonoBehaviour
     public string _ResPath = string.Empty;
     private string _AssetBundlePath = string.Empty;
 
+    private string _DocPath = string.Empty;
+    private string _LibPath = string.Empty;        //更新使用
+    private string _TmpPath = string.Empty;       //更新使用
+    private string _ConfigPath = string.Empty;     // ResPath下的配置目录，可热更新
+
     private bool _IsInited = false;
+
+    public string LibPath
+    {
+        get { return _LibPath; }
+    }
 
     public bool IsSyncLoadBundle(string bundleName)
     {
@@ -41,6 +52,16 @@ public partial class EntryPoint : MonoBehaviour
         SetupPath();
 
         HobaDebuger.GameLogLevel = _WriteLogLevel;
+
+#if !UNITY_ANDROID
+        //_DocPath = LuaDLL.HOBA_GetDocumentDirString();
+        //_LibPath = LuaDLL.HOBA_GetLibraryDirString();
+        //_TmpPath = LuaDLL.HOBA_GetTmpDirString();
+#else
+        _DocPath = Path.Combine(Application.persistentDataPath, "Doc");
+        _LibPath = Path.Combine(Application.persistentDataPath, "Library/Caches/updateres");
+        _TmpPath = Path.Combine(Application.persistentDataPath, "tmp");
+#endif
 
         StartCoroutine(InitGameInternal().GetEnumerator());
 	}
