@@ -58,7 +58,6 @@ Shader "Tera/MobileDiffuseBumpNight"
 				final_color.rgb = ShadeWithDynamicLight_mdbdn(i, diffuse.rgb, diffuse.a, light_color, atten, i.sh);
 #endif
 				UNITY_APPLY_FOG(i.fogCoord, final_color);
-//				final_color.rgb = decodelightmap(UNITY_SAMPLE_TEX2D(unity_Lightmap, i.lmuv.xy));
 				return final_color;
 			}
 			ENDCG

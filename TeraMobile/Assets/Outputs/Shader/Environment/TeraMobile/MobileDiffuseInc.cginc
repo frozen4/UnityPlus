@@ -196,23 +196,21 @@ fixed3 ShadeWithDynamicLight_mdd_t(v2f_mdd i,
 #ifdef SNOW_SURFACE_ON
 	MixDiffuseWithSnow(diffuse, i.uv, normal, i.faceUp);
 #endif
-	
-//	float3 halfway_vec = normalize(lightDir - normalize(i.viewDir));
-//	half nh = max(0.4, abs(dot(normal, halfway_vec)));
-//
-//	half light_spec = pow(nh, 1 * 128);
-//
-//	float3 reflVect = normalize(reflect(-i.viewDir, normal));
-//	float3 reflColor = texCUBE(_EnvMap, reflVect);
-//	light_color *= reflColor;
+	float3 halfway_vec = normalize(lightDir - normalize(i.viewDir));
+	half nh = max(0.4, abs(dot(normal, halfway_vec)));
 
+	half light_spec = pow(nh, 1 * 128);
+
+	float3 reflVect = normalize(reflect(-i.viewDir, normal));
+	float3 reflColor = texCUBE(_EnvMap, reflVect);
+	light_color *= reflColor;
+    
 	half3 p1 = max(half3(0, 0, 0), aa_light_color * nl + (sh*0.5) + (sh*0.5*light_color));
+	half3 p2 = max(half3(0, 0, 0), light_color * light_spec * atten);
 #ifdef RAIN_SURFACE_ON
-    half3 p2 = max(half3(0, 0, 0), light_color * light_spec * atten);
 	p2 *= factor;
 #endif
 #ifdef SNOW_SURFACE_ON
-    half3 p2 = max(half3(0, 0, 0), light_color * light_spec * atten);
 	p2 *= saturate(1 - _SnowDensity * 1.6);
 #endif
 	return max(fixed3(0.01,0.01,0.01),diffuse * p1);
