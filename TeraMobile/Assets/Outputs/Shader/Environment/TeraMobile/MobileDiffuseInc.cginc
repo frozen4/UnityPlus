@@ -169,7 +169,6 @@ fixed3 ShadeWithDynamicLight_mdd(v2f_mdd i,
 #endif
 }
 
-#if defined(TRANSPARENT_SCENEOBJECT)
 fixed3 ShadeWithDynamicLight_mdd_t(v2f_mdd i,
 	fixed3 diffuse,
 	float3 light_color,
@@ -193,21 +192,22 @@ fixed3 ShadeWithDynamicLight_mdd_t(v2f_mdd i,
 	      sh = lerp(sh,dot(sh,float3(0.3,0.59,0.11)),nl);
 
 	fixed3 aa_light_color = light_color * _SunColor.rgb * _SunColor.a;
+	half3 p1 = max(half3(0, 0, 0), aa_light_color * nl + (sh*0.5) + (sh*0.5*light_color));
 #ifdef SNOW_SURFACE_ON
 	MixDiffuseWithSnow(diffuse, i.uv, normal, i.faceUp);
 #endif
-	float3 halfway_vec = normalize(lightDir - normalize(i.viewDir));
+	
+#ifdef RAIN_SURFACE_ON
+    float3 halfway_vec = normalize(lightDir - normalize(i.viewDir));
 	half nh = max(0.4, abs(dot(normal, halfway_vec)));
 
 	half light_spec = pow(nh, 1 * 128);
 
 	float3 reflVect = normalize(reflect(-i.viewDir, normal));
 	float3 reflColor = texCUBE(_EnvMap, reflVect);
-	light_color *= reflColor;
-    
-	half3 p1 = max(half3(0, 0, 0), aa_light_color * nl + (sh*0.5) + (sh*0.5*light_color));
+	light_color *= reflColor;    
+	
 	half3 p2 = max(half3(0, 0, 0), light_color * light_spec * atten);
-#ifdef RAIN_SURFACE_ON
 	p2 *= factor;
 #endif
 #ifdef SNOW_SURFACE_ON
@@ -215,7 +215,6 @@ fixed3 ShadeWithDynamicLight_mdd_t(v2f_mdd i,
 #endif
 	return max(fixed3(0.01,0.01,0.01),diffuse * p1);
 }
-#endif
 #endif
 
 float4 _BumpMap_ST;
@@ -350,13 +349,13 @@ fixed3 ShadeWithDynamicLight_mdbd(v2f_mdbd i,
 
 	fixed3 aa_light_color = light_color * _SunColor.rgb * _SunColor.a;
 
-#ifdef ENVMAP_LIGHTING
-    half nv = saturate(1 - dot(normal, viewDir));
-	float3 reflVect = normalize(reflect(-viewDir, normal));
-	float3 reflColor = texCUBE(_EnvMap, reflVect);
-	       reflColor = max(0.01,lerp(fixed3(0.25,0.25,0.25),reflColor,_Refint));
-	light_color += reflColor * _Refint * nv * 2;
-#endif
+//#ifdef ENVMAP_LIGHTING
+//    half nv = saturate(1 - dot(normal, viewDir));
+//	float3 reflVect = normalize(reflect(-viewDir, normal));
+//	float3 reflColor = texCUBE(_EnvMap, reflVect);
+//	       reflColor = max(0.01,lerp(fixed3(0.25,0.25,0.25),reflColor,_Refint));
+//	light_color += reflColor * _Refint * nv * 2;
+//#endif
 
 	half3 p1 = max(half3(0, 0, 0), aa_light_color * nl + (sh*0.5) + (sh*0.5*light_color));
 	half3 p3 = max(half3(0, 0, 0),(light_color*((nl*0.5+0.5) + 1 + _lmfb)));
@@ -376,8 +375,6 @@ fixed3 ShadeWithDynamicLight_mdbd(v2f_mdbd i,
 sampler2D _Sptex;
 uniform fixed _reflint;
 uniform fixed _reflsat;
-uniform int _reftype;
-uniform int _fnl;
 
 fixed3 ShadeWithDynamicLight_mdbdr(v2f_mdbd i,
 	fixed3 diffuse,
@@ -385,7 +382,6 @@ fixed3 ShadeWithDynamicLight_mdbdr(v2f_mdbd i,
 	half3 light_color,
 	half atten,
 	fixed3 sh)
-//	sampler2D spmap)
 {
 	
 	half3 viewDir = -normalize(half3(i.tangentToWorld[0].w, i.tangentToWorld[1].w, i.tangentToWorld[2].w));
@@ -413,48 +409,37 @@ fixed3 ShadeWithDynamicLight_mdbdr(v2f_mdbd i,
 	half nl = saturate(dot(normal, lightDir));
 	half nh = saturate(dot(normal, halfway_vec));
 	     sh = lerp(sh,dot(sh,float3(0.3,0.59,0.11)),nl);
-//	half nv = saturate(dot(normal, viewDir));
-//	half nvr = saturate(dot(reflect(-lightDir,normal),viewDir));
 	half4 Specularmap = tex2D(_Sptex,i.uv.xy);
 
 	half light_spec = pow(nh, Specularmap.a * 128);
-//	     light_spec += pow(nv, Specularmap.a * 128) * (1-light_spec);
 	fixed3 aa_light_color = light_color * _SunColor.rgb * _SunColor.a;
 
 	half3 p1 = max(half3(0, 0, 0), aa_light_color * nl + (sh*0.5) + (sh*0.5*light_color));
 	half3 p3 = max(half3(0, 0, 0),(light_color*((nl*0.5+0.5) + 1 + _lmfb)));
 	      p1 = lerp(p1,p3,saturate(_Night*step(0.01,_lmfb)));
 	half3 p2 = max(half3(0, 0, 0), (diffuse + light_color) * 0.5 * light_spec * atten);
-	      
-#ifdef ENVMAP_LIGHTING
-    half nv = clamp(1 - dot(normal, viewDir),0.04,1);
-         nv = lerp(1,nv,_fnl);
-//    half nv = clamp(dot(normal, viewDir),0.04,1);
-	float3 reflVect = normalize(reflect(-viewDir, normalize(i.normal)));
+
 	float3 refVect = normalize(reflect(-viewDir, normal));
 	float refpow = max(0,exp(Specularmap.a*5-3)*0.14);
     float ref = lerp(3,1,refpow);
-	float3 reflColor = texCUBElod(_EnvMap, half4(lerp(reflVect,refVect,_reftype),ref));
-	       reflColor = max(0.01,lerp(fixed3(0.25,0.25,0.25),reflColor,_Refint));
+	float3 reflColor = texCUBElod(_EnvMap, half4(refVect,ref));
+	       reflColor = max(fixed3(0.04,0.04,0.04),lerp(fixed3(0.25,0.25,0.25),reflColor,_Refint));
 	half refpower = ((reflColor.r*0.299)+(reflColor.g*0.587)+(reflColor.b*0.114));
 	half3 p4 = pow(reflColor * Specularmap.a,1+_reflsat);
-//	half3 p4 = pow(reflColor * Specularmap.a,lerp(1,1.5+_reflint,nv));
-	      p4 *= light_color * refpower * (_reflint)*nv;
+	      p4 *= light_color * refpower * (_reflint);
 	      p4 *= 1-p2*0.75;
 	p2 += p4;
-#endif
+
 #ifdef RAIN_SURFACE_ON
 	p2 *= factor;
 #endif
 #ifdef SNOW_SURFACE_ON
 	p2 *= saturate(1 - _SnowDensity * 1.6);
 #endif
-
 	fixed3 final_color = diffuse * p1 + p2;
 	return clamp(final_color,fixed3(0.01,0.01,0.01),fixed3(1,1,1));
 }
 
-#if defined(TRANSPARENT_SCENEOBJECT)
 fixed4 ShadeWithDynamicLight_mdbd_t(v2f_mdbd i,
 	fixed4 diffuse,
 	float3 light_color,
@@ -497,15 +482,12 @@ fixed4 ShadeWithDynamicLight_mdbd_t(v2f_mdbd i,
 	      p1 = lerp(p1,p3,saturate(_Night*step(0.01,_lmfb)));
 	half3 p2 = max(half3(0, 0, 0), aa_light_color * light_spec * atten);
 	fixed3 finalcolor = (diffuse.rgb * p1 + p2);
-#ifdef ENVMAP_LIGHTING
     half nv = saturate(1 - dot(normal, viewDir));
 	float3 reflVect = normalize(reflect(-viewDir, normal));
-	float3 reflColor = texCUBE(_EnvMap, reflVect);
-	alpha = pow(dot(reflColor.rgb,float3(0.3,0.59,0.11)),2) + light_spec + diffuse.a;
-	reflColor *= _Refint;
-	light_spec += reflColor;
+	float3 reflColor = max(fixed3(0.04,0.04,0.04),lerp(fixed3(0.25,0.25,0.25),texCUBE(_EnvMap, reflVect),_Refint));
+	alpha = saturate(pow(dot(reflColor.rgb,float3(0.3,0.59,0.11)),1)*diffuse.a + diffuse.a);
+	reflColor *= _reflint;
 	finalcolor *= reflColor;
-#endif
 #ifdef RAIN_SURFACE_ON
 	p2 *= factor;
 #endif
@@ -514,7 +496,6 @@ fixed4 ShadeWithDynamicLight_mdbd_t(v2f_mdbd i,
 #endif
 	return fixed4(max(fixed3(0.01,0.01,0.01),finalcolor),alpha);
 }
-#endif
 
 fixed3 ShadeWithDynamicLight_mdbdsnow(v2f_mdbd i,
     half4 _coverdir,

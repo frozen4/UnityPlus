@@ -9,7 +9,7 @@ Shader "Tera/MobileTransparentObject"
 	{
 		Tags { "RenderType"="Transparent" "Queue"="Transparent" }
 		ZWrite Off
-		//Cull Off
+		Cull Off
 		Blend SrcAlpha OneMinusSrcAlpha
 
 		Pass
@@ -24,7 +24,7 @@ Shader "Tera/MobileTransparentObject"
 			#pragma multi_compile MOBILE_DYNAMIC_DIRLIGHT_ON MOBILE_DYNAMIC_DIRLIGHT_OFF
 			#pragma multi_compile RAIN_SURFACE_OFF RAIN_SURFACE_ON
 			#pragma multi_compile SNOW_SURFACE_OFF SNOW_SURFACE_ON
-			#define TRANSPARENT_SCENEOBJECT
+			
 			#include "UnityCG.cginc"
 			#include "AutoLight.cginc"
 			#include "Lighting.cginc"

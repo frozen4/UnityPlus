@@ -7,6 +7,7 @@ Shader "Tera/MobileDiffuseBumpGlassy"
 		_BumpMap("Normalmap",2D) = "bump" {}
 		_Shininess("Shininess", Range(0.03,1)) = 1
 		spec("Spec Factor", Range(0,10)) = 1
+		_reflint("Reflection Intenstiy",Range(0,5)) = 1
 	}
 	SubShader
 	{
@@ -26,9 +27,6 @@ Shader "Tera/MobileDiffuseBumpGlassy"
 			#pragma multi_compile MOBILE_DYNAMIC_DIRLIGHT_ON MOBILE_DYNAMIC_DIRLIGHT_OFF
 			#pragma multi_compile RAIN_SURFACE_OFF RAIN_SURFACE_ON
 			#pragma multi_compile SNOW_SURFACE_OFF SNOW_SURFACE_ON
-
-			#define TRANSPARENT_SCENEOBJECT
-			#define ENVMAP_LIGHTING
 			
 			#include "UnityCG.cginc"
 			#include "AutoLight.cginc"

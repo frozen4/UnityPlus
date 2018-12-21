@@ -1,16 +1,22 @@
-Shader "AQUAS/Mobile/Bicolored" {
+Shader "Tera/MobileWaterBicolored" {
     Properties {
         _DepthTex ("Depth Texture", 2D) = "white" {}
+
+        //Test Functions,Need to be removed before MasterUp
+        [MaterialToggle] _showdepth ("Show Water Depth Transparency", Float ) = 0
+        _depthcolor ("Display Water Depth as", Color) = (1,0,0,1)
+        //Test Functions,Need to be removed before MasterUp
+
         [NoScaleOffset]_NormalTexture ("Normal Texture", 2D) = "white" {}
         _NormalTiling ("Normal Tiling", Float ) = 1
-        _LightHeight ("Light Height", Range(0,1)) = 0.5
+        _LightDiradj ("Light Direction Adjust", Vector) = (0,0,0,0)
         _DeepWaterColor ("Deep Water Color", Color) = (0.07843138,0.3921569,0.7843137,1)
         _ShallowWaterColor ("Shallow Water Color", Color) = (0.4411765,0.9537525,1,1)
-        _DepthTransparency ("Depth Transparency", Float ) = 0
-        _ShoreFade ("Shore Fade", Float ) = 0.3
-        _ShoreTransparency ("Shore Transparency", Float ) = 0.04
-        _ShallowDeepBlend ("Shallow-Deep-Blend", Float ) = 3.6
-        _Fade ("Shallow-Deep-Fade", Float ) = 3.1
+
+        //Test Functions,Need to be removed before MasterUp
+        [MaterialToggle] _showcolor ("Show Water Color Gradient", Float ) = 0
+        //Test Functions,Need to be removed before MasterUp
+
         [HideInInspector]_ReflectionTex ("Reflection Tex", 2D) = "white" {}
         [MaterialToggle] _UseReflections ("Enable Reflections", Float ) = 0
         _Reflectionintensity ("Reflection intensity", Range(0, 1)) = 0.5
@@ -23,6 +29,32 @@ Shader "AQUAS/Mobile/Bicolored" {
         _Refraction ("Refraction", Range(0, 5)) = 0.5
         _WaveSpeed ("Wave Speed", Float ) = 40
         _WaveSpeed2 ("Wave Speed2", Float ) = 0
+        [Header(Shore Wave and Foam)]
+        _foamwaver ("Shore Wave Texture",2D) = "black" {}
+        _foamspeed ("Shore Wave Speed", Float) = 0.1
+        _foamrange ("Shore Wave Range", Range(0,1)) = 0
+
+        //Test Functions,Need to be removed before MasterUp
+        [MaterialToggle] _showfoamrange ("Show Shore Wave Range", Float ) = 0
+        //Test Functions,Need to be removed before MasterUp
+
+        _foamnoise ("Shore Wave Turbulence", Range(0,1) ) = 0.2
+        _foamVisibility ("Foam Visibility", Range(0, 5)) = 0
+        _foamtex ("Foam Texture",2D) = "black" {}
+        _foamtilling("Foam Tilling", Float) = 1
+
+        //Test Functions,Need to be removed before MasterUp
+        [MaterialToggle] _showfoamwave ("Display Shore Wave Only", Float ) = 0
+//        _DepthTransparency ("Depth Transparency", Float ) = 0
+//        _ShoreFade ("Shore Fade", Float ) = 0.3
+//        _ShoreTransparency ("Shore Transparency", Float ) = 0.04
+//        _ShallowDeepBlend ("Shallow-Deep-Blend", Float ) = 3.6
+//        _Fade ("Shallow-Deep-Fade", Float ) = 3.1
+        //Test Functions,Need to be removed before MasterUp
+
+        _foamColor ("Foam Color", Color) = (0.5,0.5,0.5,1)
+        _foamtexspeed ("Foam Speed", Float ) = 1
+
     }
     SubShader {
         Tags {
@@ -50,30 +82,50 @@ Shader "AQUAS/Mobile/Bicolored" {
             #pragma exclude_renderers d3d11_9x 
             #pragma target 3.0
             uniform float4 _LightColor0;
-            uniform fixed _LightHeight;
+            uniform half4 _LightDiradj;
             uniform float4 _TimeEditor;
-            uniform float4 _DeepWaterColor;
-            uniform float4 _ShallowWaterColor;
-            uniform float _ShallowDeepBlend;
-            uniform float _Fade;
-            uniform sampler2D _ReflectionTex; uniform float4 _ReflectionTex_ST;
+            uniform fixed4 _DeepWaterColor;
+            uniform fixed4 _ShallowWaterColor;
+            uniform sampler2D _ReflectionTex; uniform fixed4 _ReflectionTex_ST;
             uniform float _Reflectionintensity;
             uniform fixed _UseReflections;
-            uniform float _DepthTransparency;
             uniform float _Specular;
             uniform float _Specular1;
             uniform float _Gloss;
             uniform float _LightWrapping;
-            uniform sampler2D _DepthTex; uniform float4 _DepthTex_ST;
-            uniform sampler2D _NormalTexture; uniform float4 _NormalTexture_ST;
+            uniform sampler2D _DepthTex; uniform fixed4 _DepthTex_ST;
+            uniform sampler2D _NormalTexture; uniform fixed4 _NormalTexture_ST;
             uniform float _Refraction;
             uniform float _WaveSpeed;
             uniform float _WaveSpeed2;
             uniform float _Distortion;
-            uniform float4 _SpecularColor;
+            uniform fixed4 _SpecularColor;
             uniform float _NormalTiling;
-            uniform float _ShoreFade;
-            uniform float _ShoreTransparency;
+
+            uniform sampler2D _foamwaver;
+            uniform sampler2D _foamtex; uniform fixed4 _foamtex_ST;
+            uniform fixed _foamstr;
+            uniform fixed _foamspeed;
+            uniform fixed _foamrange;
+            uniform fixed _foamtilling;
+            uniform fixed _foamVisibility;
+            uniform fixed _foamBlend;
+            uniform float4 _FoamColor;
+            uniform fixed _foamtexspeed;
+            uniform fixed _foamnoise;
+
+//Test Functions,Need to be removed before MasterUp
+//            uniform float _ShoreFade;
+            uniform int _showdepth;
+            uniform fixed4 _depthcolor;
+            uniform int _showcolor;
+            uniform int _showfoamrange;
+            uniform int _showfoamwave;
+//            uniform float _ShoreTransparency;
+//            uniform float _DepthTransparency;
+//            uniform float _ShallowDeepBlend;
+//            uniform float _Fade;
+//Test Functions,Need to be removed before MasterUp
 
             uniform fixed4 _ReflectionColor;
 
@@ -93,7 +145,7 @@ Shader "AQUAS/Mobile/Bicolored" {
                 float3 tangentDir : TEXCOORD4;
                 float3 bitangentDir : TEXCOORD5;
                 float4 screenPos : TEXCOORD6;
-                float4 projPos : TEXCOORD7;
+//                float4 projPos : TEXCOORD7;
                 UNITY_FOG_COORDS(8)
             };
             VertexOutput vert (VertexInput v) {
@@ -104,7 +156,7 @@ Shader "AQUAS/Mobile/Bicolored" {
                 o.tangentDir = normalize( mul( unity_ObjectToWorld, float4( v.tangent.xyz, 0.0 ) ).xyz );
                 o.bitangentDir = normalize(cross(o.normalDir, o.tangentDir) * v.tangent.w);
                 o.posWorld = mul(unity_ObjectToWorld, v.vertex);
-                float3 lightColor = _LightColor0.rgb;
+                half3 lightColor = _LightColor0.rgb;
                 o.pos = UnityObjectToClipPos(v.vertex );
                 UNITY_TRANSFER_FOG(o,o.pos);
 //                o.projPos = ComputeScreenPos (o.pos);
@@ -118,70 +170,111 @@ Shader "AQUAS/Mobile/Bicolored" {
                 i.screenPos.y *= _ProjectionParams.x;
                 float3x3 tangentTransform = float3x3( i.tangentDir, i.bitangentDir, i.normalDir);
 /////// Vectors:
-                float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
-                float _rotator_ang = 1.5708;
-                float _rotator_spd = 1.0;
-                float _rotator_cos = cos(_rotator_spd*_rotator_ang);
-                float _rotator_sin = sin(_rotator_spd*_rotator_ang);
-                float2 _rotator_piv = float2(0.5,0.5);
-                float2 _rotator = (mul(i.uv0-_rotator_piv,float2x2( _rotator_cos, -_rotator_sin, _rotator_sin, _rotator_cos))+_rotator_piv);
-                float2 _division1 = _NormalTiling;
-                float4 _timer = _Time + _TimeEditor;
-                float3 _multiplier3 = (float3((_WaveSpeed/_division1),0.0)*_timer.r);
-                float2 _multiplier2 = ((_rotator+_multiplier3)*_division1);
-                float3 _texture1 = UnpackNormal(tex2D(_NormalTexture,TRANSFORM_TEX(_multiplier2, _NormalTexture)));
-                float2 _multiplier1 = ((i.uv0+(_multiplier3*_WaveSpeed2))*_division1);
-                float3 _texture2 = UnpackNormal(tex2D(_NormalTexture,TRANSFORM_TEX(_multiplier1, _NormalTexture)));
-                float3 _subtractor = (_texture1.rgb-_texture2.rgb);
-                float _Refract = lerp(0.05,_Refraction*1.5,pow(max(0,dot(i.normalDir,viewDirection)),1.5));
+                half3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
+                half _rotator_ang = 1.5708;
+                half _rotator_spd = 1.0;
+                half _rotator_cos = cos(_rotator_spd*_rotator_ang);
+                half _rotator_sin = sin(_rotator_spd*_rotator_ang);
+                half2 _rotator_piv = float2(0.5,0.5);
+                half2 _rotator = (mul(i.uv0-_rotator_piv,float2x2( _rotator_cos, -_rotator_sin, _rotator_sin, _rotator_cos))+_rotator_piv);
+                half2 _division1 = _NormalTiling;
+                half4 _timer = _Time + _TimeEditor;
+                half3 _multiplier3 = (float3((_WaveSpeed/_division1),0.0)*_timer.r);
+                half2 _multiplier2 = ((_rotator+_multiplier3)*_division1);
+                half3 _texture1 = UnpackNormal(tex2D(_NormalTexture,TRANSFORM_TEX(_multiplier2, _NormalTexture)));
+                half2 _multiplier1 = ((i.uv0+(_multiplier3*_WaveSpeed2))*_division1);
+                half3 _texture2 = UnpackNormal(tex2D(_NormalTexture,TRANSFORM_TEX(_multiplier1, _NormalTexture)));
+                half3 _subtractor = (_texture1.rgb-_texture2.rgb);
+                half _Refract = lerp(0.05,_Refraction*1.5,pow(max(0,dot(i.normalDir,viewDirection)),1.5));
                 float3 normalLocal = lerp(float3(0,0,1),(_texture1+_texture2),_Refract);
                 float3 normalDirection = normalize(mul( normalLocal, tangentTransform )); // Perturbed normals      
                 float3 lightDirection = normalize(_WorldSpaceLightPos0.xyz);
-                float3 lightDir = normalize(float3(_WorldSpaceLightPos0.x,_LightHeight,_WorldSpaceLightPos0.z));
-                float3 lightColor = _LightColor0.rgb;
+//                float3 lightDir = normalize(float3(_WorldSpaceLightPos0.x,_LightDiradj.z,_WorldSpaceLightPos0.z));
+                half3 lightDir = normalize(float3(_WorldSpaceLightPos0.x+_LightDiradj.x,_LightDiradj.z,_WorldSpaceLightPos0.z+_LightDiradj.y));
+                float3 lightDir1 = normalize(float3(_WorldSpaceLightPos0.x+_LightDiradj.x,_LightDiradj.w,_WorldSpaceLightPos0.z+_LightDiradj.y));
+                float3 lightDir2 = normalize(float3(viewDirection.x+0.5,lightDirection.y/3,viewDirection.z+0.5));
+                fixed3 lightColor = _LightColor0.rgb;
                 float3 halfDirection = normalize(viewDirection+lightDir);
+                float3 viewangle = normalize(viewDirection-normalDirection);
 //                float3 halfDirection = normalize(viewDirection+lightDirection);
-                float4 depth = tex2D(_DepthTex,i.uv1);
-                float waterdepth = pow(saturate(depth.r*_DepthTransparency),_ShoreFade)*saturate(depth.r*_ShoreTransparency);
-                      waterdepth = saturate(waterdepth);
+                half4 depth = tex2D(_DepthTex,i.uv1);
+//                half waterdepth = pow(saturate(depth.r*_DepthTransparency),_ShoreFade)*saturate(depth.r*_ShoreTransparency);
+                half waterdepth = saturate(depth.g);
 ////// Lighting:
-                float attenuation = 1;
-                float3 attenColor = attenuation * _LightColor0.xyz;
+                fixed attenuation = 1;
+                half3 attenColor = attenuation * _LightColor0.xyz;
+
 ///////// Gloss:
-                float specPow = exp2( _Gloss * 3);
-                float specp = exp2( _Gloss * 8+1 );
+                half specPow = exp2( _Gloss * 2);
+                half specp = exp2( _Gloss * 7+1 );
+                half roughness = max(0.001, 1-pow(_Gloss,1.3));
 ////// Specular:
                 float NdotL = max(0, dot( normalDirection, lightDirection ));
                 float Ndotv = max(0, dot( normalDirection, viewDirection ));
                 float Ndoth = max(0,dot(halfDirection,normalDirection));
+                float Ndotva = max(0,dot(viewangle,lightDir1));
                 float ref = max(0,dot(reflect(-lightDirection,normalDirection),viewDirection));
-                float3 specularColor = _SpecularColor * _LightColor0.rgb;
-                float3 spec1 = pow(Ndoth,specPow) * _Specular * pow((1-Ndotv),1.5);
-                       spec1 = clamp(spec1,0,(spec1*0.5)) * UNITY_LIGHTMODEL_AMBIENT.rgb;
-                float3 spec2 = pow(Ndoth,specp) * _Specular1 * 0.5;
-                float3 directSpecular = spec1 + spec2;
-                float3 specular = directSpecular;
+//                      ref = max(0,dot(reflect(-lightDir1,normalDirection),viewDirection));
+                float hfsp = pow(roughness,1) / (pow((1 + (-1+pow(roughness,2))*pow(Ndotva,1)),2));
+                half3 specularColor = _SpecularColor.rgb * _LightColor0.rgb;//lerp(UNITY_LIGHTMODEL_AMBIENT.rgb,_LightColor0.rgb,NdotL);
+                half spec1 = pow(Ndoth,specPow) * _Specular * pow((1-Ndotv),1.5);
+                     spec1 = clamp(spec1,0,(spec1*0.5)) * UNITY_LIGHTMODEL_AMBIENT.rgb;
+                half spec2 = pow(Ndoth,specp) * _Specular1;
+                half spec3 = pow(ref,specp) * _Specular1*1.5;
+                half spec4 = pow(Ndotva,specp) * _Specular1;
+                half3 directSpecular = spec1 + spec2 + spec3;
+//                       directSpecular = spec4;
+                half3 specular = saturate(directSpecular * specularColor);
+/////// Foam
+//                float screenZ = LinearEyeDepth (tex2Dproj(_CameraDepthTexture,UNITY_PROJ_COORD(i.projPos)).r);
+//                      waterdepth = screenZ - i.projPos.z;
+                _foamrange = saturate(_foamrange);
+
+                half foamend = depth.b > _foamrange ? 1 : depth.b*(1/_foamrange);
+                half foamstart = saturate(1-foamend);
+                half foamrange = foamend * foamstart;
+                half foamintensity = 1 - saturate(depth.b);
+                     foamintensity = foamintensity - _Time.y * _foamspeed + normalDirection.r*_foamnoise;
+//                     foamintensity *= normalDirection.r*_foamnoise;
+                half foamgradient = saturate(tex2D(_foamwaver,float2(foamintensity,normalDirection.g)).r * foamrange);
+
+                half2 _division2 = _foamtilling;
+                half3 _multiplier7 = (float3((_foamtexspeed/_division2),0.0)*_timer.r);
+                half2 _multiplier5 = ((_rotator+_multiplier7)*_division2);
+                half4 _texture3 = tex2D(_foamtex,TRANSFORM_TEX(_multiplier5, _foamtex));
+                half2 _multiplier6 = ((i.uv0+_multiplier7)*_division2);
+                half4 _texture4 = tex2D(_foamtex,TRANSFORM_TEX(_multiplier6, _foamtex));
+                half3 _multiplier4 = saturate((_texture3.rgb-_texture4.rgb));
+                half3 foam = saturate(foamgradient*_multiplier4*10*_foamVisibility);
 /////// Diffuse:
-                float3 w = float3(_LightWrapping,_LightWrapping,_LightWrapping)*0.5; // Light wrapping
-                float3 NdotLWrap = NdotL * ( 1.0 - w );
-                float3 forwardLight = max(float3(0.0,0.0,0.0), NdotLWrap + w );
-                float3 directDiffuse = forwardLight * attenColor;
-                float3 indirectDiffuse = float3(0,0,0);
+                half3 w = float3(_LightWrapping,_LightWrapping,_LightWrapping)*0.5; // Light wrapping
+                half3 NdotLWrap = NdotL * ( 1.0 - w );
+                half3 forwardLight = max(float3(0.0,0.0,0.0), NdotLWrap + w );
+                half3 directDiffuse = forwardLight * attenColor;
+                half3 indirectDiffuse = float3(0,0,0);
                        indirectDiffuse += UNITY_LIGHTMODEL_AMBIENT.rgb; // Ambient Light
-                float3 _power = pow(saturate(max(_DeepWaterColor.rgb,(_ShallowWaterColor.rgb*(saturate(depth/_ShallowDeepBlend)*-1.0+1.0)))),_Fade);
-                float2 _componentMask = _subtractor.rg;
-                float2 _remap = ((i.screenPos.rg+(float2(_componentMask.r,_componentMask.g)*_Distortion))*0.5+0.5);
-                float4 _ReflectionTex_var = tex2D(_ReflectionTex,TRANSFORM_TEX(_remap, _ReflectionTex)) * NdotL;
+//                half3 _power = pow(saturate(max(_DeepWaterColor.rgb,(_ShallowWaterColor.rgb*(saturate(depth/_ShallowDeepBlend)*-1.0+1.0)))),_Fade);
+                half3 watercolor = lerp(_ShallowWaterColor.rgb,_DeepWaterColor.rgb,depth.r);
+                half2 _componentMask = _subtractor.rg;
+                half2 _remap = ((i.screenPos.rg+(float2(_componentMask.r,_componentMask.g)*_Distortion))*0.5+0.5);
+                half4 _ReflectionTex_var = tex2D(_ReflectionTex,TRANSFORM_TEX(_remap, _ReflectionTex)) * NdotL;
 //                float frsnl = pow((1-Ndotv),2) * _Reflectionintensity;
-                float frsnl = saturate(pow((1-Ndotv),2) * _Reflectionintensity * waterdepth);
-                float3 reflectioncolor = lerp(_ReflectionColor.rgb,_ReflectionTex_var.rgb,_UseReflections);
-                float3 diffuseColor = lerp(_power,reflectioncolor,frsnl);
-                float3 diffuse = (directDiffuse + indirectDiffuse);
-                       diffuse = lerp(diffuse,half3(1,1,1),frsnl) * diffuseColor;
+                half frsnl = clamp(pow((1-Ndotv),1),0.04,1.5) * _Reflectionintensity * waterdepth;
+                     frsnl = saturate(pow((1-Ndotv),2) * _Reflectionintensity * waterdepth);
+                half3 reflectioncolor = lerp(_ReflectionColor.rgb,_ReflectionTex_var.rgb,_UseReflections);
+                half3 diffuseColor = lerp(watercolor,reflectioncolor,frsnl);
+                half3 diffuse = (directDiffuse + indirectDiffuse);
+                       diffuse = lerp(diffuse,half3(1,1,1),frsnl*1.25) * diffuseColor;
                        diffuse = saturate(diffuse);
+                       waterdepth = saturate(lerp(waterdepth,foamgradient,foamgradient) + foamgradient*(0.5*_foamVisibility));
 /// Final Color:
-                float3 finalColor = diffuse + specular;
-                fixed4 finalRGBA = fixed4(finalColor,waterdepth);
+                half3 finalColor = diffuse + foam + specular;
+                half4 finalRGBA = half4(finalColor,waterdepth);
+
+                //Test Functions,Need to be removed before MasterUp
+                      finalColor = lerp(finalColor,lerp(lerp(foamrange,foam,_showfoamwave),watercolor,_showcolor),max(_showcolor,max(_showfoamrange,_showfoamwave)));
+                      finalRGBA = half4(lerp(finalColor,_depthcolor.rgb,_showdepth),lerp(waterdepth,1,max(_showcolor,max(_showfoamrange,_showfoamwave))));
+                //Test Functions,Need to be removed before MasterUp
                 UNITY_APPLY_FOG(i.fogCoord, finalRGBA);
                 return finalRGBA;
             }
