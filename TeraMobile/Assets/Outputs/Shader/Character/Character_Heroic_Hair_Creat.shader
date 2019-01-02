@@ -10,7 +10,7 @@ Shader "Character/Character_Heroic_Hair_Creat" {
         scattercolor ("Scatter Color", Color) = (0.5,0.5,0.5,1)
         _SpecularmapRGBA ("Specularmap(RGBA)", 2D) = "white" {}
         _SpecularInt ("Specular Intensity", Range(0, 2)) = 0.75
-        _ReflectionIntensity ("Reflection Intensity", Range(0, 0.5)) = 0
+        _ReflectionIntensity ("Reflection Intensity", Range(0, 1)) = 0
         _AnisoDir ("Aniso Light Direction", Vector) = (0, 1, 0, 0)
         _Glossiness ("Aniso Gloss lv1", Range(0,1)) = 0.5
         aspc1 ("Aniso Specular Intensity Lv1", Range(0,5)) = 1
@@ -97,7 +97,6 @@ Shader "Character/Character_Heroic_Hair_Creat" {
 ////// Lighting:
                 float attenuation = 1;
                 float3 attenColor = attenuation * _LightColor0.xyz;
-                float3 sh = AmbientColorGradient(normalDirection);
                 float3 lightpower = dot(lightColor,float3(0.3,0.59,0.11));
 ///////// Gloss:
                 fixed4 _BaseRGBA_var = tex2D(_BaseRGBA,TRANSFORM_TEX(i.uv0, _BaseRGBA));
@@ -115,13 +114,17 @@ Shader "Character/Character_Heroic_Hair_Creat" {
                 float NdotA = max(-_boundary,dot(normalDirection,anisoDirction) * _MatMask_var.r);
                 float Ndotl = max(0,1 - NdotL);
                 float plmncrm = max(0,dot(i.pl,float3(0.3,0.59,0.11)));
+                float3 sh = AmbientColorGradient(normalDirection);
+                float3 IBL = ImageBasedLighting(gloss,viewReflectDirection);
+                       IBL *= _ReflectionIntensity * sh;
+
                 float3 _haircolor = ColorCstm(_BaseRGBA_var.rgb,_HairColorCustom.rgb,_MatMask_var.r);
                 float3 _hairspcolor = ColorCstm(spcolor.rgb,_HairColorCustom.rgb,_MatMask_var.r);
                 float3 baseRGBA = _BaseRGBA_var.rgb * (1-_MatMask_var.r) + _haircolor;
-                float3 specularColor = _hairspcolor * _MatMask_var.r;
-                float3 directSpecular = SpecAniso(_AnisoDir, viewDirection, normalDirection, _AnisoOffset2, _Glossiness, 8, aspc1);
-//                float3 directSpecular = SpecAniso(_AnisoDir, 0, normalDirection, _AnisoOffset2, _Glossiness, 8, aspc1);      
+                float3 specularColor = max(_hairspcolor * _MatMask_var.r,0.25);
+                float3 directSpecular = SpecAniso(_AnisoDir, viewDirection, normalDirection, _AnisoOffset2, _Glossiness, 8, aspc1);    
                        directSpecular += SpecAniso(_AnisoDir, viewDirection, normalDirection, _AnisoOffset, _Glossiness2, 8, aspc2);
+                       directSpecular += max(fixed3(0,0,0),IBL * max(0,1-directSpecular));
                        directSpecular *= specularColor * attenColor * i.pl * (NdotA * 0.6 + 0.4);
                        directSpecular += SpecularGGX(3.1415926535897, gloss, 1, Ndoth, NdotV, NdotL) * nohair * spcolor.rgb;
                 float3 specular = directSpecular * _SpecularInt;
@@ -136,14 +139,10 @@ Shader "Character/Character_Heroic_Hair_Creat" {
                        
                 float3 diffuseColor = _rim + baseRGBA;
                 float3 diffuse = (directDiffuse + indirectDiffuse) * diffuseColor * 0.75;//0.5 * lightpower;
-                       diffuse += Scattering(Ndotv, contraction, feedback,_MatMask_var.r) * _HairColorCustom.rgb;
+//                       diffuse += Scattering(Ndotv, contraction, feedback,_MatMask_var.r) * scattercolor.rgb;
 /// Final Color:
                 float3 finalColor = diffuse + specular;
                        finalColor = max(0,finalColor);
-
-//                       finalColor = normalDirection;
-//                       finalColor = SpecAniso(_AnisoDir, viewDirection, normalDirection, _AnisoOffset2, _Glossiness, 8, aspc1);
-//                       finalColor += SpecAniso(_AnisoDir, viewDirection, normalDirection, _AnisoOffset, _Glossiness2, 8, aspc2);
 
                 fixed4 finalRGBA = fixed4(finalColor,1);
                 UNITY_APPLY_FOG(i.fogCoord, finalRGBA);

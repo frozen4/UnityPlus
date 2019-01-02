@@ -1,4 +1,3 @@
-
 Shader "Character/Character_NPC_ip" {
     Properties {
         _BaseRGBA ("Base(RGBA)", 2D) = "white" {}
@@ -16,8 +15,6 @@ Shader "Character/Character_NPC_ip" {
         _Brdfmap ("Brdfmap", 2D) = "white" {}
         _brdfmod("Brdfmap Range", Range(0,1)) = 0.5
         _brdfrange("Brdfmap Effective Range", Range(0,1)) = 0
-        _RimColor ("Rim Color", Color) = (1,1,1,1)
-        _RimPower ("Rim Power", Range(0, 5)) = 0
         _headlight ("Head Lighting Intensity", Range(0,1)) = 0.5
         _AnisoDir ("Hair Aniso Light Direction", Vector) = (0, 1, 0, 0)
         _Glossiness ("Aniso Gloss lv1", Range(0,1)) = 0.5
@@ -162,7 +159,7 @@ Shader "Character/Character_NPC_ip" {
                 float3 sh = AmbientColorGradient(normalDirection);
                        sh = lerp(sh,dot(sh,float3(0.3,0.59,0.11)),NdotL);
                 float3 IBL = ImageBasedLighting(gloss,viewReflectDirection);
-                       IBL *= _ReflectionIntensity * sh;
+                       IBL *= lerp(_ReflectionIntensity,0.5*_ReflectionIntensity,hairrange) * sh;
                 float3 zis = Frsn(Ndotv,gloss,IBL,equiprange);
                 float3 _Rim = Rim(NdotV,_RimPower,_RimColor);
 
@@ -198,6 +195,8 @@ Shader "Character/Character_NPC_ip" {
                        finalColor *= 1-eyeRange;
                        finalColor += eye;
                        finalColor += emission;
+                      
+
                 half4 finalRGBA = half4(finalColor,1);
                 UNITY_APPLY_FOG(i.fogCoord, finalRGBA);
 				 //disappear effect

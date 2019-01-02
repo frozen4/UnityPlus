@@ -22,9 +22,8 @@ Shader "Character/Character_Heroic_Face2" {
 		_TransmissionRange("TransmissionRange", Range(-1, 1)) = 0
 		_normalblend("Blend With OriginNormal", Range(0,1)) = 0
 		_ssspower("SSSPower", Range(0,1)) = 0
-		_sssmerge("SSSMerge", Range(0,1)) = 0
-
-        Notouch("Rim&DeathEffect", Range(0,1)) = 0
+		_sssmerge("SSSMerge", Range(0,1)) = 0.5
+        [Header(RimEffect)]
         _RimColor ("Rim Color", Color) = (1,1,1,1)
         _RimPower ("Rim Power", Range(0, 5)) = 0
     }
@@ -162,15 +161,15 @@ Shader "Character/Character_Heroic_Face2" {
                 _TransmissionColor.rgb *= 0.5;
 /////// Diffuse:
                        NdotL = max(-_brdfrange, NdotL);
-                float3 NdotLs = LightingbyBRDFmap2(_Brdfmap, NdotL, sqrt(Ndotv), Ndotl, _brdfrange, 0.5, _headlight, _SkinDirpow);
+                float3 NdotLs = LightingbyBRDFmap(_Brdfmap, NdotL, sqrt(Ndotv), Ndotl, _brdfrange, 0.5, _headlight, _SkinDirpow);
                        NdotLs *= lerp(NdotLs,1,NdotL+(Ndotv*max(0,1-NdotL)));
                 float T = Transmission(VdotO,_TransmissionRange);
                 float scatter = Scattering(Ndotv, 10, 0.05,_MatMask_var.r);
                 float3 scattering = scatter * _Skinems * 0.5;
                 float3 sssadd = _MatMask_var.b * (T*_MatMask_var.r+NdotO) * _TransmissionColor.rgb;
-                float3 diffuse = CalculateDiffuse(NdotLs,0,scattering,attenColor,sh,_skincolor) * lerp(i.pl,1,_skinpoint);
+                float3 diffuse = CalculateDiffuse(NdotLs,0,scattering,attenColor,sh,_skincolor+(sssadd*_sssmerge)) * lerp(i.pl,1,_skinpoint);
                        diffuse = lerp(diffuse,_skincolor*(1+_se*NdotL),NdotL*_MatMask_var.r);
-                       diffuse += sssadd;
+                       diffuse += sssadd*(1-_sssmerge);
 ///// Eye Color:
                 float3 _EyeColor = ColorCstm(_BaseRGBA_var.rgb,_Eyecolor.rgb,_MatMask_var.g);
                 float3 eye = Eye(_EyeColor,_MatMask_var,emispower,NdotLD,Ndotv,sh);
@@ -179,7 +178,16 @@ Shader "Character/Character_Heroic_Face2" {
                        finalColor *= _MatMask_var.r;
                        finalColor += specular;
                        finalColor += eye;
-                       finalColor = max(0,finalColor);                       
+                       finalColor = max(0,finalColor);
+
+//                       finalColor = NdotLs;
+//                       finalColor = normalDirection;
+//                       finalColor = i.normalDir;
+//                       finalColor = NdotO;
+//                       finalColor = sqrt(NdotL);
+//                       finalColor = lerp(0.5,pow(NdotL,0.75),0.4) + NdotL*0.2;//sqrt(NdotL)*0.2;
+//                       finalColor = 1-saturate(1-pow(NdotL,2.2));
+                                                                                   
                 fixed4 finalRGBA = fixed4(finalColor,1);
                 UNITY_APPLY_FOG(i.fogCoord, finalRGBA);
                 return finalRGBA;

@@ -161,7 +161,7 @@ Shader "Character/Character_NPC_vip" {
                 float3 sh = AmbientColorGradient(normalDirection);
                        sh = lerp(sh,dot(sh,float3(0.3,0.59,0.11)),NdotL);
                 float3 IBL = ImageBasedLighting(gloss,viewReflectDirection);
-                       IBL *= _ReflectionIntensity * sh;
+                       IBL *= lerp(_ReflectionIntensity,0.5*_ReflectionIntensity,hairrange) * sh;
                 float3 zis = Frsn(Ndotv,gloss,IBL,equiprange);
                 float3 _Rim = Rim(NdotV,_RimPower,_RimColor);
 

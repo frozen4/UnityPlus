@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Environment/FX_Waterflow_4UVscroll" {
     Properties {
         _Color ("Color", Color) = (1,1,1,1)
@@ -35,20 +37,20 @@ Shader "Environment/FX_Waterflow_4UVscroll" {
             #pragma exclude_renderers d3d11_9x xbox360 xboxone ps3 ps4 psp2 
             #pragma target 3.0
             uniform float4 _TimeEditor;
-            uniform fixed4 _Color;
+            uniform float4 _Color;
             uniform sampler2D _MainTexture_UVc1;
 			uniform float4 _MainTexture_UVc1_ST;
 
             uniform sampler2D _Mask_Tex; 
 
-			uniform fixed4 _Mask_UVc_Layer2;
-			uniform fixed4 _Mask_UVc_Layer3;
-			uniform fixed4 _Mask_UVc_Layer4;
+			uniform float4 _Mask_UVc_Layer2;
+			uniform float4 _Mask_UVc_Layer3;
+			uniform float4 _Mask_UVc_Layer4;
 			
 			uniform float4 _Mask_UVc_Layer12_Speed;
 			uniform float4 _Mask_UVc_Layer34_Speed;
 
-            uniform fixed _AlphaScale;
+            uniform float _AlphaScale;
             struct VertexInput {
                 float4 vertex : POSITION;
                 float2 uv0 : TEXCOORD0;
@@ -68,16 +70,16 @@ Shader "Environment/FX_Waterflow_4UVscroll" {
             VertexOutput vert (VertexInput v) {
                 VertexOutput o = (VertexOutput)0;
 
-				float4 timer = _Time + _TimeEditor;
-				float2 mainflow = (v.uv0 + timer.g*_Mask_UVc_Layer12_Speed.xy);
-				float2 maskflow1 = (v.uv1 + timer.g*_Mask_UVc_Layer12_Speed.zw);
-				float2 maskflow2 = (v.uv2 + timer.g*_Mask_UVc_Layer34_Speed.xy);
-				float2 maskflow3 = (v.uv3 + timer.g*_Mask_UVc_Layer34_Speed.zw);
+				float4 node_2470 = _Time + _TimeEditor;
+				float2 node_1302 = (v.uv0 + node_2470.g*_Mask_UVc_Layer12_Speed.xy);
+				float2 node_5558 = (v.uv1 + node_2470.g*_Mask_UVc_Layer12_Speed.zw);
+				float2 node_8129 = (v.uv2 + node_2470.g*_Mask_UVc_Layer34_Speed.xy);
+				float2 node_6908 = (v.uv3 + node_2470.g*_Mask_UVc_Layer34_Speed.zw);
 
-                o.uv0.xy = TRANSFORM_TEX(mainflow, _MainTexture_UVc1);
-                o.uv0.zw = transform_tex_uv(maskflow1, _Mask_UVc_Layer2);
-				o.uv1.xy = transform_tex_uv(maskflow2, _Mask_UVc_Layer3);
-				o.uv1.zw = transform_tex_uv(maskflow3, _Mask_UVc_Layer4);
+                o.uv0.xy = TRANSFORM_TEX(node_1302, _MainTexture_UVc1);
+                o.uv0.zw = transform_tex_uv(node_5558, _Mask_UVc_Layer2);
+				o.uv1.xy = transform_tex_uv(node_8129, _Mask_UVc_Layer3);
+				o.uv1.zw = transform_tex_uv(node_6908, _Mask_UVc_Layer4);
                 o.pos = UnityObjectToClipPos(v.vertex );
 
                 return o;
@@ -85,13 +87,13 @@ Shader "Environment/FX_Waterflow_4UVscroll" {
             float4 frag(VertexOutput i) : COLOR {
 ////// Lighting:
 ////// Emissive:
-                half4 _MainTexture_UVc1_var = tex2D(_MainTexture_UVc1, i.uv0.xy);
-                half3 emissive = (_Color.rgb*_MainTexture_UVc1_var.rgb);
-                half3 finalColor = emissive;
+                float4 _MainTexture_UVc1_var = tex2D(_MainTexture_UVc1, i.uv0.xy);
+                float3 emissive = (_Color.rgb*_MainTexture_UVc1_var.rgb);
+                float3 finalColor = emissive;
 				                				
-				half4 _Mask_UVc2_var = tex2D(_Mask_Tex, i.uv0.zw);
-				half4 _Mask_UVc3_var = tex2D(_Mask_Tex, i.uv1.xy);
-                half4 _Mask_UVc4_var = tex2D(_Mask_Tex, i.uv1.zw);
+				float4 _Mask_UVc2_var = tex2D(_Mask_Tex, i.uv0.zw);
+				float4 _Mask_UVc3_var = tex2D(_Mask_Tex, i.uv1.xy);
+                float4 _Mask_UVc4_var = tex2D(_Mask_Tex, i.uv1.zw);
 
                 half4 finalRGBA = half4(finalColor,(_AlphaScale*(_MainTexture_UVc1_var.a*_Mask_UVc2_var.r*_Mask_UVc3_var.g*_Mask_UVc4_var.b)));
 

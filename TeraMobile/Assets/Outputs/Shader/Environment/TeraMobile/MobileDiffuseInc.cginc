@@ -209,10 +209,11 @@ fixed3 ShadeWithDynamicLight_mdd_t(v2f_mdd i,
 	
 	half3 p2 = max(half3(0, 0, 0), light_color * light_spec * atten);
 	p2 *= factor;
-#endif
 #ifdef SNOW_SURFACE_ON
 	p2 *= saturate(1 - _SnowDensity * 1.6);
 #endif
+#endif
+
 	return max(fixed3(0.01,0.01,0.01),diffuse * p1);
 }
 #endif
