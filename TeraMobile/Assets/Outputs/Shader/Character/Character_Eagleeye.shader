@@ -1,4 +1,4 @@
-Shader "Character/Character_Eagleeye" {
+Shader "TERA/Character/GhostEffect" {
     Properties {
         _Color ("Color", Color) = (1,1,1,1)
         _MainPower ("Main Power", Range(0.0, 3)) = 1.5
@@ -18,9 +18,10 @@ Shader "Character/Character_Eagleeye" {
                 "LightMode"="ForwardBase"
             }
             Blend SrcAlpha OneMinusSrcAlpha
-            ZWrite Off
+            ZWrite On
 			ZTest LEqual
-            
+//			Cull Back
+
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
@@ -35,8 +36,6 @@ Shader "Character/Character_Eagleeye" {
             uniform float _MainPower;
             uniform float4 _TimeEditor;
             uniform sampler2D _Alphatex; uniform float4 _Alphatex_ST;
-			//uniform sampler2D_float _CameraDepthNormalsTexture;
-            uniform sampler2D_float _CameraDepthTexture;
 			
 			struct VertexInput {
                 float4 vertex : POSITION;
@@ -62,15 +61,24 @@ Shader "Character/Character_Eagleeye" {
 				o.uv0.xy = TRANSFORM_TEX(uvanim, _Alphatex);
                 return o;
             }
-            float4 frag(VertexOutput i) : COLOR {
+            
+            fixed4 frag(VertexOutput i) : COLOR {
 					i.normalDir = normalize(i.normalDir);
 					float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
-					float3 Ndotv = max(0,dot(i.normalDir, viewDirection));
+					float3 lightDirection = normalize(_WorldSpaceLightPos0.xyz);
+					float NdotL = dot(i.normalDir, lightDirection);
+//					float3 Ndotv = max(0,dot(i.normalDir, viewDirection));
+					float Ndotv = dot(i.normalDir, viewDirection);
 					float4 _Alpha = tex2D(_Alphatex,i.uv0.xy);
-					float Fresnel = max(0.01,1.0 - Ndotv);
+//					float Fresnel = max(0.01,1.0 - max(0,Ndotv));
+					float backcull = Ndotv < 0 ? 0 : 1;
+					float Fresnel = 1.0 - max(0,Ndotv);
+					      Fresnel *= backcull;
+					      Fresnel = max(0.01,Fresnel);
 					float3 emissive = ((_RimColor.rgb*pow(1.0 - Ndotv, _RimPower)*saturate(_RimPower))) * _Alpha.r + (Fresnel*_Color.rgb*_MainPower);
 					       emissive += _RimColor * Fresnel * 0.5;
 					float3 finalColor = max(0.001,emissive);
+//					       finalColor = backcull;
 					return fixed4(finalColor, Fresnel);
 
             }

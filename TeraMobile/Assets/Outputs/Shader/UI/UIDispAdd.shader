@@ -1,6 +1,6 @@
 // Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-Shader "UI/DisplacementAdd" {
+Shader "TERA/UI/DisplacementAdd" {
 	Properties{
 		_TintColor("Tint Color", Color) = (0.5, 0.5, 0.5, 0.5)
 		_MainTex("Main Texture", 2D) = "white" {}
@@ -19,6 +19,14 @@ Shader "UI/DisplacementAdd" {
 		_DispX("Displacement Strength X", Float) = 0
 		_DispY("Displacement Strength Y", Float) = 0.2
 		//_VolumeExpansion("Volume Expansion", Range(0.0, 1)) = 0
+
+		_StencilComp("Stencil Comparison", Float) = 8
+		_Stencil("Stencil ID", Float) = 0
+		_StencilOp("Stencil Operation", Float) = 0
+		_StencilWriteMask("Stencil Write Mask", Float) = 255
+		_StencilReadMask("Stencil Read Mask", Float) = 255
+
+		_ColorMask("Color Mask", Float) = 15
 	}
 
 	Category{
@@ -31,21 +39,21 @@ Shader "UI/DisplacementAdd" {
 			//"CanUseSpriteAtlas" = "True"
 		}
 
-		//Stencil
-		//	{
-		//		Ref[_Stencil]
-		//		Comp[_StencilComp]
-		//		Pass[_StencilOp]
-		//		ReadMask[_StencilReadMask]
-		//		WriteMask[_StencilWriteMask]
-		//	}
+		Stencil
+			{
+				Ref[_Stencil]
+				Comp[_StencilComp]
+				Pass[_StencilOp]
+				ReadMask[_StencilReadMask]
+				WriteMask[_StencilWriteMask]
+			}
 
 		Cull Off
 		Lighting Off
 		ZWrite Off
 		ZTest[unity_GUIZTestMode]
 		Blend SrcAlpha One
-		//ColorMask[_ColorMask]
+		ColorMask[_ColorMask]
 
 		// ---- Fragment program cards
 		SubShader{

@@ -1,7 +1,7 @@
 // Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
 
-Shader "HDX/FX/FX_Additive" {
+Shader "TERA/Fx/HDX/FX_Additive" {
 	Properties {
 		_MainTex ("Base", 2D) = "white" {}
 		[HDR]_TintColor ("TintColor", Color) = (1.0, 1.0, 1.0, 1.0)
@@ -59,5 +59,5 @@ Shader "HDX/FX/FX_Additive" {
 		}
 				
 	} 
-	FallBack Off
+	//FallBack Off
 }

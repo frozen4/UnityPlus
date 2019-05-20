@@ -1,6 +1,6 @@
 // Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-Shader "effect/distort__add__ui" {
+Shader "TERA/Fx/DistortAdd_UI" {
 	Properties {
 		_TintColor ("Tint Color", Color) = (0.5,0.5,0.5,0.5)
 		_NoiseTex ("Distort Texture (RG)", 2D) = "white" {}

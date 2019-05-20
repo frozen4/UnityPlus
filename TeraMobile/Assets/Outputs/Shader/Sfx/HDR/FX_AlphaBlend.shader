@@ -1,7 +1,7 @@
 // Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
 
-Shader "HDX/FX/FX_AlphaBlend" {
+Shader "TERA/Fx/HDX/FX_AlphaBlend" {
 	Properties {
 		_MainTex ("Base", 2D) = "white" {}
 		[HDR]_TintColor ("TintColor", Color) = (1.0, 1.0, 1.0, 1.0)
@@ -32,7 +32,7 @@ Shader "HDX/FX/FX_AlphaBlend" {
 			return o; 
 		}
 		
-		half4 frag( v2f i ) : COLOR {	
+		half4 frag( v2f i ) : COLOR {
 			return tex2D (_MainTex, i.uv.xy) * _TintColor * i.color;
 		}
 	
@@ -42,7 +42,7 @@ Shader "HDX/FX/FX_AlphaBlend" {
 		Tags { "RenderType" = "Transparent" "Reflection" = "RenderReflectionTransparentAdd" "Queue" = "Transparent"}
 		Cull Off
 		Lighting Off
-		ZWrite On
+		ZWrite Off
 		Fog { Mode Off }
 		Blend SrcAlpha OneMinusSrcAlpha
 		
@@ -59,5 +59,5 @@ Shader "HDX/FX/FX_AlphaBlend" {
 		}
 				
 	} 
-	FallBack Off
+	//FallBack Off
 }

@@ -1,4 +1,4 @@
-Shader "HDX/Base/ParticleOffset4" {
+Shader "TERA/Fx/HDX/ParticleOffset4" {
 Properties {
     [HDR]_TintColor ("Color", Color) = (0.5,0.5,0.5,1)
     _MainTex ("MainTex", 2D) = "white" {}

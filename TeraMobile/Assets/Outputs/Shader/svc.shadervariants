@@ -8,22 +8,6 @@ ShaderVariantCollection:
   m_Name: svc
   m_Shaders:
     data:
-      first: {fileID: 4800000, guid: ecd1e39282cee024392e24f28bb2aaaa, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: FOG_LINEAR
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: d52e56371ebcf914581cb4b135e67d5e, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: FOG_LINEAR
-          passType: 0
-    data:
       first: {fileID: 4800000, guid: c1ffdcaa7728ced4fa68c999e5e7f2de, type: 3}
       second:
         variants:
@@ -36,249 +20,31 @@ ShaderVariantCollection:
         - keywords: 
           passType: 0
     data:
-      first: {fileID: 4800000, guid: 01077abf0b0ab344cbf2f73af9d26938, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 0119f6945be7ca342ad9cefa260d25e5, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL ENVMAP_LIGHTING_OFF FOG_LINEAR LIGHTMAP_ON RAIN_SURFACE_OFF
-            SHADOWS_SCREEN SNOW_SURFACE_OFF TERRAIN_NORMAL_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED ENVMAP_LIGHTING_OFF FOG_LINEAR
-            LIGHTMAP_ON RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF TERRAIN_NORMAL_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON ENVMAP_LIGHTING_OFF FOG_LINEAR
-            LIGHTMAP_ON RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF TERRAIN_NORMAL_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON ENVMAP_LIGHTING_OFF
-            FOG_LINEAR LIGHTMAP_ON RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF
-            TERRAIN_NORMAL_ON
-          passType: 4
-        - keywords: DIRECTIONAL ENVMAP_LIGHTING_OFF FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING
-            RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF TERRAIN_NORMAL_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED ENVMAP_LIGHTING_OFF FOG_LINEAR
-            LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF
-            TERRAIN_NORMAL_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON ENVMAP_LIGHTING_OFF FOG_LINEAR
-            LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF
-            TERRAIN_NORMAL_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON ENVMAP_LIGHTING_OFF
-            FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING RAIN_SURFACE_OFF SHADOWS_SCREEN
-            SNOW_SURFACE_OFF TERRAIN_NORMAL_ON
-          passType: 4
-        - keywords: DIRECTIONAL ENVMAP_LIGHTING_OFF FOG_LINEAR LIGHTMAP_ON RAIN_SURFACE_OFF
-            SHADOWS_SCREEN SHADOWS_SHADOWMASK SNOW_SURFACE_OFF TERRAIN_NORMAL_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED ENVMAP_LIGHTING_OFF FOG_LINEAR
-            LIGHTMAP_ON RAIN_SURFACE_OFF SHADOWS_SCREEN SHADOWS_SHADOWMASK SNOW_SURFACE_OFF
-            TERRAIN_NORMAL_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON ENVMAP_LIGHTING_OFF FOG_LINEAR
-            LIGHTMAP_ON RAIN_SURFACE_OFF SHADOWS_SCREEN SHADOWS_SHADOWMASK SNOW_SURFACE_OFF
-            TERRAIN_NORMAL_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON ENVMAP_LIGHTING_OFF
-            FOG_LINEAR LIGHTMAP_ON RAIN_SURFACE_OFF SHADOWS_SCREEN SHADOWS_SHADOWMASK
-            SNOW_SURFACE_OFF TERRAIN_NORMAL_ON
-          passType: 4
-        - keywords: DIRECTIONAL ENVMAP_LIGHTING_OFF FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING
-            RAIN_SURFACE_OFF SHADOWS_SCREEN SHADOWS_SHADOWMASK SNOW_SURFACE_OFF TERRAIN_NORMAL_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED ENVMAP_LIGHTING_OFF FOG_LINEAR
-            LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING RAIN_SURFACE_OFF SHADOWS_SCREEN SHADOWS_SHADOWMASK
-            SNOW_SURFACE_OFF TERRAIN_NORMAL_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON ENVMAP_LIGHTING_OFF FOG_LINEAR
-            LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING RAIN_SURFACE_OFF SHADOWS_SCREEN SHADOWS_SHADOWMASK
-            SNOW_SURFACE_OFF TERRAIN_NORMAL_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON ENVMAP_LIGHTING_OFF
-            FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING RAIN_SURFACE_OFF SHADOWS_SCREEN
-            SHADOWS_SHADOWMASK SNOW_SURFACE_OFF TERRAIN_NORMAL_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 01a18d7302a7c8148b268aedd5dc3d61, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: FOG_LINEAR
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 020d31f82f3d7c349b55ed146c24aab1, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 02d9c26d90f4fb54792633160eb316d9, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
       first: {fileID: 4800000, guid: 02e02a389020fef4abaed26d46d4de53, type: 3}
       second:
         variants:
         - keywords: 
           passType: 0
     data:
-      first: {fileID: 4800000, guid: 0309871dfef1070489a72eb58b797812, type: 3}
+      first: {fileID: 4800000, guid: 0b82ed92460ad7a48b0fab0f61e7ce9a, type: 3}
       second:
         variants:
         - keywords: 
           passType: 0
-    data:
-      first: {fileID: 4800000, guid: 04485bad6abe6a043828a100b49bd961, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: 
-          passType: 1
-        - keywords: 
-          passType: 2
-        - keywords: 
-          passType: 3
-    data:
-      first: {fileID: 4800000, guid: 0567f21ebf56647968cd11e9051d2cd0, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 085ce52ffb3a51343951fef53688ce98, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR LIGHTMAP_ON SHADOWS_SCREEN
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED FOG_LINEAR LIGHTMAP_ON SHADOWS_SCREEN
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR LIGHTMAP_ON SHADOWS_SCREEN
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            LIGHTMAP_ON SHADOWS_SCREEN
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 0eca4632f3241a143b4c723ec6aa4ca7, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: LIGHTMAP_ON
-          passType: 0
-        - keywords: LIGHTMAP_OFF
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 0ed5587bbc5e364438ca69f379bcf999, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 0ee89da579393cb4bbcd1732138c4f74, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF
-            SHADOWS_SCREEN SNOW_SURFACE_OFF VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR MOBILE_DYNAMIC_DIRLIGHT_ON
-            RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF
-            VERTEXLIGHT_ON
-          passType: 4
     data:
       first: {fileID: 4800000, guid: 110612a06483bb448ba074d78c1679af, type: 3}
       second:
         variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR VERTEXLIGHT_ON
+        - keywords: DIRECTIONAL FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING
           passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 11db05511f2574240834f6ad1b11136f, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
     data:
       first: {fileID: 4800000, guid: 1221dacf182a1074b98fed2687eca95d, type: 3}
       second:
         variants:
         - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 1270eff82b34ac649803d9d7e328b230, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
           passType: 4
     data:
       first: {fileID: 4800000, guid: 12fdbf13a63507544b731282726ae8c3, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 14a84b94c8f9c4f43a74c54fab58830f, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 18e178cd7ac19ab449964db221db9c22, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 19e0fcab098212649886b3f9b45a7c16, type: 3}
       second:
         variants:
         - keywords: 
@@ -290,120 +56,7 @@ ShaderVariantCollection:
         - keywords: 
           passType: 0
     data:
-      first: {fileID: 4800000, guid: 1b825fcc8bc8201408882fa0e43f1147, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 1b902472b6fd24414990293278ca2be7, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 1fa91af177832e949b158784f7ee1b20, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 0
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 0
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON SHADOWS_SCREEN
-            VERTEXLIGHT_ON
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 2077f07c898ebb64ca43ca01d6f59a0f, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 2306bbabc58493f4e9016475e92c1de6, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
       first: {fileID: 4800000, guid: 23d8111a24fc08749b6904dbaf86b7ec, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 247b100d49aa051448b5029fcf262137, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 24a64731dd0768844aef72210f30330b, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR LIGHTMAP_ON SHADOWS_SCREEN
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED FOG_LINEAR LIGHTMAP_ON SHADOWS_SCREEN
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR LIGHTMAP_ON SHADOWS_SCREEN
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            LIGHTMAP_ON SHADOWS_SCREEN
-          passType: 4
-        - keywords: DIRECTIONAL FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING SHADOWS_SCREEN
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING
-            SHADOWS_SCREEN
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING
-            SHADOWS_SCREEN
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING SHADOWS_SCREEN
-          passType: 4
-        - keywords: DIRECTIONAL FOG_LINEAR LIGHTMAP_ON SHADOWS_SCREEN SHADOWS_SHADOWMASK
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED FOG_LINEAR LIGHTMAP_ON SHADOWS_SCREEN
-            SHADOWS_SHADOWMASK
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR LIGHTMAP_ON SHADOWS_SCREEN
-            SHADOWS_SHADOWMASK
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            LIGHTMAP_ON SHADOWS_SCREEN SHADOWS_SHADOWMASK
-          passType: 4
-        - keywords: DIRECTIONAL FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING SHADOWS_SCREEN
-            SHADOWS_SHADOWMASK
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING
-            SHADOWS_SCREEN SHADOWS_SHADOWMASK
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING
-            SHADOWS_SCREEN SHADOWS_SHADOWMASK
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING SHADOWS_SCREEN SHADOWS_SHADOWMASK
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 2539882f821e6a74dbcd2667d158fc12, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 264949a1c8507014a854517f6baee4b2, type: 3}
       second:
         variants:
         - keywords: 
@@ -415,44 +68,22 @@ ShaderVariantCollection:
         - keywords: 
           passType: 0
     data:
-      first: {fileID: 4800000, guid: 26fc7ef7a6aa20a42a1851e646f49dc8, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: 
-          passType: 1
-    data:
       first: {fileID: 4800000, guid: 289750519e185954d9c625e0aa8c2df3, type: 3}
       second:
         variants:
-        - keywords: 
-          passType: 0
         - keywords: FOG_LINEAR
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 2a9a49cb251edae41b32373f89413e99, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 2bbb6a8903046bc408580854defecb91, type: 3}
-      second:
-        variants:
-        - keywords: 
           passType: 0
     data:
       first: {fileID: 4800000, guid: 2f4a967e044ee524ca2ed57073befea6, type: 3}
       second:
         variants:
         - keywords: 
-          passType: 0
+          passType: 4
     data:
-      first: {fileID: 4800000, guid: 30e3db7608ad5f248822f1869d5a0670, type: 3}
+      first: {fileID: 4800000, guid: 307544c641f136d4c9f03717fd0213f4, type: 3}
       second:
         variants:
-        - keywords: 
+        - keywords: FOG_LINEAR
           passType: 0
     data:
       first: {fileID: 4800000, guid: 3173a4dcddb0f2e47a44c36ec0420f94, type: 3}
@@ -473,80 +104,10 @@ ShaderVariantCollection:
         - keywords: 
           passType: 0
     data:
-      first: {fileID: 4800000, guid: 328d4e3ca1ec1b541b5634619f01a4a0, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 32d5a9bec6e165947b8ce0eb76d12e9e, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: 
-          passType: 4
-    data:
       first: {fileID: 4800000, guid: 33aec8d7e0fb580458b7d5df1d17e96f, type: 3}
       second:
         variants:
-        - keywords: 
-          passType: 0
         - keywords: FOG_LINEAR
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 343848c24d6368043bf76b5d35affbba, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: LIGHTMAP_ON
-          passType: 0
-        - keywords: LIGHTMAP_OFF
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 3510fd06ed67dcf4a83cad7ee8e0b06c, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 3512437c9c4b6cc49ac4bb55d632ad13, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 359ee1b0bcb61c54885565acdd27fa0b, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 36b6b433243b9144eb2e36c799572ef0, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 37462d18cceea44018e9f1b000ae0e4b, type: 3}
-      second:
-        variants:
-        - keywords: 
           passType: 0
     data:
       first: {fileID: 4800000, guid: 375ec2003b8ab2546bf5420e183a67a8, type: 3}
@@ -558,62 +119,8 @@ ShaderVariantCollection:
       first: {fileID: 4800000, guid: 37deafbe27fdb1846b3c3ea001a9d089, type: 3}
       second:
         variants:
-        - keywords: 
-          passType: 0
         - keywords: FOG_LINEAR
           passType: 0
-    data:
-      first: {fileID: 4800000, guid: 37e545252211de047acd003ce1b11017, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 387fd71526873034b879ca672ca44212, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF
-            SNOW_SURFACE_OFF VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL FOG_LINEAR MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF
-            SHADOWS_SCREEN SNOW_SURFACE_OFF VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR MOBILE_DYNAMIC_DIRLIGHT_ON
-            RAIN_SURFACE_OFF SNOW_SURFACE_OFF VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR MOBILE_DYNAMIC_DIRLIGHT_ON
-            RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF SNOW_SURFACE_OFF VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF
-            VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 389707fc9151eef409b88407b87fd5a1, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: 
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 395322cdbb08df740b129db98aada835, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
     data:
       first: {fileID: 4800000, guid: 3966b9fb498fd094fa02fc7b07e6870a, type: 3}
       second:
@@ -625,23 +132,7 @@ ShaderVariantCollection:
       second:
         variants:
         - keywords: 
-          passType: 0
-        - keywords: 
           passType: 4
-    data:
-      first: {fileID: 4800000, guid: 3bdc5c9d35a0e4c4089881245735aa0e, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 3dce769e6ce5f9e4383630e1804fd45d, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: FOG_LINEAR
-          passType: 0
     data:
       first: {fileID: 4800000, guid: 41caea6d583889148881bbd83109134c, type: 3}
       second:
@@ -661,17 +152,9 @@ ShaderVariantCollection:
         - keywords: 
           passType: 0
     data:
-      first: {fileID: 4800000, guid: 4452e6553fe96a343bb2a8686b2ee250, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
       first: {fileID: 4800000, guid: 44baba223b9807b4aa6d0ae25198291d, type: 3}
       second:
         variants:
-        - keywords: 
-          passType: 0
         - keywords: FOG_LINEAR
           passType: 0
     data:
@@ -684,8 +167,6 @@ ShaderVariantCollection:
       first: {fileID: 4800000, guid: 4843b03e0dfc99e4bb6ec1e605204386, type: 3}
       second:
         variants:
-        - keywords: 
-          passType: 0
         - keywords: FOG_LINEAR
           passType: 0
     data:
@@ -693,313 +174,61 @@ ShaderVariantCollection:
       second:
         variants:
         - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 4aa21fbc3b2ba11498c10db69f6ae544, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: FOG_LINEAR
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 4b059b594b019e14f872aa0e30018d42, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 4c2c7a821b2132f4ca1f99226d3aaa29, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 4ce3388474af2d847b560bd91d6fee94, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 4df03056d9885cd4783ba1553968b976, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: FOG_LINEAR
-          passType: 1
-        - keywords: FOG_LINEAR SPOT
-          passType: 1
-        - keywords: FOG_LINEAR POINT
-          passType: 1
-        - keywords: FOG_LINEAR
-          passType: 2
-        - keywords: FOG_LINEAR
-          passType: 3
-    data:
-      first: {fileID: 4800000, guid: 4eb104223c427094e80a1e8ecf181517, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 4f726be83ba72084792ae45251375596, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
           passType: 4
     data:
       first: {fileID: 4800000, guid: 50609c7cf7955e44a80a9d58099d5657, type: 3}
       second:
         variants:
-        - keywords: 
-          passType: 0
-        - keywords: BlendAdd Clip_OFF FOG_LINEAR FrameBlend_OFF SoftParticles_OFF
-          passType: 1
-        - keywords: BlendAdd Clip_OFF FOG_LINEAR FrameBlend_OFF SOFTPARTICLES_ON SoftParticles_OFF
-          passType: 1
-        - keywords: BlendAlpha Clip_OFF FOG_LINEAR FrameBlend_OFF SoftParticles_OFF
-          passType: 1
-        - keywords: BlendAlpha Clip_OFF FOG_LINEAR FrameBlend_OFF SOFTPARTICLES_ON
-            SoftParticles_OFF
-          passType: 1
-        - keywords: BlendMul Clip_OFF FOG_LINEAR FrameBlend_OFF SoftParticles_OFF
-          passType: 1
-        - keywords: BlendMul Clip_OFF FOG_LINEAR FrameBlend_OFF SOFTPARTICLES_ON SoftParticles_OFF
-          passType: 1
-        - keywords: BlendMul2 Clip_OFF FOG_LINEAR FrameBlend_OFF SoftParticles_OFF
-          passType: 1
-        - keywords: BlendMul2 Clip_OFF FOG_LINEAR FrameBlend_OFF SOFTPARTICLES_ON
-            SoftParticles_OFF
-          passType: 1
-        - keywords: BlendAdd Clip_OFF FOG_LINEAR FrameBlend_ON SoftParticles_OFF
-          passType: 1
-        - keywords: BlendAdd Clip_OFF FOG_LINEAR FrameBlend_ON SOFTPARTICLES_ON SoftParticles_OFF
-          passType: 1
-        - keywords: BlendAlpha Clip_OFF FOG_LINEAR FrameBlend_ON SoftParticles_OFF
-          passType: 1
-        - keywords: BlendAlpha Clip_OFF FOG_LINEAR FrameBlend_ON SOFTPARTICLES_ON
-            SoftParticles_OFF
-          passType: 1
-        - keywords: BlendMul Clip_OFF FOG_LINEAR FrameBlend_ON SoftParticles_OFF
-          passType: 1
-        - keywords: BlendMul Clip_OFF FOG_LINEAR FrameBlend_ON SOFTPARTICLES_ON SoftParticles_OFF
-          passType: 1
-        - keywords: BlendMul2 Clip_OFF FOG_LINEAR FrameBlend_ON SoftParticles_OFF
-          passType: 1
-        - keywords: BlendMul2 Clip_OFF FOG_LINEAR FrameBlend_ON SOFTPARTICLES_ON SoftParticles_OFF
-          passType: 1
-        - keywords: BlendAdd Clip_ON FOG_LINEAR FrameBlend_OFF SoftParticles_OFF
-          passType: 1
-        - keywords: BlendAdd Clip_ON FOG_LINEAR FrameBlend_OFF SOFTPARTICLES_ON SoftParticles_OFF
-          passType: 1
-        - keywords: BlendAlpha Clip_ON FOG_LINEAR FrameBlend_OFF SoftParticles_OFF
-          passType: 1
-        - keywords: BlendAlpha Clip_ON FOG_LINEAR FrameBlend_OFF SOFTPARTICLES_ON
-            SoftParticles_OFF
-          passType: 1
-        - keywords: BlendMul Clip_ON FOG_LINEAR FrameBlend_OFF SoftParticles_OFF
-          passType: 1
-        - keywords: BlendMul Clip_ON FOG_LINEAR FrameBlend_OFF SOFTPARTICLES_ON SoftParticles_OFF
-          passType: 1
-        - keywords: BlendMul2 Clip_ON FOG_LINEAR FrameBlend_OFF SoftParticles_OFF
-          passType: 1
-        - keywords: BlendMul2 Clip_ON FOG_LINEAR FrameBlend_OFF SOFTPARTICLES_ON SoftParticles_OFF
-          passType: 1
-        - keywords: BlendAdd Clip_ON FOG_LINEAR FrameBlend_ON SoftParticles_OFF
-          passType: 1
-        - keywords: BlendAdd Clip_ON FOG_LINEAR FrameBlend_ON SOFTPARTICLES_ON SoftParticles_OFF
-          passType: 1
-        - keywords: BlendAlpha Clip_ON FOG_LINEAR FrameBlend_ON SoftParticles_OFF
-          passType: 1
-        - keywords: BlendAlpha Clip_ON FOG_LINEAR FrameBlend_ON SOFTPARTICLES_ON SoftParticles_OFF
-          passType: 1
-        - keywords: BlendMul Clip_ON FOG_LINEAR FrameBlend_ON SoftParticles_OFF
-          passType: 1
-        - keywords: BlendMul Clip_ON FOG_LINEAR FrameBlend_ON SOFTPARTICLES_ON SoftParticles_OFF
-          passType: 1
-        - keywords: BlendMul2 Clip_ON FOG_LINEAR FrameBlend_ON SoftParticles_OFF
-          passType: 1
-        - keywords: BlendMul2 Clip_ON FOG_LINEAR FrameBlend_ON SOFTPARTICLES_ON SoftParticles_OFF
-          passType: 1
-        - keywords: BlendAdd Clip_ON_Alpha FOG_LINEAR FrameBlend_OFF SoftParticles_OFF
-          passType: 1
-        - keywords: BlendAdd Clip_ON_Alpha FOG_LINEAR FrameBlend_OFF SOFTPARTICLES_ON
-            SoftParticles_OFF
-          passType: 1
-        - keywords: BlendAlpha Clip_ON_Alpha FOG_LINEAR FrameBlend_OFF SoftParticles_OFF
-          passType: 1
-        - keywords: BlendAlpha Clip_ON_Alpha FOG_LINEAR FrameBlend_OFF SOFTPARTICLES_ON
-            SoftParticles_OFF
-          passType: 1
-        - keywords: BlendMul Clip_ON_Alpha FOG_LINEAR FrameBlend_OFF SoftParticles_OFF
-          passType: 1
-        - keywords: BlendMul Clip_ON_Alpha FOG_LINEAR FrameBlend_OFF SOFTPARTICLES_ON
-            SoftParticles_OFF
-          passType: 1
-        - keywords: BlendMul2 Clip_ON_Alpha FOG_LINEAR FrameBlend_OFF SoftParticles_OFF
-          passType: 1
-        - keywords: BlendMul2 Clip_ON_Alpha FOG_LINEAR FrameBlend_OFF SOFTPARTICLES_ON
-            SoftParticles_OFF
-          passType: 1
-        - keywords: BlendAdd Clip_ON_Alpha FOG_LINEAR FrameBlend_ON SoftParticles_OFF
-          passType: 1
-        - keywords: BlendAdd Clip_ON_Alpha FOG_LINEAR FrameBlend_ON SOFTPARTICLES_ON
-            SoftParticles_OFF
-          passType: 1
-        - keywords: BlendAlpha Clip_ON_Alpha FOG_LINEAR FrameBlend_ON SoftParticles_OFF
-          passType: 1
-        - keywords: BlendAlpha Clip_ON_Alpha FOG_LINEAR FrameBlend_ON SOFTPARTICLES_ON
-            SoftParticles_OFF
-          passType: 1
-        - keywords: BlendMul Clip_ON_Alpha FOG_LINEAR FrameBlend_ON SoftParticles_OFF
-          passType: 1
-        - keywords: BlendMul Clip_ON_Alpha FOG_LINEAR FrameBlend_ON SOFTPARTICLES_ON
-            SoftParticles_OFF
-          passType: 1
-        - keywords: BlendMul2 Clip_ON_Alpha FOG_LINEAR FrameBlend_ON SoftParticles_OFF
-          passType: 1
-        - keywords: BlendMul2 Clip_ON_Alpha FOG_LINEAR FrameBlend_ON SOFTPARTICLES_ON
-            SoftParticles_OFF
-          passType: 1
+        - keywords: BlendAdd Clip_OFF FOG_LINEAR
+          passType: 4
+        - keywords: BlendMul Clip_OFF FOG_LINEAR
+          passType: 4
+        - keywords: BlendAlpha Clip_OFF FOG_LINEAR
+          passType: 4
+        - keywords: BlendMul2 Clip_OFF FOG_LINEAR
+          passType: 4
+        - keywords: BlendAdd Clip_ON FOG_LINEAR
+          passType: 4
+        - keywords: BlendMul Clip_ON FOG_LINEAR
+          passType: 4
+        - keywords: BlendAlpha Clip_ON FOG_LINEAR
+          passType: 4
+        - keywords: BlendMul2 Clip_ON FOG_LINEAR
+          passType: 4
+        - keywords: BlendAdd Clip_ON_Alpha FOG_LINEAR
+          passType: 4
+        - keywords: BlendMul Clip_ON_Alpha FOG_LINEAR
+          passType: 4
+        - keywords: BlendAlpha Clip_ON_Alpha FOG_LINEAR
+          passType: 4
+        - keywords: BlendMul2 Clip_ON_Alpha FOG_LINEAR
+          passType: 4
     data:
-      first: {fileID: 4800000, guid: 5071991c81d4a0e40aa08f70db4f3971, type: 3}
+      first: {fileID: 4800000, guid: 50ea3a3af5871054d85709f121c22ad5, type: 3}
       second:
         variants:
-        - keywords: 
+        - keywords: DIRECTIONAL FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING SHADOWS_SCREEN
           passType: 0
     data:
       first: {fileID: 4800000, guid: 51695196499e2994199bb0afcee27427, type: 3}
       second:
         variants:
-        - keywords: 
-          passType: 0
         - keywords: FOG_LINEAR
           passType: 0
     data:
-      first: {fileID: 4800000, guid: 51803efbc7eea444c82fc25bf9fe0305, type: 3}
+      first: {fileID: 4800000, guid: 553a667a1f1b7fa489973a95a169cec4, type: 3}
       second:
         variants:
         - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 528cfefc9775120498c67c83e15c0366, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: 
-          passType: 4
-        - keywords: LIGHTMAP_ON
-          passType: 4
-        - keywords: LIGHTMAP_OFF
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 53b5cda3fc7f62f4195153c4562ca595, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 5638542d3ea5f8b458dbc2eaa50bb77a, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DISTORT_OFF
-          passType: 0
-        - keywords: DISTORT_ON
           passType: 0
     data:
       first: {fileID: 4800000, guid: 56531d77e1bd3e747a110fd2f85e1ec2, type: 3}
       second:
         variants:
         - keywords: 
-          passType: 0
-        - keywords: 
           passType: 4
-    data:
-      first: {fileID: 4800000, guid: 5ba58e55bf383654991b145089f3269d, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 5e1b561ee80cda847877ac01aff4ff95, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
     data:
       first: {fileID: 4800000, guid: 5f30feb850bd57245bf2fa4ed62c2dcd, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 5fd04508f2d32324f87546342f9483cf, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR MOBILE_DYNAMIC_DIRLIGHT_ON SHADOWS_SCREEN
-            VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR MOBILE_DYNAMIC_DIRLIGHT_ON
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            MOBILE_DYNAMIC_DIRLIGHT_ON SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 60d12b63c30b1324093a064c8f5e8fa6, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 62d9b97f00bac4b4889febba201495d3, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 6349cba54a234cd4a995b0802e6153cc, type: 3}
       second:
         variants:
         - keywords: 
@@ -1008,53 +237,20 @@ ShaderVariantCollection:
       first: {fileID: 4800000, guid: 64c153d0994d5ce48a2c1f070b818c56, type: 3}
       second:
         variants:
-        - keywords: 
-          passType: 0
         - keywords: FOG_LINEAR
           passType: 0
     data:
       first: {fileID: 4800000, guid: 66cd9209ef8f6dc46ba7043ac9c7b8ff, type: 3}
       second:
         variants:
-        - keywords: 
-          passType: 0
         - keywords: FOG_LINEAR
           passType: 0
     data:
       first: {fileID: 4800000, guid: 67fb9c0f5c0269d4ba1f227b2cc23429, type: 3}
       second:
         variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL SHADOWS_SCREEN VERTEXLIGHT_ON
+        - keywords: DIRECTIONAL LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING SHADOWS_SCREEN
           passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON SHADOWS_SCREEN
-            VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 68407e5c513c8a042bf9913b418c11a1, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: FOG_LINEAR WATER_REFLECTION_ON WATER_SOFTEDGE_ON
-          passType: 4
-        - keywords: FOG_LINEAR WATER_REFLECTION_ON WATER_SOFTEDGE_OFF
-          passType: 4
-        - keywords: FOG_LINEAR WATER_REFLECTION_OFF WATER_SOFTEDGE_ON
-          passType: 4
-        - keywords: FOG_LINEAR WATER_REFLECTION_OFF WATER_SOFTEDGE_OFF
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 6931148e363dc514790c95be04496a1b, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: FOG_LINEAR
-          passType: 0
     data:
       first: {fileID: 4800000, guid: 6996572c658b16940a6660f42e1c255e, type: 3}
       second:
@@ -1062,81 +258,10 @@ ShaderVariantCollection:
         - keywords: 
           passType: 0
     data:
-      first: {fileID: 4800000, guid: 6a21696f035de40429eb922b1c9d9c89, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 6a820ab2b7609174c99e4bd2fd43b8a0, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DISTORT_OFF
-          passType: 0
-        - keywords: DISTORT_ON
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 6b673fb4a50ab734382f41db804c3184, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: 
-          passType: 1
-    data:
-      first: {fileID: 4800000, guid: 6be7f4f4d9db313428030db8bea97760, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 6be9adb53c54d984b9198129a1dbe87d, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
       first: {fileID: 4800000, guid: 6e32dc3aa18c8e646b25d8435f753839, type: 3}
       second:
         variants:
-        - keywords: 
-          passType: 0
         - keywords: FOG_LINEAR
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 6fb293927c55f0a459078472b8c7ea3d, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 709c2916d893fdd4db59ba6870271e04, type: 3}
-      second:
-        variants:
-        - keywords: 
           passType: 0
     data:
       first: {fileID: 4800000, guid: 724236899c2db6341ac82d22ecca3bc6, type: 3}
@@ -1151,50 +276,11 @@ ShaderVariantCollection:
         - keywords: 
           passType: 0
     data:
-      first: {fileID: 4800000, guid: 740363ca3c6820b4588d9a635cf27a39, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 0
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 0
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON SHADOWS_SCREEN
-            VERTEXLIGHT_ON
-          passType: 0
-    data:
       first: {fileID: 4800000, guid: 746f59e0f76c84741bc19964765928d5, type: 3}
       second:
         variants:
         - keywords: 
           passType: 0
-    data:
-      first: {fileID: 4800000, guid: 74c44c3a609f1a640a40c362013497d6, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DISTORT_OFF
-          passType: 0
-        - keywords: DISTORT_ON
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 7629e01034efe064c81bbdbd124822d1, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: FOG_LINEAR
-          passType: 1
-        - keywords: FOG_LINEAR SPOT
-          passType: 1
-        - keywords: FOG_LINEAR POINT
-          passType: 1
-        - keywords: FOG_LINEAR
-          passType: 2
-        - keywords: FOG_LINEAR
-          passType: 3
     data:
       first: {fileID: 4800000, guid: 769ac4a872f9e8340aeb20f8035dee8a, type: 3}
       second:
@@ -1202,247 +288,29 @@ ShaderVariantCollection:
         - keywords: 
           passType: 0
     data:
-      first: {fileID: 4800000, guid: 76c7d1096fcdbe543b054a0ba4460941, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DISTORT_OFF
-          passType: 0
-        - keywords: DISTORT_ON
-          passType: 0
-    data:
       first: {fileID: 4800000, guid: 77a64b0351e9f844e83d3567cea083ed, type: 3}
       second:
         variants:
-        - keywords: 
-          passType: 0
         - keywords: FOG_LINEAR
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 77cf8a0f12653f548b661c7042893000, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: FOG_LINEAR
-          passType: 1
-        - keywords: FOG_LINEAR
-          passType: 2
-        - keywords: FOG_LINEAR
-          passType: 3
-    data:
-      first: {fileID: 4800000, guid: 798e3877538e932459b1153ed2561ccb, type: 3}
-      second:
-        variants:
-        - keywords: 
           passType: 0
     data:
       first: {fileID: 4800000, guid: 7add1db7bd820d6409e16f790483cd2d, type: 3}
       second:
         variants:
-        - keywords: 
-          passType: 0
-        - keywords: FOG_LINEAR
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 7cea94f5f8fed90449799aecb8dccab7, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL FOG_LINEAR INSTANCING_ON SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR INSTANCING_ON SHADOWS_SCREEN
-            VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            INSTANCING_ON SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON _TERRAIN_NORMAL_MAP
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-            _TERRAIN_NORMAL_MAP
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 7cef4cddc575e0e4aa9f4ec7c73b4769, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: FOG_LINEAR
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 7d5227eddbfb710489bd817b67209f80, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL FOG_LINEAR INSTANCING_ON SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR INSTANCING_ON SHADOWS_SCREEN
-            VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            INSTANCING_ON SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON _TERRAIN_NORMAL_MAP
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-            _TERRAIN_NORMAL_MAP
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON _TERRAIN_NORMAL_MAP
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 7d97c3ee0769f1645a0fc745a6669984, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 7da9ab1048d0e8147ac2961f5e734284, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 7ddda407435beb343a723f610997bc18, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
         - keywords: FOG_LINEAR
           passType: 0
     data:
       first: {fileID: 4800000, guid: 7e06240809d161349b1d418d81b3ec6f, type: 3}
       second:
         variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF
-            SHADOWS_SCREEN SNOW_SURFACE_OFF VERTEXLIGHT_ON
-          passType: 0
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR MOBILE_DYNAMIC_DIRLIGHT_ON
-            RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF VERTEXLIGHT_ON
-          passType: 0
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF
-            VERTEXLIGHT_ON
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 7ec4846febede394eb1f347d8f181172, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 7ef813f0176ce0544bd19d8a829fa625, type: 3}
-      second:
-        variants:
-        - keywords: 
+        - keywords: DIRECTIONAL FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING SHADOWS_SCREEN
           passType: 0
     data:
       first: {fileID: 4800000, guid: 81b1a7848d0196643babbcbcbfc848d7, type: 3}
       second:
         variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR VERTEXLIGHT_ON
+        - keywords: DIRECTIONAL FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING
           passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 81e7b505e49592642874738531f07c4b, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF
-            SHADOWS_SCREEN SNOW_SURFACE_OFF VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR MOBILE_DYNAMIC_DIRLIGHT_ON
-            RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF
-            VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 830d938420ecde2458ae7056de233f23, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 83378db669f689947958f425d09f2431, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 8523e4ae5d0e76c428cec97025b3c428, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 0
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 0
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON SHADOWS_SCREEN
-            VERTEXLIGHT_ON
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 856f1e015fa3319499c6626f97243700, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 88015b231da2f06429a13c729dbac65a, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
     data:
       first: {fileID: 4800000, guid: 890e3a56fdf110d439999f44ed9e4353, type: 3}
       second:
@@ -1450,116 +318,7 @@ ShaderVariantCollection:
         - keywords: 
           passType: 0
     data:
-      first: {fileID: 4800000, guid: 890e6bbb4a702e74592358659ef6b02b, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 89a4b0610ed68e14f8c54cda5f9a5298, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: FOG_LINEAR
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 8b885c4fa14315943ae8185e70d8a211, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 8bb8dac17b19bd241923d8988187a0ef, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 8d132fdc4f933d84884ece479fbce617, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
       first: {fileID: 4800000, guid: 8ec21351580a7bc429e0652c6d9593c7, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: LIGHTMAP_ON
-          passType: 0
-        - keywords: LIGHTMAP_OFF
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 92346ec92984e8f458f65ded91c9746d, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 92727b53ddff8fd43a082cb008262ee9, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 9374ab8be75d64c47ab78f78e4b5e1f7, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: FOG_LINEAR
-          passType: 1
-        - keywords: FOG_LINEAR SPOT
-          passType: 1
-        - keywords: FOG_LINEAR POINT
-          passType: 1
-        - keywords: FOG_LINEAR
-          passType: 2
-        - keywords: FOG_LINEAR
-          passType: 3
-    data:
-      first: {fileID: 4800000, guid: 93de32ed7e26c804f9eac9d5bce8d3f5, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 9431820faa662874db7b9f65ba50ed8c, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 95571eb5949ad8248b95a0bc1a4b8194, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 9965e597c720acf4cbbd687248ad5758, type: 3}
       second:
         variants:
         - keywords: 
@@ -1571,169 +330,16 @@ ShaderVariantCollection:
         - keywords: 
           passType: 0
     data:
-      first: {fileID: 4800000, guid: 9d294816cf41c438aa30cafca24d943c, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 9e0d4124f30a1bf48b9958a122df3a49, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 9e112258d601bc841ab6aaa912078a0c, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: 9e7d17ced599c2045950f5b1f1529cad, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: a1f11c3d7677fd24ab1027d26f7fd8bc, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: a2bb8031bfe1cab4cb6c2d960e74359d, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: a464a30e429012f458274400207def18, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: a49a8e3f66b1ffd428f981e5640a8b0f, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: a92c7b4b9b99a384b80246f8d776f99d, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: a955e17c4c566284daa8f2cead2bcf44, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
       first: {fileID: 4800000, guid: a9890cd34fa975e469959870c5b2570c, type: 3}
       second:
         variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: aa5860abfb4148149b5d7244a746b761, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: acad3fe5e21abe5449f2d394d102c1a9, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: 
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: adfcf8ed91842344fabf928670231c0d, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: ae4dbdc3c0d58c742bcc22bd5bf25c37, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: aed167920813b44458891f2936f2024a, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: 
+        - keywords: DIRECTIONAL FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING SHADOWS_SCREEN
           passType: 4
     data:
       first: {fileID: 4800000, guid: b10591c549b6e0147b1696e6a7e6c605, type: 3}
       second:
         variants:
         - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: b159e738afc420342a93d7316c278822, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DistortOn
-          passType: 0
-        - keywords: DistortOff
           passType: 0
     data:
       first: {fileID: 4800000, guid: b17f7584f8a4ad64f898197646113adb, type: 3}
@@ -1745,40 +351,7 @@ ShaderVariantCollection:
       first: {fileID: 4800000, guid: b22bd964333d8174da305afc274a5d6a, type: 3}
       second:
         variants:
-        - keywords: 
-          passType: 0
         - keywords: FOG_LINEAR
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: b2a0a758d0610e44ab0241854c43adfa, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: b6f579d2b2b6e5142aa79306b1eefb2c, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: FOG_LINEAR
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: b9d83712c5bcd2a4ab6a3237badcf5af, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: LIGHTMAP_ON
-          passType: 0
-        - keywords: LIGHTMAP_OFF
           passType: 0
     data:
       first: {fileID: 4800000, guid: bc5382ed3e166894bb294704125b26b0, type: 3}
@@ -1787,33 +360,7 @@ ShaderVariantCollection:
         - keywords: 
           passType: 0
     data:
-      first: {fileID: 4800000, guid: bd150d70d6229ce4ba41caad2240b1e2, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: FOG_LINEAR
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: bda2e00b0a1a32b4b9273fb73ca1ffde, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: FOG_LINEAR
-          passType: 0
-    data:
       first: {fileID: 4800000, guid: be02802ac7376974b94b45cc3118cc0b, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: LIGHTMAP_ON
-          passType: 0
-        - keywords: LIGHTMAP_OFF
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: bfb4a318f8a3bd24490eab1827b3feef, type: 3}
       second:
         variants:
         - keywords: 
@@ -1823,240 +370,25 @@ ShaderVariantCollection:
       second:
         variants:
         - keywords: 
-          passType: 0
-        - keywords: 
           passType: 4
     data:
-      first: {fileID: 4800000, guid: c07ba6affb316764784e3133ff66f7f1, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR LIGHTMAP_ON SHADOWS_SCREEN
-          passType: 0
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED FOG_LINEAR LIGHTMAP_ON SHADOWS_SCREEN
-          passType: 0
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR LIGHTMAP_ON SHADOWS_SCREEN
-          passType: 0
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            LIGHTMAP_ON SHADOWS_SCREEN
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING SHADOWS_SCREEN
-          passType: 0
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING
-            SHADOWS_SCREEN
-          passType: 0
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING
-            SHADOWS_SCREEN
-          passType: 0
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING SHADOWS_SCREEN
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR LIGHTMAP_ON SHADOWS_SCREEN SHADOWS_SHADOWMASK
-          passType: 0
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED FOG_LINEAR LIGHTMAP_ON SHADOWS_SCREEN
-            SHADOWS_SHADOWMASK
-          passType: 0
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR LIGHTMAP_ON SHADOWS_SCREEN
-            SHADOWS_SHADOWMASK
-          passType: 0
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            LIGHTMAP_ON SHADOWS_SCREEN SHADOWS_SHADOWMASK
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING SHADOWS_SCREEN
-            SHADOWS_SHADOWMASK
-          passType: 0
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING
-            SHADOWS_SCREEN SHADOWS_SHADOWMASK
-          passType: 0
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING
-            SHADOWS_SCREEN SHADOWS_SHADOWMASK
-          passType: 0
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING SHADOWS_SCREEN SHADOWS_SHADOWMASK
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: c3a93b03689ff6a429fabdbff959c010, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON _ALPHATEST_ON
-            _DETAIL_MULX2 _EMISSION _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-            _ALPHATEST_ON _DETAIL_MULX2 _EMISSION _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON _ALPHATEST_ON _DETAIL_MULX2 _EMISSION _METALLICGLOSSMAP
-            _NORMALMAP _PARALLAXMAP
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: c538199760c25684cafd2e344f534ff8, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: FOG_LINEAR
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: c6401c735e0911449bb00fa1e3e17a08, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 0
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 0
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: c6832402233b414439aea9dd1d44ca4a, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: FOG_LINEAR
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: c6c8a112215a7b147a3fcc7153810704, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR LIGHTMAP_ON MOBILE_DYNAMIC_DIRLIGHT_ON
-            RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED FOG_LINEAR LIGHTMAP_ON MOBILE_DYNAMIC_DIRLIGHT_ON
-            RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR LIGHTMAP_ON MOBILE_DYNAMIC_DIRLIGHT_ON
-            RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            LIGHTMAP_ON MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF SHADOWS_SCREEN
-            SNOW_SURFACE_OFF
-          passType: 4
-        - keywords: DIRECTIONAL FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING MOBILE_DYNAMIC_DIRLIGHT_ON
-            RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING
-            MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING
-            MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF
-            SHADOWS_SCREEN SNOW_SURFACE_OFF
-          passType: 4
-        - keywords: DIRECTIONAL FOG_LINEAR LIGHTMAP_ON MOBILE_DYNAMIC_DIRLIGHT_ON
-            RAIN_SURFACE_OFF SHADOWS_SCREEN SHADOWS_SHADOWMASK SNOW_SURFACE_OFF
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED FOG_LINEAR LIGHTMAP_ON MOBILE_DYNAMIC_DIRLIGHT_ON
-            RAIN_SURFACE_OFF SHADOWS_SCREEN SHADOWS_SHADOWMASK SNOW_SURFACE_OFF
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR LIGHTMAP_ON MOBILE_DYNAMIC_DIRLIGHT_ON
-            RAIN_SURFACE_OFF SHADOWS_SCREEN SHADOWS_SHADOWMASK SNOW_SURFACE_OFF
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            LIGHTMAP_ON MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF SHADOWS_SCREEN
-            SHADOWS_SHADOWMASK SNOW_SURFACE_OFF
-          passType: 4
-        - keywords: DIRECTIONAL FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING MOBILE_DYNAMIC_DIRLIGHT_ON
-            RAIN_SURFACE_OFF SHADOWS_SCREEN SHADOWS_SHADOWMASK SNOW_SURFACE_OFF
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING
-            MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF SHADOWS_SCREEN SHADOWS_SHADOWMASK
-            SNOW_SURFACE_OFF
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING
-            MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF SHADOWS_SCREEN SHADOWS_SHADOWMASK
-            SNOW_SURFACE_OFF
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF
-            SHADOWS_SCREEN SHADOWS_SHADOWMASK SNOW_SURFACE_OFF
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: c70cbfe1c63e37b449a5a71b556e7968, type: 3}
+      first: {fileID: 4800000, guid: c4f0e465e02764c4795710713908c841, type: 3}
       second:
         variants:
         - keywords: 
           passType: 0
     data:
-      first: {fileID: 4800000, guid: c9b4103a57c1a374691b4a4885d157ef, type: 3}
+      first: {fileID: 4800000, guid: c685f738612a53d4fbd7b08b25237041, type: 3}
       second:
         variants:
         - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
           passType: 4
     data:
-      first: {fileID: 4800000, guid: cb1ac041c6fd304419222f8c67d462c2, type: 3}
+      first: {fileID: 4800000, guid: d194743a380c208499b7ab236177aed8, type: 3}
       second:
         variants:
-        - keywords: 
+        - keywords: UNITY_COLORSPACE_GAMMA
           passType: 0
-        - keywords: 
-          passType: 1
-    data:
-      first: {fileID: 4800000, guid: cba2a98d1604122498e97ec20d528d48, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: cd827ce9acfff8e4bac48c600750b3df, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: d0fead432a23dbc4cba253bfe18244a9, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: LIGHTMAP_ON
-          passType: 0
-        - keywords: LIGHTMAP_OFF
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: d345e666465662641b6aece6c6566e0e, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: FOG_LINEAR
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: d42e5f84e590d4e45862170c4cda387c, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
     data:
       first: {fileID: 4800000, guid: d42f8b2e947658c4896a7d6238a1ed6d, type: 3}
       second:
@@ -2064,84 +396,16 @@ ShaderVariantCollection:
         - keywords: 
           passType: 0
     data:
-      first: {fileID: 4800000, guid: d489e29301b8a2d498f3d4b8243b5575, type: 3}
+      first: {fileID: 4800000, guid: d44f74cba3a929a41b102d878aa0c3d1, type: 3}
       second:
         variants:
-        - keywords: 
+        - keywords: FOG_LINEAR
           passType: 0
-    data:
-      first: {fileID: 4800000, guid: d56a2af36fcc9394596c5a4188062c11, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: 
-          passType: 4
-        - keywords: LIGHTMAP_ON
-          passType: 4
-        - keywords: LIGHTMAP_OFF
-          passType: 4
     data:
       first: {fileID: 4800000, guid: d5f47f623ad7eb24190481eff52eece9, type: 3}
       second:
         variants:
         - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: d6b29fb6563624c4da52c57272fa51e8, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: d7f6fa0b48dae4b45ad9b96a786fdda6, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: d8c52f7a0b2ecc741b74122e9ced47b3, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: FOG_LINEAR
-          passType: 1
-        - keywords: FOG_LINEAR SPOT
-          passType: 1
-        - keywords: FOG_LINEAR POINT
-          passType: 1
-        - keywords: FOG_LINEAR
-          passType: 2
-        - keywords: FOG_LINEAR
-          passType: 3
-    data:
-      first: {fileID: 4800000, guid: d8f81cb6ce467f445aea9ba8392b7594, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: FOG_LINEAR
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: d98ff5d497d82984f850eec334992850, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 0
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 0
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
           passType: 0
     data:
       first: {fileID: 4800000, guid: d9927335a9e8c9c4dbdd46902c7cf6d8, type: 3}
@@ -2150,37 +414,17 @@ ShaderVariantCollection:
         - keywords: 
           passType: 0
     data:
-      first: {fileID: 4800000, guid: dc31d5818c4f9e941b8c28a72faf1d61, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: LIGHTMAP_ON
-          passType: 0
-        - keywords: LIGHTMAP_OFF
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: dc7d058c53bb6f04f9e044cbbf83f9d7, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF
-            SHADOWS_SCREEN SNOW_SURFACE_OFF VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR MOBILE_DYNAMIC_DIRLIGHT_ON
-            RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF
-            VERTEXLIGHT_ON
-          passType: 4
-    data:
       first: {fileID: 4800000, guid: dc8a9d0862a1bd54fb23e715afbb889a, type: 3}
       second:
         variants:
         - keywords: 
           passType: 0
+    data:
+      first: {fileID: 4800000, guid: dd40c5802b3949b4b982422241ab67dc, type: 3}
+      second:
+        variants:
+        - keywords: DIRECTIONAL FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING SHADOWS_SCREEN
+          passType: 4
     data:
       first: {fileID: 4800000, guid: dd5b62d6bde3bc84388fb1134612b94d, type: 3}
       second:
@@ -2192,60 +436,13 @@ ShaderVariantCollection:
       second:
         variants:
         - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: dee16bd6ac6b7b54399067122e35a946, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
           passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: e033dc745a4994a20889e698e348bce8, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: e09a8e85e53d3be4f93dac99577b86bc, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
     data:
       first: {fileID: 4800000, guid: e1cbb19759c85a646bb6d917ff2f8319, type: 3}
       second:
         variants:
         - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: e1e03383f8c3a594985382c1e2a38d39, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF
-            SHADOWS_SCREEN SNOW_SURFACE_OFF VERTEXLIGHT_ON
           passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR MOBILE_DYNAMIC_DIRLIGHT_ON
-            RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF
-            VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: e1f1e0ed7f7acd348b23fad9b33a3870, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
     data:
       first: {fileID: 4800000, guid: e26c2f98df17bf242a4dd350803bbce3, type: 3}
       second:
@@ -2253,99 +450,13 @@ ShaderVariantCollection:
         - keywords: 
           passType: 0
     data:
-      first: {fileID: 4800000, guid: e2e7bf92b36e1d048a25dc9cba7db9cc, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: e457374a305c7954f92ad826edfa8f5b, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: e506dad9c4d927547944ffdd4a8ad939, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
       first: {fileID: 4800000, guid: e696a9494886eb8499963d7fbef48c02, type: 3}
       second:
         variants:
         - keywords: 
           passType: 0
     data:
-      first: {fileID: 4800000, guid: e72f68d80aad10a4bb3b4330aae3d71c, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DISTORT_OFF
-          passType: 0
-        - keywords: DISTORT_ON
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: e7cb5718a7eb51849820f7c6009f2f6b, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: FOG_LINEAR
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: e9de9f5bf3b81974689f175af45ba78e, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
       first: {fileID: 4800000, guid: ed12e16b786856b49ac9fe12adf949fb, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: ed151a132483c474b8df1bb732d32e7a, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: LIGHTMAP_ON
-          passType: 0
-        - keywords: LIGHTMAP_OFF
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: ed6f375dbc268de40bab068ef51a5420, type: 3}
       second:
         variants:
         - keywords: 
@@ -2357,19 +468,6 @@ ShaderVariantCollection:
         - keywords: 
           passType: 0
     data:
-      first: {fileID: 4800000, guid: f13f49278f7546c48a25f9933ab3e0a2, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
       first: {fileID: 4800000, guid: f1e82600eaeb95b4791cb038a7771a50, type: 3}
       second:
         variants:
@@ -2379,32 +477,10 @@ ShaderVariantCollection:
       first: {fileID: 4800000, guid: f29bb33b840baba4e9f02157976c5d45, type: 3}
       second:
         variants:
-        - keywords: 
-          passType: 0
         - keywords: FOG_LINEAR
           passType: 0
     data:
-      first: {fileID: 4800000, guid: f839a38a266a74044b1cb120f7d40f8c, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: fb62ec091a30b744f8052997bff11197, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: UNITY_COLORSPACE_GAMMA
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: fbe4963d349e6cb458fd0847a7540cd0, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: fc4c26534efef4ffda125db648325828, type: 3}
+      first: {fileID: 4800000, guid: f9f566963ea1f7c4ea1b643c6a328754, type: 3}
       second:
         variants:
         - keywords: 
@@ -2416,177 +492,46 @@ ShaderVariantCollection:
         - keywords: 
           passType: 0
     data:
-      first: {fileID: 4800000, guid: fe4c75f33fb7d0645bd26192259470ae, type: 3}
+      first: {fileID: 4800000, guid: 53bdf8e8b1c643a4d9ae114d5a33f168, type: 3}
       second:
         variants:
         - keywords: 
           passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
+        - keywords: UNITY_UI_ALPHACLIP
+          passType: 0
     data:
-      first: {fileID: 4800000, guid: fe70447e6894f834187fa5dd485c2ce1, type: 3}
+      first: {fileID: 4800000, guid: 21b9f3e163583a6449f069052e32997f, type: 3}
       second:
         variants:
         - keywords: 
           passType: 0
     data:
-      first: {fileID: 4800000, guid: ffd592f97a53aff40bd0835079f0ba54, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF
-            SHADOWS_SCREEN SNOW_SURFACE_OFF VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR MOBILE_DYNAMIC_DIRLIGHT_ON
-            RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF
-            VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 856ac50ac9a0a6440911b31284348dba, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL ENVMAP_LIGHTING_ON FOG_LINEAR RAIN_SURFACE_OFF SHADOWS_SCREEN
-            SNOW_SURFACE_OFF TERRAIN_NORMAL_ON VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON ENVMAP_LIGHTING_ON FOG_LINEAR RAIN_SURFACE_OFF
-            SHADOWS_SCREEN SNOW_SURFACE_OFF TERRAIN_NORMAL_ON VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON ENVMAP_LIGHTING_ON
-            FOG_LINEAR RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF TERRAIN_NORMAL_ON
-            VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL ENVMAP_LIGHTING_OFF FOG_LINEAR RAIN_SURFACE_OFF SHADOWS_SCREEN
-            SNOW_SURFACE_OFF TERRAIN_NORMAL_ON VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON ENVMAP_LIGHTING_OFF FOG_LINEAR
-            RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF TERRAIN_NORMAL_ON VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON ENVMAP_LIGHTING_OFF
-            FOG_LINEAR RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF TERRAIN_NORMAL_ON
-            VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: fad592c1c1a27b54584d55702b8c4961, type: 3}
+      first: {fileID: 4800000, guid: 6647e5fe442a67a49b292a6bc9e27a1f, type: 3}
       second:
         variants:
         - keywords: 
           passType: 0
     data:
-      first: {fileID: 4800000, guid: 7aee3abfa569d0e498d54e3508706774, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: 307544c641f136d4c9f03717fd0213f4, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: FOG_LINEAR
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: d44f74cba3a929a41b102d878aa0c3d1, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: FOG_LINEAR
-          passType: 0
-    data:
-      first: {fileID: 4800000, guid: c513b8a93543af24eb3024c1a44530cf, type: 3}
-      second:
-        variants:
-        - keywords: 
-          passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR LIGHTMAP_ON MOBILE_DYNAMIC_DIRLIGHT_ON
-            RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED FOG_LINEAR LIGHTMAP_ON MOBILE_DYNAMIC_DIRLIGHT_ON
-            RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR LIGHTMAP_ON MOBILE_DYNAMIC_DIRLIGHT_ON
-            RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            LIGHTMAP_ON MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF SHADOWS_SCREEN
-            SNOW_SURFACE_OFF
-          passType: 4
-        - keywords: DIRECTIONAL FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING MOBILE_DYNAMIC_DIRLIGHT_ON
-            RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING
-            MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING
-            MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF SHADOWS_SCREEN SNOW_SURFACE_OFF
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF
-            SHADOWS_SCREEN SNOW_SURFACE_OFF
-          passType: 4
-        - keywords: DIRECTIONAL FOG_LINEAR LIGHTMAP_ON MOBILE_DYNAMIC_DIRLIGHT_ON
-            RAIN_SURFACE_OFF SHADOWS_SCREEN SHADOWS_SHADOWMASK SNOW_SURFACE_OFF
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED FOG_LINEAR LIGHTMAP_ON MOBILE_DYNAMIC_DIRLIGHT_ON
-            RAIN_SURFACE_OFF SHADOWS_SCREEN SHADOWS_SHADOWMASK SNOW_SURFACE_OFF
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR LIGHTMAP_ON MOBILE_DYNAMIC_DIRLIGHT_ON
-            RAIN_SURFACE_OFF SHADOWS_SCREEN SHADOWS_SHADOWMASK SNOW_SURFACE_OFF
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            LIGHTMAP_ON MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF SHADOWS_SCREEN
-            SHADOWS_SHADOWMASK SNOW_SURFACE_OFF
-          passType: 4
-        - keywords: DIRECTIONAL FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING MOBILE_DYNAMIC_DIRLIGHT_ON
-            RAIN_SURFACE_OFF SHADOWS_SCREEN SHADOWS_SHADOWMASK SNOW_SURFACE_OFF
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING
-            MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF SHADOWS_SCREEN SHADOWS_SHADOWMASK
-            SNOW_SURFACE_OFF
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING
-            MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF SHADOWS_SCREEN SHADOWS_SHADOWMASK
-            SNOW_SURFACE_OFF
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING MOBILE_DYNAMIC_DIRLIGHT_ON RAIN_SURFACE_OFF
-            SHADOWS_SCREEN SHADOWS_SHADOWMASK SNOW_SURFACE_OFF
-          passType: 4
-    data:
-      first: {fileID: 4800000, guid: c4f0e465e02764c4795710713908c841, type: 3}
+      first: {fileID: 4800000, guid: 8f3cf06840d8f82468638b0a7824c48a, type: 3}
       second:
         variants:
         - keywords: 
           passType: 0
     data:
-      first: {fileID: 4800000, guid: dd40c5802b3949b4b982422241ab67dc, type: 3}
+      first: {fileID: 4800000, guid: d445e5e4212985b43a59c531849feefa, type: 3}
       second:
         variants:
         - keywords: 
           passType: 0
-        - keywords: DIRECTIONAL FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DYNAMICLIGHTMAP_ON FOG_LINEAR SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
-        - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON FOG_LINEAR
-            SHADOWS_SCREEN VERTEXLIGHT_ON
-          passType: 4
+    data:
+      first: {fileID: 4800000, guid: 6fbc32ef30c7d2b439d84165d538bf38, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 779c7c0e193eebf48b5f414aeedaf46b, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0

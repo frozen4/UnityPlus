@@ -1,6 +1,6 @@
 ﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-Shader "HDX/Xffect/displacement-dissolve/additive" {
+Shader "TERA/Fx/HDX/displacement-dissolve-additive" {
 Properties {
  [HDR]_TintColor ("Tint Color", Color) = (0.5,0.5,0.5,0.5)
  _MainTex ("Main Texture", 2D) = "white" {}

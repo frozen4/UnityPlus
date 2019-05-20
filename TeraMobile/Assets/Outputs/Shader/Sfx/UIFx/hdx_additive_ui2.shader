@@ -1,7 +1,7 @@
 // Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
 // Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-Shader "HDX/Particles/Additive_ui2" {
+Shader "TERA/Fx/HDX/ParticlesAdditive_ui2" {
 	Properties {
 		_TintColor ("Tint Color", Color) = (0.5,0.5,0.5,0.5)
 		_MainTex ("Particle Texture", 2D) = "white" {}

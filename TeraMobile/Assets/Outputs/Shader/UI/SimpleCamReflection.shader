@@ -1,4 +1,4 @@
-Shader "UI/Mobile/SimpleCamReflectionbyAUQASCamera" {
+Shader "TERA/UI/SimpleCamReflectionbyAUQASCamera" {
     Properties {
         _DepthTex ("Depth Texture", 2D) = "white" {}
         [NoScaleOffset]_NormalTexture ("Normal Texture", 2D) = "white" {}
@@ -6,7 +6,7 @@ Shader "UI/Mobile/SimpleCamReflectionbyAUQASCamera" {
         _BaseColor ("Deep Water Color", Color) = (0.07843138,0.3921569,0.7843137,1)
 //        _ShallowWaterColor ("Shallow Water Color", Color) = (0.4411765,0.9537525,1,1)
 //        _Fade ("Shallow-Deep-Fade", Float ) = 3.1
-        [HideInInspector]_ReflectionTex ("Reflection Tex", 2D) = "white" {}
+        [HideInInspector]_ReflectionTexture1 ("Reflection Tex", 2D) = "white" {}
         [MaterialToggle] _UseReflections ("Enable Reflections", Float ) = 0
         _Reflectionintensity ("Reflection intensity", Range(0, 1)) = 0.5
         _Distortion ("Distortion", Range(0, 2)) = 0.3
@@ -42,7 +42,7 @@ Shader "UI/Mobile/SimpleCamReflectionbyAUQASCamera" {
             uniform float4 _LightColor0;
             uniform float4 _TimeEditor;
             uniform float4 _BaseColor;
-            uniform sampler2D _ReflectionTex; uniform float4 _ReflectionTex_ST;
+            uniform sampler2D _ReflectionTexture1; uniform float4 _ReflectionTexture1_ST;
             uniform float _Reflectionintensity;
             uniform sampler2D _DepthTex; uniform float4 _DepthTex_ST;
             uniform sampler2D _NormalTexture; uniform float4 _NormalTexture_ST;
@@ -87,7 +87,7 @@ Shader "UI/Mobile/SimpleCamReflectionbyAUQASCamera" {
                 o.screenPos = o.pos;
                 return o;
             }
-            float4 frag(VertexOutput i) : COLOR {
+            fixed4 frag(VertexOutput i) : COLOR {
                 i.normalDir = normalize(i.normalDir);
                 i.screenPos = float4( i.screenPos.xy / i.screenPos.w, 0, 0 );
                 i.screenPos.y *= _ProjectionParams.x;
@@ -130,20 +130,18 @@ Shader "UI/Mobile/SimpleCamReflectionbyAUQASCamera" {
                 float3 indirectDiffuse = float3(0,0,0);
                 float2 _componentMask = _subtractor.rg;
                 float2 _remap = ((i.screenPos.rg+(float2(_componentMask.r,_componentMask.g)*_Distortion))*0.5+0.5);
-                float4 _ReflectionTex_var = tex2D(_ReflectionTex,TRANSFORM_TEX(_remap, _ReflectionTex)) * (_Reflectionintensity+0.25);
-                fixed _finalA = _ReflectionTex_var.a * depth.r*0.75;
-//                float frsnl = pow((1-Ndotv),2) * _Reflectionintensity;
-                //float frsnl = (1-Ndotv) * _Reflectionintensity;
-                float3 diffuseColor = _ReflectionTex_var.rgb;//lerp(_BaseColor.rgb,_ReflectionTex_var.rgb,frsnl);
-                float3 diffuse = (directDiffuse + indirectDiffuse) * diffuseColor;
+                float4 _ReflectionTexture1_var = tex2D(_ReflectionTexture1,TRANSFORM_TEX(_remap, _ReflectionTexture1)) * (_Reflectionintensity+0.25);
+                fixed _finalA = _ReflectionTexture1_var.a * depth.r*0.75;
+                float3 diffuse = _ReflectionTexture1_var.rgb;
 /// Final Color:
                 float3 finalColor = diffuse;
                 fixed4 finalRGBA = fixed4(finalColor,_finalA);
+//                       finalRGBA = fixed4(float3(depth.r,depth.r,depth.r),1);
                 UNITY_APPLY_FOG(i.fogCoord, finalRGBA);
                 return finalRGBA;
             }
             ENDCG
         }
     }
-    FallBack "Diffuse"
+    //FallBack "Diffuse"
 }

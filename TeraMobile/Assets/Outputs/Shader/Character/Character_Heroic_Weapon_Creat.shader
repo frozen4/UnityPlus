@@ -1,4 +1,4 @@
-Shader "Character/Character_Heroic_Weapon_Creat" {
+Shader "TERA/Character/Heroic_Weapon_Creat" {
     Properties {
         _BaseRGBA ("Base(RGBA)", 2D) = "white" {}
         _Normalmap ("Normalmap", 2D) = "bump" {}
@@ -80,7 +80,7 @@ Shader "Character/Character_Heroic_Weapon_Creat" {
                 TRANSFER_VERTEX_TO_FRAGMENT(o)
                 return o;
             }
-            float4 frag(VertexOutput i) : COLOR {
+            half4 frag(VertexOutput i) : COLOR {
                 i.normalDir = normalize(i.normalDir);
                 float3x3 tangentTransform = float3x3( i.tangentDir, i.bitangentDir, i.normalDir);
                 float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
@@ -142,50 +142,8 @@ Shader "Character/Character_Heroic_Weapon_Creat" {
             }
             ENDCG
         }
-        Pass {
-            Name "ShadowCaster"
-            Tags {
-                "LightMode"="ShadowCaster"
-            }
-            ZWrite On
-			ZTest LEqual
-			Cull Off
-            Offset 1, 1
-            
-            CGPROGRAM
-            #pragma vertex vert
-            #pragma fragment frag
-            #define UNITY_PASS_SHADOWCASTER
-            #include "UnityCG.cginc"
-            #include "Lighting.cginc"
-            #pragma fragmentoption ARB_precision_hint_fastest
-            #pragma multi_compile_shadowcaster
-            #pragma multi_compile_fog
-            #pragma exclude_renderers d3d11_9x xbox360 xboxone ps3 ps4 psp2 
-            #pragma target 3.0
-            uniform sampler2D _BaseRGBA; uniform float4 _BaseRGBA_ST;
-            struct VertexInput {
-                float4 vertex : POSITION;
-                float2 texcoord0 : TEXCOORD0;
-            };
-            struct VertexOutput {
-                V2F_SHADOW_CASTER;
-                float2 uv0 : TEXCOORD1;
-            };
-            VertexOutput vert (VertexInput v) {
-                VertexOutput o = (VertexOutput)0;
-                o.uv0 = v.texcoord0;
-                o.pos = UnityObjectToClipPos(v.vertex );
-                TRANSFER_SHADOW_CASTER(o)
-                return o;
-            }
-            float4 frag(VertexOutput i) : COLOR {
-                float4 _BaseRGBA_var = tex2D(_BaseRGBA,TRANSFORM_TEX(i.uv0, _BaseRGBA));
-                clip(_BaseRGBA_var.a - 0.5);
-                SHADOW_CASTER_FRAGMENT(i)
-            }
-            ENDCG
-        }
+        
+        UsePass "Hidden/Character/CharacterPass/CHARACTERSHADOWCASTER"
     }
-    FallBack "Diffuse"
+    //FallBack "Diffuse"
 }

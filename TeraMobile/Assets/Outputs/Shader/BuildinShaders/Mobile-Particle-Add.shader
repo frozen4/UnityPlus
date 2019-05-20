@@ -4,7 +4,7 @@
 // - no AlphaTest
 // - no ColorMask
 
-Shader "BuildinShader/Mobile/Particles/Additive" {
+Shader "Mobile/Particles/Additive" {
 Properties {
 	_MainTex ("Particle Texture", 2D) = "white" {}
 }

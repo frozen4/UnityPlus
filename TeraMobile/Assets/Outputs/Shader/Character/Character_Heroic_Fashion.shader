@@ -1,10 +1,11 @@
-Shader "Character/Character_Heroic_Fashion" {
+Shader "TERA/Character/Heroic_Fashion" {
     Properties {
         _BaseRGBA ("Base(RGBA)", 2D) = "white" {}
         _SkinColor ("Skin Color Custom", Color) = (0,0.667,0.667,1)
         _Skinems ("Skin Ambient Bounce", Color) = (1,1,1,1)
         _SkinDirpow ("Skin Bounce", Range(0, 1)) = 0.3
         _se ("Skin Emission", Range(0,2)) = 0.3
+        _Skinedge ("Skin Edge Color", Color) = (1,1,1,1)
         _Normalmap ("Normalmap", 2D) = "bump" {}
         _SpecularmapRGBA ("Specularmap(RGBA)", 2D) = "white" {}
         _SpecularIntensity ("Specular Intensity", Range(0, 2)) = 1
@@ -17,18 +18,17 @@ Shader "Character/Character_Heroic_Fashion" {
         _skinpoint("Skin PointLight Intensity", Range(0,1)) = 1
         _OriginOffset ("Origin Position Offset", Vector) = (0, 0.125, 0)
         _TransmissionColor ("TransmissionColor ", Color) = (0.25,0,0,1)
-		_TransmissionPointPower("TransmissionPointPower", Range(0, 1)) = 0.25
+		_TransmissionPointPower("TransmissionAddPower", Range(0, 1)) = 0.25
 		_TransmissionRange("TransmissionRange", Range(-1, 1)) = 0
-        Notouch("Rim&DeathEffect", Range(0,1)) = 0
+		_TransmissionRange1("TransmissionMergeRange", Range(0, 1)) = 0
+        [Header(RimEffect)]
         _RimColor ("Rim Color", Color) = (1,1,1,1)
         _RimPower ("Rim Power", Range(0, 5)) = 0
         _FlakeColor1 ("Flake Color 1", Color) = (1,1,1,1)
         _FlakeColor2 ("Flake Color 2", Color) = (1,1,1,1)
-		// Addition
-//		_AdditionTex("Addition Diffuse Tex", 2D) = "white" {}
-//		_AdditionNormal("Addition Normal Tex", 2D) = "white" {}
-//		_AdditionSpecular("Addition Specular Tex", 2D) = "white" {}
-//		_AdditionOffset("Addition Tex Offset", Vector) = (0, 0, 1, 1)
+        [Header(RimEffect)]
+        [MaterialToggle] shs ("Shadowswitcher",float) = 0
+        [MaterialToggle] sks ("Skinswitcher",float) = 0
     }
     SubShader {
         Tags {
@@ -53,7 +53,7 @@ Shader "Character/Character_Heroic_Fashion" {
             #include "AutoLight.cginc"
             #include "UnityStandardUtils.cginc"
             #include "TeraPBRLighting.cginc"
-//            #pragma multi_compile_UNIQUE_SHADOW UNIQUE_SHADOW_LIGHT_COOKIE
+            #pragma multi_compile_UNIQUE_SHADOW UNIQUE_SHADOW_LIGHT_COOKIE
             #pragma multi_compile_fwdbase_fullshadows
             #pragma multi_compile_fog
             #pragma exclude_renderers d3d11_9x xbox360 xboxone ps3 ps4 psp2 
@@ -81,17 +81,17 @@ Shader "Character/Character_Heroic_Fashion" {
             uniform float _gloss;
             uniform float _brdfrange;
             uniform float _ReflectionIntensity;
-
+            uniform fixed4 _Skinedge;
             uniform fixed4 _TransmissionColor;
 			uniform fixed4 _TransmissionRangeAdj;
 			uniform fixed _TransmissionPointPower;
 			uniform fixed _TransmissionRange;
-//			uniform sampler2D _AdditionTex;
-//			uniform sampler2D _AdditionNormal;
-//			uniform sampler2D _AdditionSpecular;
-//			uniform float4 _AdditionOffset;
+			uniform fixed _TransmissionRange1;
 
-            float4 frag(V2f_TeraPBR i) : COLOR {
+			uniform int shs;
+			uniform int sks;
+
+            half4 frag(V2f_TeraPBR i) : COLOR {
 ////// Textures:
 //#if defined(HERO_ADDITION_ON)
 //				float2 additiontex_uv;
@@ -143,17 +143,20 @@ Shader "Character/Character_Heroic_Fashion" {
 ////				normalLocal = combied_color.a * combied_normal.rgb + (1 - combied_color.a) * normalLocal.rgb;
 ////#endif
 				float3 normalDirection = normalize(mul(normalLocal, tangentTransform)); // Perturbed normals
-				float3 blurrednormal = lerp(normalDirection,i.originNormal,0.5);//*i.vcolor.a);
 				float3 viewReflectDirection = reflect(-viewDirection, normalDirection);
                 float3 lightDirection = normalize(_WorldSpaceLightPos0.xyz);
                 float3 halfDirection = normalize(viewDirection+lightDirection);
                 float3 ahalfDirection = normalize(viewDirection-lightDirection);
                 float3 lightDir = normalize(float3(_WorldSpaceLightPos0.x,0,_WorldSpaceLightPos0.z));
                 float3 halfDir = normalize(viewDirection+lightDir);
+                float3 charSunDirection = normalize(_SunDirchar1.xyz);
                 float3 lightColor = _LightColor0.rgb;
 ////// Lighting:
-                float attenuation = 1;
-                float3 attenColor = lerp(attenuation,1,_MatMask_var.r) * lightColor;
+//                float attenuation = 1;//UNITY_SHADOW_ATTENUATION(i, i.posWorld);;
+                float shadowatten = UNITY_SHADOW_ATTENUATION(i, i.posWorld);
+                float attenuation = lerp(shadowatten,1,_MatMask_var.r);
+//                float attenuation = SAMPLE_MCSHADOW(i);
+                
 
 ///////// Gloss:
                 float glossq = min(1,((_SpecularmapRGBA_var.a+_gloss)/(1+_gloss))) * equiprange;
@@ -164,32 +167,30 @@ Shader "Character/Character_Heroic_Fashion" {
                 float3 _skinspcolor = ColorCstm(_SpecularmapRGBA_var.rgb.rgb,_SkinColor.rgb,_MatMask_var.r);
                 float3 baseRGBA = _BaseRGBA_var.rgb * equiprange;
                        baseRGBA *= _flake1 * _flake2;
-                       baseRGBA += _skincolor;
 ///// Lightness:
                 float lightpower = ((lightColor.r*0.299)+(lightColor.g*0.587)+(lightColor.b*0.114));
+                      lightpower = dot(lightColor.rgb,float3(0.3,0.59,0.11));
                 float emispower = clamp(lightpower,0.0,1.0);
                 float NdotL = max(0, dot( normalDirection, lightDirection ));
-                float NdotLD = max(0, dot( normalDirection, lightDir ));
                 float _NdotL = max(0, dot( normalDirection, -lightDirection ));
-                float NdotO = max(0, dot( blurrednormal, lightDirection));
-                float VdotO = max(0, dot( blurrednormal, viewDirection));
-                float Vdoto = max(0, dot( i.originNormal, viewDirection));
+                float NdotO = lerp(0.5,pow(NdotL,0.75),0.4) + NdotL*0.2;
+                float Vdoto = max(0, lerp(0.5,pow(NdotL,0.75),0.4) + NdotL*0.2);
                 float Ndotv = max(0, dot( normalDirection, viewDirection ));
                 float Ndoth = max(0,dot(halfDirection,normalDirection));
-                float Ndotah = max(0,dot(ahalfDirection,normalDirection));
-                float mrref = max(0,dot(reflect(-lightDirection,normalDirection),viewDirection));
-                float LdotH = max(0.0,dot(lightDirection, halfDirection));
                 float Ndothd = dot(normalDirection,halfDir);
                 float Vdoti = max(0, dot( i.normalDir, viewDirection));
                 float NdotV = max(0,1 - Ndotv);
                 float Ndotl = max(0,1 - NdotL);
-                float _Ndotl = max(0,1 - _NdotL);
+                float NdotSunchar = max(0,dot(charSunDirection,normalDirection) * NdotV);
+                float3 attenColor = lightpower*_MatMask_var.r + lightColor*equiprange;//lerp(lerp(shadowatten,attenuation,shs),1,_MatMask_var.r) * lightColor;//
+                       
+//                       attenuation *= NdotL;
                 float3 sh = AmbientColorGradient(normalDirection);
                        sh = lerp(sh,dot(sh,float3(0.3,0.59,0.11)),NdotL);
                 float3 IBL = ImageBasedLighting(gloss,viewReflectDirection);
-                       IBL *= _ReflectionIntensity * sh;
+                       IBL *= _ReflectionIntensity * sh;//*(attenuation+NdotV*gloss);
                 fixed pie = 3.1415926535;
-                float3 zis = Frsn(Ndotv,gloss,IBL,equiprange);
+                float3 zis = Frsn(Ndotv,gloss,IBL,equiprange);//*(attenuation*0.5+0.5);
                 float3 _Rim = Rim(NdotV,_RimPower,_RimColor);
 ////// Specular:
                 float spGGX = SpecularGGXWithHeadLight(pie, gloss, _MatMask_var.r, max(Ndothd,Ndoth), Ndotv, NdotV, NdotL,_NdotL);
@@ -197,18 +198,29 @@ Shader "Character/Character_Heroic_Fashion" {
                 float3 specular = CalculateSpecular(_SpecularmapRGBA_var.rgb,spGGX,gloss,attenColor,IBL,equiprange,sPc_skin,0);
                        specular *= i.pl * _SpecularIntensity;
 /////// Diffuse:
-                float NdotLq = NdotL * 0.8 * equiprange;
-                       NdotL = max(-_brdfrange, NdotL);
-                float3 NdotLs = LightingbyBRDFmap(_Brdfmap, NdotL, Ndotv, Ndotl, _brdfrange, 0.5, 1, _SkinDirpow) * _MatMask_var.r;
-                
-                float T = Transmission(VdotO,_TransmissionRange);
+//                float NdotLq = NdotL * 0.8 * equiprange;
                 float scatter = Scattering(Ndotv, 10, 0.05,_MatMask_var.r);
-                float3 scattering = scatter * _Skinems * 0.5;
-                float3 sssadd = _MatMask_var.g * (T*_MatMask_var.r+NdotO) * _TransmissionColor.rgb*0.5;
-                float3 trasission = saturate(pow((Ndotv+Vdoti)*0.5,6))*_MatMask_var.r*0.25*_TransmissionColor.rgb;
-                float3 diffuse = CalculateDiffuse(NdotLs,NdotLq,scattering,attenColor,sh,baseRGBA) * lerp(i.pl,1,_skinpoint);
+                half3 scattering = scatter * _Skinems * 0.5;
+                float NdotLq = lerp(NdotL,min(shadowatten,NdotL),shs) * 0.8 * equiprange;
+//                       NdotL = max(-_brdfrange, NdotL);
+//                       NdotL = (NdotL+pow(NdotL,0.5)) * 0.5;
+                float3 NdotLs = LightingbyBRDFmap(_Brdfmap, NdotL, sqrt(Ndotv), Ndotl, _brdfrange, 0.5, 1, _SkinDirpow);
+//                       NdotLs = lerp(NdotLs,FakeSSSLightingforSkin(NdotL, Ndotv, sh, _Skinedge.rgb, scatter),sks);
+                       NdotLs = lerp(NdotLs,FakeSSSLightingforSkin1(NdotL, Ndotv, sh, FastSSSforskin(Ndotl,NdotV,_Skinedge.rgb), scatter,Ndotl),sks);
+                       NdotLs *= _MatMask_var.r;
+
+//                       NdotLs *= lerp(NdotLs,1,NdotL+(Ndotv*max(0,1-NdotL)));
+                float T = Transmission(Vdoto,_TransmissionRange);
+                      T *= 1-NdotO;
+                
+                float3 sssadd = T*_MatMask_var.r*(1+NdotO) * _TransmissionColor.rgb * _TransmissionPointPower*i.vcolor.a;
+                       sssadd = T*_MatMask_var.r*(1+saturate(NdotO)) * _TransmissionColor.rgb * _TransmissionPointPower*i.vcolor.a;
+                       baseRGBA += _skincolor;// + (sssadd*0.5)*(1-sks);
+                float3 diffuse = CalculateDiffuseAddon(NdotLs,NdotLq,scattering,attenColor,sh,baseRGBA,NdotSunchar) * lerp(i.pl,1,_skinpoint);
                        diffuse = lerp(diffuse,_skincolor*(1+_se*NdotL),NdotL*_MatMask_var.r);
-                       diffuse += sssadd;//+trasission;
+                       diffuse += sssadd*0.5;
+                float3 diffuse1 = CalculateDiffuseAddonf(NdotLs,NdotLq,scattering*0,attenColor,sh,baseRGBA,NdotSunchar,_MatMask_var.r) * lerp(i.pl,1,_skinpoint);
+                       diffuse = lerp(diffuse,diffuse1,sks);
 //////// Emissive:
                 float3 emission = baseRGBA * _MatMask_var.a;
 /// Final Color:
@@ -216,18 +228,30 @@ Shader "Character/Character_Heroic_Fashion" {
                       reflerp *= equiprange;
                 float3 finalColor = FinalColor(diffuse,specular,reflerp,_Rim,zis);
 
-//                       finalColor = trasission;
-//                       finalColor = pow(sqrt(Ndotv),2)*_MatMask_var.r*0.5;
-//                       finalColor = Ndotv*_MatMask_var.r*0.5;
-//                       finalColor = pow((Ndotv+Vdoti)*0.5,2)*_MatMask_var.r*0.25;
-                       
+//                finalColor = NdotL+pow(NdotL,0.5);
+//                finalColor *= 0.5;
+//                finalColor = exp2(-(Ndotv*Ndotv*10));
+//                finalColor = lerp(_Skinedge.rgb,fixed3(1,1,1),saturate(pow(Ndotv,0.5))*0.5+0.5);//*0.5+0.5;
+//                finalColor = lerp(fixed3(1,1,1),_Skinedge.rgb,exp2(-(Ndotv*Ndotv*lerp(5,10,NdotL))));
+//                       finalColor = exp(-(NdotV*NdotV*10));
+//                       finalColor = Ndotl;
+//                       finalColor *= NdotV;
+//                       finalColor = FastSSSforskin(Ndotl,NdotV,_Skinedge.rgb);
+//
+//                       finalColor = FakeSSSLightingforSkin1(NdotL, Ndotv, sh, finalColor, scatter,Ndotl);
+//                       finalColor *= _skincolor;
+//                       finalColor = NdotLs;
+//                         finalColor = diffuse1;
+
+
+
                 half4 finalRGBA = half4(finalColor,1);
                 UNITY_APPLY_FOG(i.fogCoord, finalRGBA);
                 return finalRGBA;
             }
             ENDCG
         }
-        UsePass "Hide/Character/CharacterPass/CHARACTERSHADOWCASTER"
+        UsePass "Hidden/Character/CharacterPass/CHARACTERSHADOWCASTER"
     }
 
     SubShader {
@@ -287,7 +311,7 @@ Shader "Character/Character_Heroic_Fashion" {
 			uniform fixed _TransmissionPointPower;
 			uniform fixed _TransmissionRange;
 
-            float4 frag(V2f_TeraPBR i) : COLOR {
+            half4 frag(V2f_TeraPBR i) : COLOR {
 // GeometryData:
 				i.normalDir = normalize(i.normalDir);
 				float3x3 tangentTransform = float3x3(i.tangentDir, i.bitangentDir, i.normalDir);
@@ -319,9 +343,9 @@ Shader "Character/Character_Heroic_Fashion" {
                 float glossk = _SpecularmapRGBA_var.a * _MatMask_var.r;
 				float gloss = saturate(glossq+glossk);
 ///// SkinColor:
-                float3 _skincolor = ColorCstm(_BaseRGBA_var.rgb,_SkinColor.rgb,_MatMask_var.r);
-                float3 _skinspcolor = ColorCstm(_SpecularmapRGBA_var.rgb.rgb,_SkinColor.rgb,_MatMask_var.r);
-                float3 baseRGBA = _BaseRGBA_var.rgb * equiprange;
+                half3 _skincolor = ColorCstm(_BaseRGBA_var.rgb,_SkinColor.rgb,_MatMask_var.r);
+                half3 _skinspcolor = ColorCstm(_SpecularmapRGBA_var.rgb.rgb,_SkinColor.rgb,_MatMask_var.r);
+                half3 baseRGBA = _BaseRGBA_var.rgb * equiprange;
                        baseRGBA *= _flake1 * _flake2;
                        baseRGBA += _skincolor;
 ///// Lightness:
@@ -334,7 +358,7 @@ Shader "Character/Character_Heroic_Fashion" {
                 float Ndothd = dot(normalDirection,halfDir);
                 float NdotV = max(0,1 - Ndotv);
                 float Ndotl = max(0,1 - NdotL);
-                float _Ndotl = max(0,1 - _NdotL);
+//                float _Ndotl = max(0,1 - _NdotL);
                 float3 sh = AmbientColorGradient(normalDirection);
                        sh = lerp(sh,dot(sh,float3(0.3,0.59,0.11)),NdotL);
                 fixed pie = 3.1415926535;
@@ -342,30 +366,30 @@ Shader "Character/Character_Heroic_Fashion" {
 ////// Specular:
                 float spGGX = SpecularGGX(pie, gloss, _MatMask_var.r, max(Ndothd,Ndoth), NdotV, NdotL);
                 float3 sPc_skin = Specularskin(gloss, max(Ndothd,Ndoth), _lf, spGGX, NdotL, attenColor, Ndotv, _MatMask_var.r, Ndotl, _skinspcolor, specmncrm);
-                float3 specular = CalculateSpecular(_SpecularmapRGBA_var.rgb,spGGX,gloss,attenColor,0,equiprange,sPc_skin,0);
+                half3 specular = CalculateSpecular(_SpecularmapRGBA_var.rgb,spGGX,gloss,attenColor,0,equiprange,sPc_skin,0);
                        specular *= _SpecularIntensity;
 /////// Diffuse:
                 float NdotLq = NdotL * 0.8 * equiprange;
                        NdotL = max(-_brdfrange, NdotL);
-                float3 NdotLs = LightingbyBRDFmap(_Brdfmap, NdotL, Ndotv, Ndotl, _brdfrange, 0.5, 1, _SkinDirpow) * _MatMask_var.r;
+                float3 NdotLs = LightingbyBRDFmap(_Brdfmap, NdotL,sqrt(Ndotv), Ndotl, _brdfrange, 0.5, 1, _SkinDirpow) * _MatMask_var.r;
 
                 float scatter = Scattering(Ndotv, 10, 0.05,_MatMask_var.r);
-                float3 scattering = scatter * _Skinems * 0.5;
-                float3 diffuse = CalculateDiffuse(NdotLs,NdotLq,scattering,attenColor,sh,baseRGBA) * lerp(i.pl,1,_skinpoint);
+                half3 scattering = scatter * _Skinems * 0.5;
+                half3 diffuse = CalculateDiffuse(NdotLs,NdotLq,scattering,attenColor,sh,baseRGBA) * lerp(i.pl,1,_skinpoint);
                        diffuse = lerp(diffuse,_skincolor*(1+_se*NdotL),NdotL*_MatMask_var.r);
 //////// Emissive:
 //                float3 emission = baseRGBA * _MatMask_var.a;
 /// Final Color:
-                float reflerp = reflp(_SpecularmapRGBA_var.rgb,pie);
+                half reflerp = reflp(_SpecularmapRGBA_var.rgb,pie);
                       reflerp *= equiprange;
-                float3 finalColor = FinalColor(diffuse,specular,reflerp,_Rim,0);
+                half3 finalColor = FinalColor(diffuse,specular,reflerp,_Rim,0);
                 half4 finalRGBA = half4(finalColor,1);
                 UNITY_APPLY_FOG(i.fogCoord, finalRGBA);
                 return finalRGBA;
             }
             ENDCG
         }
-        UsePass "Hide/Character/CharacterPass/CHARACTERSHADOWCASTER"
+//        UsePass "Hidden/Character/CharacterPass/CHARACTERSHADOWCASTER"
     }
 
     SubShader {
@@ -377,8 +401,8 @@ Shader "Character/Character_Heroic_Fashion" {
         }
         LOD 200
 
-        UsePass "Hide/Character/CharacterPass/CHARACTERFORWARDBASEFLAKE"
-        UsePass "Hide/Character/CharacterPass/CHARACTERSHADOWCASTER"
+        UsePass "Hidden/Character/CharacterPass/CHARACTERFORWARDBASEFLAKE"
+        UsePass "Hidden/Character/CharacterPass/CHARACTERSHADOWCASTER"
     }
-    FallBack "Diffuse"
+//    FallBack "Diffuse"
 }

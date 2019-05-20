@@ -1,7 +1,7 @@
 ﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 //Note this is for UI only
 
-Shader "UI/AlphaSplit"
+Shader "TERA/UI/AlphaSplit"
 {
     Properties
     {
@@ -14,6 +14,9 @@ Shader "UI/AlphaSplit"
         _StencilOp ("Stencil Operation", Float) = 0
         _StencilWriteMask ("Stencil Write Mask", Float) = 255
         _StencilReadMask ("Stencil Read Mask", Float) = 255
+
+		[Enum(UnityEngine.Rendering.BlendMode)]SrcMode("SrcMode", int) = 1
+		[Enum(UnityEngine.Rendering.BlendMode)]DstMode("DstMode", int) = 1
     }
     
     SubShader
@@ -41,7 +44,9 @@ Shader "UI/AlphaSplit"
         ZWrite Off
         ZTest [unity_GUIZTestMode]
         //Blend SrcAlpha OneMinusSrcAlpha
-		Blend One OneMinusSrcAlpha
+		//Blend One OneMinusSrcAlpha
+		Blend[SrcMode][DstMode]
+
         ColorMask [_ColorMask]
 
         Pass

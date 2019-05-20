@@ -1,4 +1,4 @@
-Shader "Character/Character_Heroic_WeaponWing" {
+Shader "TERA/Character/Heroic_WeaponWing" {
     Properties {
         _BaseRGBA ("Base(RGBA)", 2D) = "white" {}
         _Normalmap ("Normalmap", 2D) = "bump" {}
@@ -54,7 +54,8 @@ Shader "Character/Character_Heroic_WeaponWing" {
             uniform half _gloss;
             uniform fixed _headlight;
 
-            float4 frag(V2f_TeraPBR i) : COLOR {
+            uniform float4 _SunDirchar;
+            half4 frag(V2f_TeraPBR i) : COLOR {
 ////// Textures:
                 float4 _BaseRGBA_var = tex2D(_BaseRGBA,TRANSFORM_TEX(i.uv0, _BaseRGBA));
                 clip(_BaseRGBA_var.a - 0.5);
@@ -77,6 +78,7 @@ Shader "Character/Character_Heroic_WeaponWing" {
 				float3 viewReflectDirection = reflect(-viewDirection, normalDirection);
                 float3 lightDirection = normalize(_WorldSpaceLightPos0.xyz);
                 float3 lightDir = normalize(float3(_WorldSpaceLightPos0.x,0,_WorldSpaceLightPos0.z));
+                float3 charSunDirection = normalize(_SunDirchar.xyz);
                 float3 halfDirection = normalize(viewDirection+lightDirection);
                 float3 halfDir = normalize(viewDirection+lightDir);
                 float3 lightColor = _LightColor0.rgb;
@@ -89,20 +91,16 @@ Shader "Character/Character_Heroic_WeaponWing" {
 				float plmncrm = dot(i.pl,float3(0.3,0.59,0.11));
 ///// Lightness:
                 float lightpower = ((lightColor.r*0.299)+(lightColor.g*0.587)+(lightColor.b*0.114));
-                float emispower = clamp(lightpower,0.0,1.0);
                 float NdotL = max(0, dot( normalDirection, lightDirection ));
                 float _NdotL = max(0, dot( normalDirection, -lightDirection ));
                 float Ndotv = max(0, dot( normalDirection, viewDirection ));
                 float Ndoth = max(0,dot(halfDirection,normalDirection));
-                float mrref = max(0,dot(reflect(-lightDirection,normalDirection),viewDirection));
-                float LdotH = max(0.0,dot(lightDirection, halfDirection));
-                float vdotH = max(0.0,dot(viewDirection, halfDirection));
                 float Ndothd = dot(normalDirection,halfDir);
+
                 float NdotV = max(0,1 - Ndotv);
                 float Ndotl = max(0,1 - NdotL);
-                float _Ndotl = max(0,1 - _NdotL);
+                float NdotSunchar = max(0,dot(charSunDirection,normalDirection)*NdotV);
                 fixed pie = 3.1415926535;
-                fixed pie2 = pie/2;
                 float3 sh = AmbientColorGradient(normalDirection);
                        sh = lerp(sh,dot(sh,float3(0.3,0.59,0.11)),NdotL);
                 float3 IBL = ImageBasedLighting(gloss,viewReflectDirection);
@@ -111,14 +109,14 @@ Shader "Character/Character_Heroic_WeaponWing" {
                 float3 _Rim = Rim(NdotV,_RimPower,_RimColor);
 
 ////// Specular:
-                float spGGX = SpecularGGX(pie, gloss, 0, max(Ndothd,Ndoth), NdotV, NdotL);
+                float spGGX = SpecularGGXWithHeadLight(pie, gloss, _MatMask_var.r, max(Ndothd,Ndoth), Ndotv, NdotV, NdotL,_NdotL);
                       spGGX += SpecularGGX(pie, gloss, 0, Ndotv, NdotV, NdotL);
                 float3 specular = CalculateSpecular(_SpecularmapRGBA_var.rgb,spGGX,gloss,attenColor,IBL,equiprange,0,0);
                        specular *= i.pl*_Pl;
                        specular *= _SpecularIntensity;
 /////// Diffuse:
                 float NdotLq = LightingWithHeadLight(NdotL, Ndotv, 0.4);
-                float3 diffuse = CalculateDiffuse(0,NdotLq,0,attenColor,sh,baseRGBA);
+                float3 diffuse = CalculateDiffuseAddon(0,NdotLq,0,attenColor,sh,baseRGBA,NdotSunchar);
 ////// Emissive:
                 float3 emission = baseRGBA * _MatMask_var.g;
 /// Final Color:
@@ -131,7 +129,7 @@ Shader "Character/Character_Heroic_WeaponWing" {
             }
             ENDCG
         }
-        UsePass "Hide/Character/CharacterPass/CHARACTERSHADOWCASTER"
+        UsePass "Hidden/Character/CharacterPass/CHARACTERSHADOWCASTER"
     }
 
     SubShader {
@@ -176,7 +174,7 @@ Shader "Character/Character_Heroic_WeaponWing" {
             uniform half _gloss;
             uniform fixed _headlight;
 
-            float4 frag(V2f_TeraPBR i) : COLOR {
+            half4 frag(V2f_TeraPBR i) : COLOR {
 ////// Textures:
                 float4 _BaseRGBA_var = tex2D(_BaseRGBA,TRANSFORM_TEX(i.uv0, _BaseRGBA));
                 clip(_BaseRGBA_var.a - 0.5);
@@ -210,22 +208,18 @@ Shader "Character/Character_Heroic_WeaponWing" {
 				float gloss = min(1,((_SpecularmapRGBA_var.a+_gloss)/(1+_gloss)));
 ///// Lightness:
                 float lightpower = ((lightColor.r*0.299)+(lightColor.g*0.587)+(lightColor.b*0.114));
-                float emispower = clamp(lightpower,0.0,1.0);
                 float NdotL = max(0, dot( normalDirection, lightDirection ));
-                float _NdotL = max(0, dot( normalDirection, -lightDirection ));
                 float Ndotv = max(0, dot( normalDirection, viewDirection ));
                 float Ndoth = max(0,dot(halfDirection,normalDirection));
                 float Ndothd = dot(normalDirection,halfDir);
                 float NdotV = max(0,1 - Ndotv);
                 float Ndotl = max(0,1 - NdotL);
-                float _Ndotl = max(0,1 - _NdotL);
                 fixed pie = 3.1415926535;
-                fixed pie2 = pie/2;
                 float3 sh = AmbientColorGradient(normalDirection);
                        sh = lerp(sh,dot(sh,float3(0.3,0.59,0.11)),NdotL);
                 float3 _Rim = Rim(NdotV,_RimPower,_RimColor);
 ////// Specular:
-                float spGGX = SpecularGGXWithHeadLight(pie, gloss, _MatMask_var.r, max(Ndothd,Ndoth), Ndotv, NdotV, NdotL,_NdotL);
+                float spGGX = SpecularGGX(pie, gloss, 0, max(Ndothd,Ndoth), NdotV, NdotL);
                 float3 specular = CalculateSpecular(_SpecularmapRGBA_var.rgb,spGGX,gloss,attenColor,0,equiprange,0,0);
                        specular *= i.pl*_Pl;
                        specular *= _SpecularIntensity;
@@ -242,7 +236,7 @@ Shader "Character/Character_Heroic_WeaponWing" {
             }
             ENDCG
         }
-        UsePass "Hide/Character/CharacterPass/CHARACTERSHADOWCASTER"
+        UsePass "Hidden/Character/CharacterPass/CHARACTERSHADOWCASTER"
     }
 
     SubShader {
@@ -254,8 +248,8 @@ Shader "Character/Character_Heroic_WeaponWing" {
         }
         LOD 200
 
-        UsePass "Hide/Character/CharacterPass/CHARACTERFORWARDBASEFLAKE"
-        UsePass "Hide/Character/CharacterPass/CHARACTERSHADOWCASTER"
+        UsePass "Hidden/Character/CharacterPass/CHARACTERFORWARDBASEFLAKE"
+        UsePass "Hidden/Character/CharacterPass/CHARACTERSHADOWCASTER"
     }
-    FallBack "Diffuse"
+    //FallBack "Diffuse"
 }

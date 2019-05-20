@@ -1,4 +1,4 @@
-Shader "Environment/Env_Fadeable" {
+Shader "TERA/Environment/Fadeable" {
 
 Properties {
 	_MainColor ("Top Color" ,Color) = (1,1,1,1)
@@ -45,7 +45,7 @@ SubShader {
                 o.pos = UnityObjectToClipPos(v.vertex );
                 return o;
             }
-            float4 frag(VertexOutput i) : COLOR {
+            half4 frag(VertexOutput i) : COLOR {
                 i.uv0.x = saturate(i.uv0.x);
                 float hg1 = i.uv0.x > 0.4 ? 1 : (i.uv0.x/0.4);
                 float hg2 = i.uv0.x > (1-0.4) ? ((1-i.uv0.x)/0.4) : 1;

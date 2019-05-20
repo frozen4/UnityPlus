@@ -1,6 +1,6 @@
 // Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-Shader "HDX/effect/distort_Alpha" {
+Shader "TERA/Fx/HDX/distort_Alpha" {
 Properties {
 	[HDR]_TintColor ("Tint Color", Color) = (0.5,0.5,0.5,0.5)
 	_NoiseTex ("Distort Texture (RG)", 2D) = "white" {}

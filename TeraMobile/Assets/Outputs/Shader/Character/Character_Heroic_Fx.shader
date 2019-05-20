@@ -1,4 +1,4 @@
-Shader "Character/Character_Heroic_withFX" {
+Shader "TERA/Character/Heroic_withFX" {
     Properties {
         _BaseRGBA ("Base(RGBA)", 2D) = "white" {}
         _SkinColor ("Skin Color Custom", Color) = (0,0.667,0.667,1)
@@ -95,7 +95,7 @@ Shader "Character/Character_Heroic_withFX" {
 			uniform fixed _TransmissionPointPower;
 			uniform fixed _TransmissionRange;
 
-            float4 frag(V2f_TeraPBRfx i) : COLOR {
+            half4 frag(V2f_TeraPBRfx i) : COLOR {
 // GeometryData:
 				i.normalDir = normalize(i.normalDir);
 				float3x3 tangentTransform = float3x3(i.tangentDir, i.bitangentDir, i.normalDir);
@@ -186,7 +186,7 @@ Shader "Character/Character_Heroic_withFX" {
             }
             ENDCG
         }
-        UsePass "Hide/Character/CharacterPass/CHARACTERSHADOWCASTER"
+        UsePass "Hidden/Character/CharacterPass/CHARACTERSHADOWCASTER"
     }
 
     SubShader {
@@ -198,8 +198,8 @@ Shader "Character/Character_Heroic_withFX" {
              }
         LOD 400
 
-        UsePass "Hide/Character/CharacterPass/CHARACTERFORWARDGGX"
-        UsePass "Hide/Character/CharacterPass/CHARACTERSHADOWCASTER"
+        UsePass "Hidden/Character/CharacterPass/CHARACTERFORWARDGGX"
+        UsePass "Hidden/Character/CharacterPass/CHARACTERSHADOWCASTER"
     }
 
     SubShader {
@@ -211,8 +211,8 @@ Shader "Character/Character_Heroic_withFX" {
              }
         LOD 200
 
-        UsePass "Hide/Character/CharacterPass/CHARACTERFORWARDBASE"
-        UsePass "Hide/Character/CharacterPass/CHARACTERSHADOWCASTER"
+        UsePass "Hidden/Character/CharacterPass/CHARACTERFORWARDBASE"
+        UsePass "Hidden/Character/CharacterPass/CHARACTERSHADOWCASTER"
     }
-    FallBack "Diffuse"
+    //FallBack "Diffuse"
 }

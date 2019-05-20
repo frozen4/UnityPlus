@@ -1,4 +1,4 @@
-Shader "HDX/Xffect/displacement/additive3layer" {
+Shader "TERA/Fx/HDX/displacement-additive3layer" {
 Properties {
  _VolumeExpansion ("Volume Expansion", Range(0.0, 1)) = 0
  [Header(Maskmap R G B)]
@@ -35,6 +35,7 @@ Properties {
  [HDR]_TintColor3 ("Tint Color", Color) = (0.5,0.5,0.5,0.5)
  _MainTex3 ("Main Texture", 2D) = "white" {}
  _DispMap3 ("Displacement Map (RG)", 2D) = "white" {}
+ [MaterialToggle] uvswitcher ("Use UV Channel2", Float ) = 0
  _ClipValue3  ("Clip Value", Range(0.0, 1.0)) = 0
  _MainScrollSpeedX3  ("Main Map Scroll Speed X", Float) = 0
  _MainScrollSpeedY3 ("Main Map Scroll Speed Y", Float) = 0
@@ -109,6 +110,7 @@ Category {
 		 uniform half _DispX3;
          uniform half _DispY3;
          uniform fixed4 _TintColor3;
+         uniform fixed uvswitcher;
          uniform half _VolumeExpansion;
 
          
@@ -116,6 +118,7 @@ Category {
              float4 vertex : POSITION;
              fixed4 color : COLOR;
              float2 texcoord : TEXCOORD0;
+             float2 texcoord1 : TEXCOORD1;
              float4 normal : NORMAL;
          };
 
@@ -127,7 +130,7 @@ Category {
 			 float4 uv2 : TEXCOORD3;
 			 float4 uv3 : TEXCOORD4;
 			 float2 uv4 : TEXCOORD5;
-			 float2 param : TEXCOORD2;
+			 float4 param : TEXCOORD2;
 
          }; 
          
@@ -137,17 +140,18 @@ Category {
              v.vertex += v.normal * _VolumeExpansion;
              o.vertex = UnityObjectToClipPos(v.vertex);
              o.color = v.color;
-             o.uv0.xy = TRANSFORM_TEX(v.texcoord, _MainTex1);
-             o.uv0.zw = TRANSFORM_TEX(v.texcoord, _DispMap1);
-             o.uv1.xy = TRANSFORM_TEX(v.texcoord, _MainTex2);
-             o.uv1.zw = TRANSFORM_TEX(v.texcoord, _DispMap2);
-             o.uv2.xy = TRANSFORM_TEX(v.texcoord, _MainTex3);
-             o.uv2.zw = TRANSFORM_TEX(v.texcoord, _DispMap3);
-             o.uv3.xy = TRANSFORM_TEX(v.texcoord, _maskuvR);
-             o.uv3.zw = TRANSFORM_TEX(v.texcoord, _maskuvG);
-             o.uv4.xy = TRANSFORM_TEX(v.texcoord, _maskuvB);
+             o.param.zw = lerp(v.texcoord,v.texcoord1,uvswitcher);
+             o.uv0.xy = TRANSFORM_TEX(o.param.zw, _MainTex1);
+             o.uv0.zw = TRANSFORM_TEX(o.param.zw, _DispMap1);
+             o.uv1.xy = TRANSFORM_TEX(o.param.zw, _MainTex2);
+             o.uv1.zw = TRANSFORM_TEX(o.param.zw, _DispMap2);
+             o.uv2.xy = TRANSFORM_TEX(o.param.zw, _MainTex3);
+             o.uv2.zw = TRANSFORM_TEX(o.param.zw, _DispMap3);
+             o.uv3.xy = TRANSFORM_TEX(o.param.zw, _maskuvR);
+             o.uv3.zw = TRANSFORM_TEX(o.param.zw, _maskuvG);
+             o.uv4.xy = TRANSFORM_TEX(o.param.zw, _maskuvB);
 //             o.uv1.zw = TRANSFORM_TEX(v.texcoord, _AlphaTex);
-			 o.param = v.texcoord;
+			 o.param.xy = v.texcoord;
              return o;
          }
          half4 frag (v2f i) : COLOR

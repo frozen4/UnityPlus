@@ -1,4 +1,4 @@
-Shader "Character/Character_NPC" {
+Shader "TERA/Character/NPC" {
     Properties {
         _BaseRGBA ("Base(RGBA)", 2D) = "white" {}
         _Skinems ("Skin Ambient Bounce", Color) = (1,1,1,1)
@@ -77,7 +77,7 @@ Shader "Character/Character_NPC" {
 			fixed4 _DeathColor;
 			fixed4 _DeathParamters;
 
-            float4 frag(V2f_TeraPBR i) : COLOR {
+            half4 frag(V2f_TeraPBR i) : COLOR {
                 i.normalDir = normalize(i.normalDir);
                 float3x3 tangentTransform = float3x3( i.tangentDir, i.bitangentDir, i.normalDir);
                 float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
@@ -134,7 +134,7 @@ Shader "Character/Character_NPC" {
             }
             ENDCG
         }
-        UsePass "Hide/Character/CharacterPass/CHARACTERSHADOWCASTER"
+        UsePass "Hidden/Character/CharacterPass/CHARACTERSHADOWCASTER"
     }
 
     SubShader {
@@ -145,8 +145,8 @@ Shader "Character/Character_NPC" {
             "DisableBatching"="True"
         }
         LOD 200
-        UsePass "Hide/Character/CharacterPass/CHARACTERNOLIGHTBASE"
-        UsePass "Hide/Character/CharacterPass/CHARACTERSHADOWCASTER"
+        UsePass "Hidden/Character/CharacterPass/CHARACTERNOLIGHTBASE"
+        UsePass "Hidden/Character/CharacterPass/CHARACTERSHADOWCASTER"
     }
-    FallBack "Diffuse"
+    //FallBack "Diffuse"
 }

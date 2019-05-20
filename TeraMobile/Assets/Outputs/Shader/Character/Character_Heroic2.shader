@@ -1,4 +1,4 @@
-Shader "Character/Character_Heroic2" {
+Shader "TERA/Character/Character_Heroic2" {
     Properties {
         _BaseRGBA ("Base(RGBA)", 2D) = "white" {}
         _SkinColor ("Skin Color Custom", Color) = (0,0.667,0.667,1)
@@ -76,7 +76,7 @@ Shader "Character/Character_Heroic2" {
 			uniform fixed _TransmissionPointPower;
 			uniform fixed _TransmissionRange;
 
-            float4 frag(V2f_TeraPBR i) : COLOR {
+            half4 frag(V2f_TeraPBR i) : COLOR {
 // GeometryData:
 				i.normalDir = normalize(i.normalDir);
 				float3x3 tangentTransform = float3x3(i.tangentDir, i.bitangentDir, i.normalDir);
@@ -141,7 +141,7 @@ Shader "Character/Character_Heroic2" {
                 float spGGX = SpecularGGXWithHeadLight(pie, gloss, _MatMask_var.r, max(Ndothd,Ndoth), Ndotv, NdotV, NdotL,_NdotL);
                 float3 sPc_skin = Specularskin(gloss, max(Ndothd,Ndoth), _lf, spGGX, NdotL, attenColor, Ndotv, _MatMask_var.r, Ndotl, _skinspcolor, specmncrm);
                 float3 specular = CalculateSpecular(_SpecularmapRGBA_var.rgb,spGGX,gloss,attenColor,IBL,equiprange,sPc_skin,0);
-                       specular *= i.pl * _SpecularIntensity;
+                specular *= i.pl * _SpecularIntensity;
 /////// Diffuse:
                 float NdotLq = NdotL * 0.8 * equiprange;
                        NdotL = max(-_brdfrange, NdotL);
@@ -152,21 +152,21 @@ Shader "Character/Character_Heroic2" {
                 float3 scattering = scatter * _Skinems * 0.5;
                 float3 sssadd = _MatMask_var.b * (T*_MatMask_var.r+NdotO) * _TransmissionColor.rgb*0.5;
                 float3 diffuse = CalculateDiffuse(NdotLs,NdotLq,scattering,attenColor,sh,baseRGBA) * lerp(i.pl,1,_skinpoint);
-                       diffuse = lerp(diffuse,_skincolor*(1+_se*NdotL),NdotL*_MatMask_var.r);
-                       diffuse += sssadd;
+                diffuse = lerp(diffuse,_skincolor*(1+_se*NdotL),NdotL*_MatMask_var.r);
+                diffuse += sssadd;
 //////// Emissive:
 //                float3 emission = baseRGBA * _MatMask_var.a;
 /// Final Color:
                 float reflerp = reflp(_SpecularmapRGBA_var.rgb,pie);
-                      reflerp *= equiprange;
-                float3 finalColor = FinalColor(diffuse,specular,reflerp,_Rim,zis);
+                reflerp *= equiprange;
+                half3 finalColor = FinalColor(diffuse,specular,reflerp,_Rim,zis);
                 half4 finalRGBA = half4(max(0.001,finalColor),1);
                 UNITY_APPLY_FOG(i.fogCoord, finalRGBA);
                 return finalRGBA;
             }
             ENDCG
         }
-        UsePass "Hide/Character/CharacterPass/CHARACTERSHADOWCASTER"
+        UsePass "Hidden/Character/CharacterPass/CHARACTERSHADOWCASTER"
     }
 
     SubShader {
@@ -178,8 +178,8 @@ Shader "Character/Character_Heroic2" {
              }
         LOD 400
 
-        UsePass "Hide/Character/CharacterPass/CHARACTERFORWARDGGX"
-        UsePass "Hide/Character/CharacterPass/CHARACTERSHADOWCASTER"
+        UsePass "Hidden/Character/CharacterPass/CHARACTERFORWARDGGX"
+        UsePass "Hidden/Character/CharacterPass/CHARACTERSHADOWCASTER"
     }
 
     SubShader {
@@ -191,8 +191,8 @@ Shader "Character/Character_Heroic2" {
              }
         LOD 200
 
-        UsePass "Hide/Character/CharacterPass/CHARACTERFORWARDBASE"
-        UsePass "Hide/Character/CharacterPass/CHARACTERSHADOWCASTER"
+        UsePass "Hidden/Character/CharacterPass/CHARACTERFORWARDBASE"
+        UsePass "Hidden/Character/CharacterPass/CHARACTERSHADOWCASTER"
     }
-    FallBack "Diffuse"
+    //FallBack "Diffuse"
 }

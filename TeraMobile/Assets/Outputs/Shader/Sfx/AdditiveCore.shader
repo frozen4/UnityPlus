@@ -1,6 +1,6 @@
 // Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-Shader "ArcReactor/Additive_core_higlight" {
+Shader "TERA/Fx/Additive_core_higlight" {
 Properties {
 	_StartColor ("Start Color", Color) = (0.5,0.5,0.5,0.5)	
 	_EndColor ("End Color", Color) = (0.5,0.5,0.5,0.5)	

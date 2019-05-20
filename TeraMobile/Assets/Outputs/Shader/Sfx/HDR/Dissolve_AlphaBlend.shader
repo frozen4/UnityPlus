@@ -1,6 +1,6 @@
 // Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-Shader "HDX/Rockie/Transparent/DissolveShader_AlphaBlend"
+Shader "TERA/Fx/HDX/DissolveShader_AlphaBlend"
 {
     Properties
     {
@@ -21,7 +21,7 @@ Shader "HDX/Rockie/Transparent/DissolveShader_AlphaBlend"
             "Queue" = "Transparent"
             "IgnoreProjector" = "True"
             "RenderType" = "Transparent"
-            "LightMode" = "Always"
+            "LightMode"="ForwardBase"
         }
 
         // Back pass

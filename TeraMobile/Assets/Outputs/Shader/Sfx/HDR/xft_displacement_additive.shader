@@ -1,12 +1,13 @@
 // Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-Shader "HDX/Xffect/displacement/additive" {
+Shader "TERA/Fx/HDX/displacement-additive" {
 Properties {
  [HDR]_TintColor ("Tint Color", Color) = (0.5,0.5,0.5,0.5)
  _MainTex ("Main Texture", 2D) = "white" {}
  _DispMap ("Displacement Map (RG)", 2D) = "white" {}
  _MaskTex ("Mask(R)", 2D) = "white" {}
  _AlphaTex ("Alpha(R)", 2D) = "white" {}
+ [MaterialToggle] uvswitcher ("Use UV Channel2", Float ) = 0
  _ClipValue  ("Clip Value", Range(0.0, 1.0)) = 0
  _MainScrollSpeedX  ("Main Map Scroll Speed X", Float) = 0
  _MainScrollSpeedY  ("Main Map Scroll Speed Y", Float) = 0
@@ -64,7 +65,7 @@ Category {
 
 		 uniform half _DispX;
          uniform half _DispY;
-
+         uniform fixed uvswitcher;
 
          uniform fixed4 _TintColor;
 
@@ -75,6 +76,7 @@ Category {
              float4 vertex : POSITION;
              fixed4 color : COLOR;
              float2 texcoord : TEXCOORD0;
+             float2 texcoord1 : TEXCOORD1;
              float4 normal : NORMAL;
          };
 
@@ -83,7 +85,7 @@ Category {
              fixed4 color : COLOR;             
              float4 uv0 : TEXCOORD0;
 			 float4 uv1 : TEXCOORD1;
-			 float2 param : TEXCOORD2;
+			 float4 param : TEXCOORD2;
          }; 
          
          v2f vert (appdata_t v)
@@ -92,11 +94,12 @@ Category {
              v.vertex += v.normal * _VolumeExpansion;
              o.vertex = UnityObjectToClipPos(v.vertex);
              o.color = v.color;
-             o.uv0.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
-             o.uv0.zw = TRANSFORM_TEX(v.texcoord, _DispMap);
-             o.uv1.xy = TRANSFORM_TEX(v.texcoord, _MaskTex);
-             o.uv1.zw = TRANSFORM_TEX(v.texcoord, _AlphaTex);
-			 o.param = v.texcoord;
+             o.param.zw = lerp(v.texcoord,v.texcoord1,uvswitcher);
+             o.uv0.xy = TRANSFORM_TEX(o.param.zw, _MainTex);
+             o.uv0.zw = TRANSFORM_TEX(o.param.zw, _DispMap);
+             o.uv1.xy = TRANSFORM_TEX(o.param.zw, _MaskTex);
+             o.uv1.zw = TRANSFORM_TEX(o.param.zw, _AlphaTex);
+			 o.param.xy = v.texcoord;
              return o;
          }
          half4 frag (v2f i) : COLOR

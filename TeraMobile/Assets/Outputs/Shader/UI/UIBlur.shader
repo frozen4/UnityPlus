@@ -1,4 +1,4 @@
-﻿Shader "UI/Blur" {
+﻿Shader "TERA/UI/Blur" {
 Properties {
 	_MainTex ("", 2D) = "" {}
 	_BlurOffsets("", Vector) = (1,1,1,-1)
