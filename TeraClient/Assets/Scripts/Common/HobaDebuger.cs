@@ -51,11 +51,10 @@ namespace Common
             LogWarning(HobaText.Format(format, args));
 		}
 
-		static public void LogError(object message)
+	    public static void LogError(object message)
 		{
 			if (GameLogLevel >= LogLevel.Error)
 			{
-                //AndroidLogger.Instance.WriteToSDCard(message.ToString());
 				UnityEngine.Debug.LogError(message);
             }
 		}

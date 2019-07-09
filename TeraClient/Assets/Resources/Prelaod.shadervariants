@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!200 &20000000
+ShaderVariantCollection:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Prelaod
+  m_Shaders:
+    data:
+      first: {fileID: 10703, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: DIRECTIONAL FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING SHADOWS_SCREEN
+          passType: 4
+    data:
+      first: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants: []
+    data:
+      first: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+        - keywords: UNITY_UI_ALPHACLIP
+          passType: 0
+    data:
+      first: {fileID: 10782, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+        - keywords: UNITY_UI_ALPHACLIP
+          passType: 0
+    data:
+      first: {fileID: 16000, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 16002, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 085bdb594e63cf84a9e37a29b4165ae5, type: 3}
+      second:
+        variants:
+        - keywords: FOG_LINEAR
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 69d834489b789734d81a1b480f1d83ae, type: 3}
+      second:
+        variants:
+        - keywords: DIRECTIONAL FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING SHADOWS_SCREEN
+          passType: 4
+    data:
+      first: {fileID: 4800000, guid: 226d221029d3cf847ba43f1058f56149, type: 3}
+      second:
+        variants:
+        - keywords: DIRECTIONAL FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING SHADOWS_SCREEN
+          passType: 4
+    data:
+      first: {fileID: 4800000, guid: bfd89aca4409d124d9de7dd52cbbfbc2, type: 3}
+      second:
+        variants:
+        - keywords: DIRECTIONAL FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING SHADOWS_SCREEN
+          passType: 4
+    data:
+      first: {fileID: 4800000, guid: 26f1cb3e965851941b96a6d18409932b, type: 3}
+      second:
+        variants:
+        - keywords: DIRECTIONAL FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING SHADOWS_SCREEN
+          passType: 4
+    data:
+      first: {fileID: 4800000, guid: 6c48f965a6821854db445226bc2bff2d, type: 3}
+      second:
+        variants:
+        - keywords: DIRECTIONAL FOG_LINEAR LIGHTMAP_ON LIGHTMAP_SHADOW_MIXING SHADOWS_SCREEN
+          passType: 4

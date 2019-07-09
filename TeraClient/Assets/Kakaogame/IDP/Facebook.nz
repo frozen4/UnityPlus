@@ -1,0 +1,119 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+/*
+만약 이 부분에서 에러가 발생하는 경우에는 
+프로젝트에 Facebook SDK가 설치되지 않은 상태입니다.
+
+아래의 링크에서 플러그인을 다운받아 프로젝트에 Facebook SDK를 설치해 주세요.
+https://developers.facebook.com/docs/unity
+
+혹은 페이스북을 사용하지 않는 프로젝트일 경우에는
+SDK Config에서 'Facebook' 항목에 체크를 풀어주시기 바랍니다.
+
+* 체크를 풀어도 해결되지 않으시는 경우에는
+Assets/Kakaogame/IDP/Facebook.cs 파일의 확장자를 .nz로 수동으로 변경해 주세요.
+ */
+using Facebook.Unity;
+
+namespace Kakaogame.SDK.IDP
+{
+    using Kakaogame.Base;
+
+    public class Facebook : IDProvider
+    {
+        public string accessToken
+        {
+            get
+            {
+                return AccessToken.CurrentAccessToken.TokenString;
+            }
+        }
+        public string userId
+        {
+            get
+            {
+                return AccessToken.CurrentAccessToken.UserId;
+            }
+        }
+        public bool isAuthorized
+        {
+            get
+            {
+                return FB.IsLoggedIn;
+            }
+        }
+
+        public void Initialize(Action<bool> callback)
+        {
+            if (FB.IsInitialized == false)
+            {
+                FB.Init(() =>
+                {
+                    callback(FB.IsInitialized);
+                });
+            }
+            else
+                callback(true);
+        }
+
+        private void _Login(Action<bool> callback)
+        {
+            var permissions = Editor.KGSharedData.instance.facebook.permissions;
+            if (permissions == null)
+                permissions = new List<string>();
+
+            KGDebug.Verbose("FacebookLogin With ReadPermissions : " + string.Join(", ", permissions.ToArray()));
+
+            FB.LogInWithReadPermissions(
+                permissions,
+                callback: (ILoginResult result) =>
+                {
+                    if (FB.IsLoggedIn)
+                        callback(true);
+                    else {
+                        callback(false);
+
+                        Base.KGDebug.Warning(result.Error);
+                    }
+                });
+        }
+        public void Login(Action<bool> callback)
+        {
+            Initialize(_ =>
+            {
+                _Login(callback);
+            });
+        }
+        public void Logout(Action<bool> callback)
+        {
+            FB.LogOut();
+
+            callback(true);
+        }
+        public void Unregister(Action<bool> callback)
+        {
+            // since there's no unregister API in FBSDK
+            FB.LogOut();
+
+            callback(true);
+        }
+
+        public void Refresh(Action<bool> callback)
+        {
+            FB.Mobile.RefreshCurrentAccessToken(
+                (IAccessTokenRefreshResult result) =>
+                {
+                    Base.KGDebug.Verbose("FacebookRefreshResult : " + FB.IsLoggedIn);
+                    Base.KGDebug.Verbose("FacebookRefreshError : " + result.Error);
+
+                    if (FB.IsLoggedIn)
+                        callback(true);
+                    else
+                        callback(false);
+                });
+        }
+    }
+}

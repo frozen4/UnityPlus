@@ -15,6 +15,7 @@ using System;
     【注意】
     - 非线程安全
     - 循环调用也会出现逻辑错误 
+
     var sb = HobaText.GetStringBuilder();
     sb.Append(HobaText.Formate("{0}", 10000));
   =======================================================================*/
@@ -37,6 +38,9 @@ public static class HobaText
     public static StringBuilder GetStringBuilder(string str)
     {
 #if true
+        if(_StringBuilder == null)
+            _StringBuilder = new StringBuilder(1024);
+
         _StringBuilder.Length = 0;
         _StringBuilder.Append(str);
         return _StringBuilder;

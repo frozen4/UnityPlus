@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 配置各种语言需要的更新文字 -->
+
+<UpdateStringConfig>
+    <SystemRequire_Memory text="系统的内存不足 {0} MB，可能无法正常运行，继续吗?" />
+    <SystemRequire_Space text="系统的空闲存储空间不足 {0} MB，游戏无法正常运行" />
+
+    <UpdateState_Success text="準備開始遊戲, 請稍候..." />
+    <UpdateState_UpdateVersionFileErr text="更新版本文件錯誤" />
+    <UpdateState_OpenPackFileErr text="打開文件包錯誤" />
+    <UpdateState_DiskSpaceFullErr text="沒有足夠的磁盤空間" />
+    <UpdateState_GetLocalVersionErr text="無法獲取本地版本" />
+    <UpdateState_GetNewVersionErr text="無法獲取伺服器版本, 請檢查網絡連接" />
+    <UpdateState_NetworkErr text="网络错误" />
+    <UpdateState_NetConnectionErr text="网络无法连接" />
+    <UpdateState_NetUnstable text="网络下载状态异常，请稍后再试..." />
+    <UpdateState_DownloadCheck text="是否進行更新，預計資源下載大小為" />
+    <UpdateState_LocalVersionTooOldErr text="本地版本過低" />
+    <UpdateState_ServerMaintananceErr text="伺服器無法找到升級版本" />
+    <UpdateState_AutoUpdateErr text="自動更新錯誤" />
+    <UpdateState_UnknownErr text="未知錯誤" />
+    <UpdateState_DownloadingErrAutoRetry text="下載錯誤，自動重試中..." />
+    <UpdateStatus_Start text="更新開始..." />
+    <UpdateStatus_TryGetLocalVersion text="獲取本地版本..." />
+    <UpdateStatus_TryCheckFreeSpace text="檢查磁盤空間..." />
+    <UpdateStatus_TryGetNewVersion text="獲取伺服器版本..." />
+    <UpdateStatus_TryDNSResolving text="嘗試連接伺服器..." />
+    <UpdateStatus_SuccessGetVersions text="獲取版本成功" />
+    <UpdateStatus_BeginUpdate text="更新提示" />
+    <UpdateStatus_LastWritePackErr text="上次寫包錯誤，請重新運行程式更新" />
+    <UpdateStatus_Downloading text="下載進度" />
+    <UpdateStatus_WritingPack text="正在寫包，请稍候..." />
+    <UpdateStatus_DownloadingServerList text="下載伺服器列表..." />
+    <UpdateStatus_CheckingExistPack text="檢查下載內容完整性, 請稍候..."/>
+    <UpdateStatus_PrepareWritingPack text="準備寫包，請稍候..." />
+    <UpdateString_CurrentVersion text="當前版本" />
+    <UpdateString_ServerVersion text="伺服器版本" />
+    <UpdateString_Yes text="是" />
+    <UpdateString_No text="否" />
+    <UpdateString_Ok text="確定" />
+    <UpdateString_Cancel text="取消" />
+    <UpdateString_HasErrorNotWifi text="非wifi環境，繼續下載嗎？" />
+    <UpdateString_HasErrorRetry text="發生錯誤，重試?" />
+    <UpdateString_HasError text="錯誤" />
+    <UpdateString_HasFatalErrorNeedReinstall text="遊戲版本過低，請前往應用商店下載最新遊戲版本" />
+    <UpdateString_HasFatalErrorNeedCleanUp text="發生嚴重錯誤，需要清理更新目錄，重新更新!"/>
+    <UpdateString_HasFatalError text="嚴重錯誤" />
+    <UpdateString_PrepareForFirstTimeUse text="正在為初次運行做準備..." />
+    <UpdateString_EnsureEnoughSpaceMB text="請確保有足夠的存储空間" />
+    <UpdateString_TextUpdate text="正在下載更新，請稍候..."/>
+    <UpdateString_FileSize text="文件大小:"/>
+    <UpdateString_DownloadSpeed text="下载速度:"/>
+    <UpdateString_VideoTitle text="視頻展示"/>
+    <UpdateString_PictureTitle text="遊戲嚮導"/>
+    <UpdateStatus_WifiTips text="建議WIFI環境下下載"/>
+
+    <PlatformSDKString_InitFailedTitle text="錯誤"/>
+    <PlatformSDKString_ErrorCode text="（錯誤碼：{0}）"/>
+    <PlatformSDKString_UnknownErr text="平台發生未知錯誤。"/>
+    <PlatformSDKString_NetworkFailure text="網絡不穩定，請檢查網絡狀態後再嘗試。"/>
+    <PlatformSDKString_ServerTimeout text="響應超時，請重新嘗試。"/>
+    <PlatformSDKString_InitializationFailed text="初始化失敗，請關閉App並重新啟動。"/>
+</UpdateStringConfig>

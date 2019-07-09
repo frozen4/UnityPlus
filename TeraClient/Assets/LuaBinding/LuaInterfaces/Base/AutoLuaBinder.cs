@@ -1,0 +1,65 @@
+﻿using System;
+
+public static class AutoLuaBinder
+{
+	public static void Bind(IntPtr L)
+	{
+		AnimationClipWrap.Register(L);
+		BehaviourWrap.Register(L);
+		CanvasWrap.Register(L);
+		CBallCurvMotorWrap.Register(L);
+		CFxFollowTargetWrap.Register(L);
+		CFxOneWrap.Register(L);
+		CGameSessionWrap.Register(L);
+		CGhostEffectManWrap.Register(L);
+		CHUDFollowTargetWrap.Register(L);
+		CLinearMotorWrap.Register(L);
+		CMotorWrap.Register(L);
+		CMutantBezierMotorWrap.Register(L);
+		ComponentWrap.Register(L);
+		CParabolicMotorWrap.Register(L);
+		CTargetMotorWrap.Register(L);
+		DG_Tweening_DOTweenAnimationWrap.Register(L);
+		DG_Tweening_DOTweenPlayerWrap.Register(L);
+		EntityComponent_AnimationUnitWrap.Register(L);
+		EntityComponent_CombatStateChangeBehaviourWrap.Register(L);
+		EntityComponent_HorseStandBehaviourWrap.Register(L);
+		EntityComponent_NpcStandBehaviourWrap.Register(L);
+		GameObjectPoolWrap.Register(L);
+		GBaseWrap.Register(L);
+		GBloodWrap.Register(L);
+		GButtonWrap.Register(L);
+		GDragablePageViewWrap.Register(L);
+		GNewGridBaseWrap.Register(L);
+		GNewIOSToggleWrap.Register(L);
+		GNewLayoutTableWrap.Register(L);
+		GNewListBaseWrap.Register(L);
+		GNewListLoopWrap.Register(L);
+		GNewListWrap.Register(L);
+		GNewTableBaseWrap.Register(L);
+		GNewTabListWrap.Register(L);
+		GNewUIBaseWrap.Register(L);
+		GNewUI_GUISceneWrap.Register(L);
+		GScaleScrollWrap.Register(L);
+		GTextWrap.Register(L);
+		LightWrap.Register(L);
+		MonoBehaviourWrap.Register(L);
+		PlayModeWrap.Register(L);
+		RectTransformWrap.Register(L);
+		ResourcesWrap.Register(L);
+		SystemInfoWrap.Register(L);
+		TimeWrap.Register(L);
+		UIEventListenerWrap.Register(L);
+		UITemplateWrap.Register(L);
+		UnityEngine_EventSystems_UIBehaviourWrap.Register(L);
+		UnityEngine_UI_ButtonWrap.Register(L);
+		UnityEngine_UI_GraphicRaycasterWrap.Register(L);
+		UnityEngine_UI_ImageWrap.Register(L);
+		UnityEngine_UI_InputFieldWrap.Register(L);
+		UnityEngine_UI_ScrollbarWrap.Register(L);
+		UnityEngine_UI_SelectableWrap.Register(L);
+		UnityEngine_UI_SliderWrap.Register(L);
+		UnityEngine_UI_TextWrap.Register(L);
+		UnityEngine_UI_ToggleWrap.Register(L);
+	}
+}

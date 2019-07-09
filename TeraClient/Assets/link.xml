@@ -1,0 +1,13 @@
+<linker>
+	<assembly fullname="UnityEngine">
+		<type fullname="UnityEngine.MeshCollider" preserve="all"/>
+		<type fullname="UnityEngine.CapsuleCollider" preserve="all"/>
+		<type fullname="UnityEngine.ParticleSystemRenderer" preserve="all"/>
+		<type fullname="UnityEngine.FlareLayer" preserve="all"/>
+		<type fullname="UnityEngine.TerrainData" preserve="all"/>
+		<type fullname="UnityEngine.Terrain" preserve="all"/>
+		<type fullname="UnityEngine.TerrainCollider" preserve="all"/>
+		<type fullname="UnityEngine.AnimatorController" preserve="all"/>
+		<type fullname="UnityEngine.Avatar" preserve="all"/>
+   </assembly>
+</linker>

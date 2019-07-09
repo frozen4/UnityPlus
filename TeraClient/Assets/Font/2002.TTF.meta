@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 764fc5de2c1e6ac45ab17259ec1c8b4a
+timeCreated: 1545876148
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: YD2002
+  fontNames:
+  - YD2002
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990401b03a588ca48ba2068f530fad1c, type: 3}
+  m_Name: attack_elem_thunder_c
+  m_EditorClassIdentifier: 
+  _Offset: {x: 0, y: 80}
+  _XRandomNum: 0.25
+  _Font: {fileID: 12800000, guid: 3a713987512ca1c45accfe1c52dd1b3e, type: 2}
+  _FontScale: 0.33333334
+  _IsOnTopLayer: 1
+  _BGType: 0
+  _MotionList:
+  - {fileID: 11400000, guid: 1c6426e62a95e764dbed9f6d90a7b674, type: 2}
+  - {fileID: 11400000, guid: 616ea926db084a64d8a135a741b7b22e, type: 2}
+  - {fileID: 11400000, guid: c3b33112f45c62048b32e22b3f3531db, type: 2}
+  - {fileID: 11400000, guid: cf9b292a6205d7d49ac5903317ec1254, type: 2}
+  - {fileID: 11400000, guid: 0e7a976d251ebfd4fbb511cd9b2d627f, type: 2}
+  - {fileID: 11400000, guid: 7b2d2141096be6f4bae12731dc67c439, type: 2}
+  - {fileID: 11400000, guid: 2718974fcda12d348b871c7cf89d0db7, type: 2}

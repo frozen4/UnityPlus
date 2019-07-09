@@ -1,0 +1,685 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KakaoGame.SDK.Kakao</name>
+    </assembly>
+    <members>
+        <member name="T:Kakaogame.SDK.Kakao.KGKakaoInvitationEvent">
+            <summary>
+            KGKKakaoInvitationEvent클래스는 보상형 초대 이벤트 정보를 제공한다.
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoInvitationEvent.eventId">
+            <summary>
+            이벤트 아이디
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoInvitationEvent.startTime">
+            <summary>
+            이벤트 시작 시각. Epoch time(단위:ms).
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoInvitationEvent.finishTime">
+            <summary>
+            이벤트 종료 시각. Epoch time(단위:ms).
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoInvitationEvent.maxHostRewardCount">
+            <summary>
+            초대자가 받을 수 있는 최대 보상 갯수
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoInvitationEvent.isEventCardEnabled">
+            <summary>
+            이벤트 카드 노출 여부
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoInvitationEvent.hostRewardCode">
+            <summary>
+            초대자가 받을 보상 아이템 코드
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoInvitationEvent.joinRewardCode">
+            <summary>
+            참여자가 받을 보상 아이템 코드
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoInvitationEvent.invitationUrl">
+            <summary>
+            초대 URL
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoInvitationEvent.totalJoinerCount">
+            <summary>
+            나의 초대로 참여한 플레이어 수
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGKakaoInvitationEvent.LoadInvitationEvents(Kakaogame.SDK.Kakao.KGResultCallbackWithInvitationEvents)">
+            <summary>
+            초대/보상 이벤트 목록을 조회한다.
+            </summary>
+            <param name="callback"></param>
+        </member>
+        <member name="T:Kakaogame.SDK.Kakao.KGKakaoInvitationHost">
+            <summary>
+            KGKakaoInvitationHost클래스는 초대/보상 이벤트에서 나를 초대한 플레이어의 정보를 제공한다.
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoInvitationHost.player">
+            <summary>
+            초대자 플레이어
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoInvitationHost.totalJoinerCount">
+            <summary>
+            초대자의 초대로 참여한 플레이어 수
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGKakaoInvitationHost.LoadInvitationHost(System.Int32,Kakaogame.SDK.Kakao.KGResultCallbackWithInvitationHost)">
+            <summary>
+            나를 초대한 초대자의 정보를 조회한다
+            </summary>
+            <param name="eventId">이벤트 아이디</param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGKakaoInvitationHost.LoadInvitationHosts(System.Int32,Kakaogame.SDK.Kakao.KGResultCallbackWithInvitationHosts)">
+            <summary>
+            나를 초대한 초대자 목록의 정보를 조회한다
+            </summary>
+            <param name="eventId">이벤트 아이디</param>
+            <param name="callback"></param>
+        </member>
+        <member name="T:Kakaogame.SDK.Kakao.KGKakaoInvitationJoiner">
+            <summary>
+            KGKakaoInvitationJoiner클래스는 초대/보상 이벤트에서 내 초대로 참여한 플레이어의 정보를 제공한다.
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoInvitationJoiner.player">
+            <summary>
+            참여자의 플레이어 정보
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoInvitationJoiner.joinTime">
+            <summary>
+            참여 시각. Epoch time(단위:ms).
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoInvitationJoiner.hostRewardCode">
+            <summary>
+            초대자의 보상 아이템 코드
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoInvitationJoiner.hostRewardState">
+            <summary>
+            초대자의 보상 아이템 상태
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoInvitationJoiner.joinRewardCode">
+            <summary>
+            참여자의 보상 아이템 코드
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoInvitationJoiner.joinRewardState">
+            <summary>
+            참여자의 보상 아이템 상태
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGKakaoInvitationJoiner.LoadInvitationJoiners(System.Int32,Kakaogame.SDK.Kakao.KGResultCallbackWithInvitationJoiners)">
+            <summary>
+            내가 초대해서 참여한 참여자의 목록을 조회한다.
+            </summary>
+            <param name="eventId">이벤트 아이디</param>
+            <param name="callback"></param>
+        </member>
+        <member name="F:Kakaogame.SDK.Kakao.KGKakaoInvitationRewardState.NotRewarded">
+            <summary>
+            지급 안됨
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.Kakao.KGKakaoInvitationRewardState.Rewarded">
+            <summary>
+            지급됨
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.Kakao.KGKakaoInvitationRewardState.ExceedRewardCount">
+            <summary>
+            지급 한도 초과
+            </summary>
+        </member>
+        <member name="T:Kakaogame.SDK.Kakao.KGKakaoStory">
+            <summary>
+            KGKakaoStory클래스는 스토리를 포스팅하는 기능을 제공한다. 
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGKakaoStory.IsKakaoStoryUser(Kakaogame.SDK.Kakao.KGResultWithIsKakaoStoryUserValueCallback)">
+            <summary>
+            현재 로그인 된 유저가 카카오 스토리 유저인지 조회한다.
+            </summary>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGKakaoStory.PostStory(System.String,System.String,Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            미리 등록된 템플릿의 스토리를 등록한다.
+            </summary>
+            <param name="templateId">템플릿 아이디</param>
+            <param name="content">내용 (null일 경우 템플릿 텍스트 사용)</param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGKakaoStory.PostCustomStory(UnityEngine.Texture2D,System.String,Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            커스텀 스토리를 등록한다.
+            </summary>
+            <param name="image">이미지</param>
+            <param name="content">내용</param>
+            <param name="callback"></param>
+        </member>
+        <member name="T:Kakaogame.SDK.Kakao.KGKakaoTalkGroupChatType">
+            <summary>
+            그룹 채팅방 종류
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.Kakao.KGKakaoTalkGroupChatType.Regular">
+            <summary>
+            일반 그룹 채팅
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.Kakao.KGKakaoTalkGroupChatType.Open">
+            <summary>
+            오픈챗
+            </summary>
+        </member>
+        <member name="T:Kakaogame.SDK.Kakao.KGKakaoTalkGroupChat">
+            <summary>
+            KGKakaoTalkGroupChat클래스는 그룹채팅 정보를 제공한다.
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoTalkGroupChat.chatId">
+            <summary>
+            그룹채팅 아이디
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoTalkGroupChat.title">
+            <summary>
+            제목
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoTalkGroupChat.thumbnailImageUrl">
+            <summary>
+            그룹채팅 프로필 이미지 URL
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoTalkGroupChat.memberCount">
+            <summary>
+            멤버 수
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoTalkGroupChat.memberThumbnailImageUrls">
+            <summary>
+            그룹채팅 멤버의 프로필 이미지 URL 목록
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGKakaoTalkGroupChat.LoadGroupChatList(System.Int32,System.Int32,System.Action{Kakaogame.SDK.KGResult,System.Int32,System.Collections.Generic.List{Kakaogame.SDK.Kakao.KGKakaoTalkGroupChat}})">
+            <summary>
+            현재 카카오 유저가 속한 카카오톡의 그룹 채팅방 목록을 조회한다.
+            </summary>
+            <param name="offset">조회할 오프셋. 0부터 시작.</param>
+            <param name="limit">한번에 가져올 최대 갯수.</param>
+            <param name="callback"></param>
+        </member>
+        <member name="T:Kakaogame.SDK.Kakao.KGKakaoTalkMessage">
+            <summary>
+            KGKakaoTalkMessage클래스는 카카오톡 메시지 전송 기능을 제공한다.
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGKakaoTalkMessage.ShowAllowMessageSettingView(Kakaogame.SDK.Kakao.KGResultWithMessageAllowedValueCallback)">
+            <summary>
+            카카오톡 메시지 수신 허용 설정 뷰를 띄운다.
+            </summary>
+            <param name="callback">[isAllowedMessage]</param>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGKakaoTalkMessage.SendNewInviteMessage(Kakaogame.SDK.KGKakaoProfile,System.String,System.Collections.Generic.Dictionary{System.String,System.Object},Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            카카오톡 초대 메시지를 전송한다.(링크4.0)
+            </summary>
+            <param name="kakaoProfile">수신자</param>
+            <param name="templateId">메시지 템플릿 아이디</param>
+            <param name="argumentDic">템플릿에 바인딩할 데이터</param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGKakaoTalkMessage.SendNewGameMessage(Kakaogame.SDK.KGKakaoProfile,System.String,System.Collections.Generic.Dictionary{System.String,System.Object},Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            카카오톡 게임 메시지를 전송한다.(링크4.0)
+            </summary>
+            <param name="kakaoProfile">수신자 (게임 친구)</param>
+            <param name="templateId">메시지 템플릿 아이디</param>
+            <param name="argumentDic">템플릿에 바인딩할 데이터</param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGKakaoTalkMessage.SendNewGroupChatMessage(Kakaogame.SDK.Kakao.KGKakaoTalkGroupChat,System.String,System.Collections.Generic.Dictionary{System.String,System.Object},Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            그룹 채팅으로 카카오 메시지를 전송한다.(링크4.0)
+            </summary>
+            <param name="groupChat">그룹 채팅</param>
+            <param name="templateId">메시지 템플릿 아이디</param>
+            <param name="argumentDic">템플릿에 바인딩할 데이터</param>
+            <param name="callback"></param>
+        </member>
+        <member name="T:Kakaogame.SDK.Kakao.KGKakaoCoinBalance">
+            <summary>
+            KGKakaoCoinBalance. (Android Only)
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoCoinBalance.amount">
+            <summary>
+            The user's total coin amount.
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoCoinBalance.amountPaid">
+            <summary>
+            Coin amount the user bought.
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoCoinBalance.amountBonus">
+            <summary>
+            Coin amount the user got for bonus.
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoCoinBalance.amountEvent">
+            <summary>
+            Coin amount the user got for events.
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoCoinBalance.toBeExpired">
+            <summary>
+            Coin expiration date information.
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoCoinBalance.checkExpireDay">
+            <summary>
+            The nearest Coin Expiration Days.
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoCoinBalance.kakaoUserId">
+            <summary>
+            Kakao userId.
+            </summary>
+        </member>
+        <member name="T:Kakaogame.SDK.Kakao.KGKakaoGameShop">
+            <summary>
+            KGKakaoGameShop클래스는 카카오게임샵 기능을 제공한다. (Android Only)
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGKakaoGameShop.StartPayment(System.String,System.String,Kakaogame.SDK.Kakao.KGResultWithOrderCallback)">
+            <summary>
+            아이템결제를 수행한다.
+            </summary>
+            <param name="itemCode">결제를 수행 할 아이템 코드</param>
+            <param name="developerPayload">결제 시 사용할 수 있는 데이터 케리어 영역</param>
+            <param name="callback">[coinBalance]</param>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGKakaoGameShop.ShowPaymentListView(Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            아이템 결제 내역을 조회한다.
+            </summary>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGKakaoGameShop.LoadIncompleteOrders(Kakaogame.SDK.Kakao.KGResultWithOrderListCallback)">
+            <summary>
+            미지급 아이템 주문 정보를 조회한다.
+            </summary>
+            <param name="callback">[kakaoOrderList]</param>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGKakaoGameShop.CompleteOrder(System.String,System.String,Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            지급이 완료된 아이템 주문을 보고한다.
+            <param name="orderId">주문 아이디</param>
+            <param name="orderToken">주문 토큰</param>
+            </summary>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGKakaoGameShop.LoadCoinBalance(Kakaogame.SDK.Kakao.KGResultWithCoinBalanceCallback)">
+            <summary>
+            현재 보유중인 카카오 코인 값을 가져온다.
+            </summary>
+            <param name="callback">[coinBalance]</param>
+        </member>
+        <member name="T:Kakaogame.SDK.Kakao.KGKakaoTalk">
+            <summary>
+            KGKakaoTalk클래스는 플러스친구를 추가하거나 확인하는 기능을 제공한다. 
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGKakaoTalk.CheckPlusFriend(System.Int32,Kakaogame.SDK.Kakao.KGResultWithIsFriendValueCallback)">
+            <summary>
+            플러스친구인지 확인한다.
+            </summary>
+            <param name="plusFriendId">플러스친구 아이디</param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGKakaoTalk.AddPlusFriend(System.Int32,Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            플러스친구를 추가한다.
+            </summary>
+            <param name="plusFriendId">플러스친구 아이디</param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGKakaoTalk.UploadGameImage(UnityEngine.Texture2D,Kakaogame.SDK.Kakao.KGResultWithImageUrlPathCallback)">
+            <summary>
+            카카오서버에 게임이미지를 업로드하고 url을 받는다.
+            </summary>
+            <param name="image">업로드할 이미지.</param>
+            <param name="callback"></param>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoTalk.isKakaoTalkInstalled">
+            <summary>
+            현재 디바이스에 카카오톡 설치 여부를 리턴한다.
+            </summary>
+        </member>
+        <member name="T:Kakaogame.SDK.Kakao.KGKakaoGuildChat">
+            <summary>
+            KGKakaoTalk클래스는 카카오톡 길드 채팅 기능을 제공한다. 
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGKakaoGuildChat.OpenKakaoTalkGuildChat(System.Int32,System.Int32,Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            카카오톡을 열어 길드채팅 대화방으로 이동한다.
+            </summary>
+            <param name="worldId">월드 아이디</param>
+            <param name="guildId">길드 아이디</param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGKakaoGuildChat.SendGuildChatMessage(System.Int32,System.Int32,System.Int32,System.String,Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            카카오톡 길드채팅 대화방에 메시지를 보낸다.
+            </summary>
+            <param name="worldId">월드 아이디</param>
+            <param name="guildId">길드 아이디</param>
+            <param name="templateId">메시지 양식</param>
+            <param name="extra">메시지 양식에 사용하는 추가 데이터</param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGKakaoGuildChat.SendNewGuildChatMessage(System.Int32,System.Int32,System.Int32,System.String,Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            카카오톡 길드채팅 대화방에 메시지를 보낸다.(v2 템플릿)
+            </summary>
+            <param name="worldId">월드 아이디</param>
+            <param name="guildId">길드 아이디</param>
+            <param name="templateId">메시지 양식</param>
+            <param name="extra">메시지 양식에 사용하는 추가 데이터</param>
+            <param name="callback"></param>
+        </member>
+        <member name="T:Kakaogame.SDK.Kakao.KGKakaoOrder">
+            <summary>
+            KGKakaoOrder.(Android Only)
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoOrder.orderId">
+            <summary>
+            Order id.
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoOrder.orderToken">
+            <summary>
+            Order token: It uses to verify this payment order.
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoOrder.itemCode">
+            <summary>
+            Item code.
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoOrder.developerPayload">
+            <summary>
+            DeveloperPayload: It has passed from your game server.
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGKakaoOrder.kakaoUserId">
+            <summary>
+            Kakao userId.
+            </summary>
+        </member>
+        <member name="T:Kakaogame.SDK.Kakao.KGIngameStatus">
+            <summary>
+            KGIngameStatus클래스는 와 관련된 기능을 제공한다. (Android Only)
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGIngameStatus.enablePlusFriendPage">
+            <summary>
+            플러스친구 가입페이지 활성화 여부
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGIngameStatus.newAgreementTalkVersion">
+            <summary>
+            플러스친구 비활성화 버전
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGIngameStatus.withGame">
+            <summary>
+            인게임웹뷰 서비스에 필요한 정보
+            </summary>
+        </member>
+        <member name="T:Kakaogame.SDK.Kakao.KGKakaoInReachGameService">
+            <summary>
+            KGKakaoInReachGameService클래스는 플러스친구를 추가하거나 확인하는 기능을 제공한다. 
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGKakaoInReachGameService.RequestIngameStatus(Kakaogame.SDK.Kakao.KGResultWithIngameStatusCallback)">
+            <summary>
+            IngameStatus를 요청한다.
+            </summary>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGKakaoInReachGameService.ShowIngameWebView(Kakaogame.SDK.Kakao.KGResultWithIntegerCallback)">
+            <summary>
+            IngameWebView를 띄운다.
+            </summary>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGKakaoInReachGameService.IsEnableNewBadge(Kakaogame.SDK.Kakao.KGResultWithIsEnableNewBadgeCallback)">
+            <summary>
+            
+            </summary>
+            <param name="callback"></param>
+        </member>
+        <member name="T:Kakaogame.SDK.Kakao.KGWithGame">
+            <summary>
+            KGWithGame클래스는 인게임웹뷰 서비스에 필요한 정보를 제공한다. (Android Only)
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGWithGame.showNewBadge">
+            <summary>
+            인게임웹뷰 뉴뱃지 활성화 여부
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGWithGame.lastModifiedAt">
+            <summary>
+            인게임웹뷰 뉴뱃지 설정 변경시간
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.Kakao.KGWithGame.homeUrl">
+            <summary>
+            인게임웹뷰 URL
+            </summary>
+        </member>
+        <member name="T:Kakaogame.SDK.Kakao.KGKakaoTalkFeedImageType">
+            <summary>
+            KGKakaoTalkProfileHome클래스는 클래스는 카카오톡 프로필에 관련된 기능을 제공한다. 
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.Kakao.KGKakaoTalkFeedImageType.MAGAZINE1">
+            <summary>
+            200 X 200
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.Kakao.KGKakaoTalkFeedImageType.MAGAZINE2">
+            <summary>
+            200 X 300
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.Kakao.KGKakaoTalkFeedImageType.MAGAZINE3">
+            <summary>
+            700 X 380
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.Kakao.KGKakaoTalkFeedImageType.MAGAZINE4">
+            <summary>
+            700 X 700
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.Kakao.KGKakaoTalkFeedImageType.BADGE_ICON">
+            <summary>
+            21 X 21, 28 X 28, 32 X 32, 16 X 16, 48 X 48 (전부 생성)
+            </summary>
+        </member>
+        <member name="T:Kakaogame.SDK.Kakao.KGKakaoTalkProfileHome">
+            <summary>
+            KGKakaoTalkProfileHome클래스는 플러스친구를 추가하거나 확인하는 기능을 제공한다. 
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGKakaoTalkProfileHome.PostFeed(System.String,System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.Collections.Generic.Dictionary{System.String,System.String},Kakaogame.SDK.Kakao.KGResultWithFeedIdCallback)">
+            <summary>
+            카카오톡 프로필에 피드를 등록한다.
+            </summary>
+            <param name="feedId">컨텐츠의 부여하는 유니크ID.</param>
+            <param name="title">매거진 영역의 타이틀. (60자 이하)</param>
+            <param name="description">매거진 영역의 상세 내용. (80자 이하)</param>
+            <param name="imageUrl">카카오 케이지에 업로드된 이미지 경로.</param>
+            <param name="execParams">매거진 영역 클릭시 이동할 앱스킴.</param>
+            <param name="webUrl">매거진 영역 클릭시 이동할 웹싸이트 url.</param>
+            <param name="extras">사전에 약속된 추가 정보.</param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGKakaoTalkProfileHome.UploadFeedImage(Kakaogame.SDK.Kakao.KGKakaoTalkFeedImageType,UnityEngine.Texture2D,Kakaogame.SDK.Kakao.KGResultWithFeedImageUrlPathCallback)">
+            <summary>
+            카카오톡 프로필 피드에 사용될 이미지를 업로드한다.
+            </summary>
+            <param name="imageType">업로드 할 이미지 종류.</param>
+            <param name="image">업로드할 이미지.</param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGKakaoTalkProfileHome.PostBadge(System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.Collections.Generic.Dictionary{System.String,System.String},Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            카카오톡 프로필에 뱃지를 등록한다.
+            </summary>
+            <param name="badgeId">뱃지 컨텐츠의 부여하는 unique id.</param>
+            <param name="title">타이틀 영역에 표시할 문구. (15자 이하)</param>
+            <param name="subTitle">서브타이틀 영역에 표시할 문구. 15자 이하 (앱이름이 15자 이상인 경우에는 12자까지만 보이고 ... 처리)</param>
+            <param name="badgeImages">뱃지를 표현하는 21x21, 28x28, 32x32, 16x16, 48x48 크기의 뱃지 이미지 url 리스트.</param>
+            <param name="execParams">뱃지 영역 클릭시 이동할 앱스킴.</param>
+            <param name="webUrl">뱃지 영역 클릭시 이동할 웹싸이트 url.</param>
+            <param name="extras">사전에 약속된 추가 정보.</param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGKakaoTalkProfileHome.UpdateBadge(System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.Collections.Generic.Dictionary{System.String,System.String},Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            카카오톡 프로필에 뱃지를 업데이트한다.
+            </summary>
+            <param name="badgeId">업데이트 하고싶은 뱃지의 unique id.</param>
+            <param name="title">타이틀 영역에 표시할 문구. (15자 이하)</param>
+            <param name="subTitle">서브타이틀 영역에 표시할 문구. 15자 이하 (앱이름이 15자 이상인 경우에는 12자까지만 보이고 ... 처리)</param>
+            <param name="badgeImages">뱃지를 표현하는 21x21, 28x28, 32x32, 16x16, 48x48 크기의 뱃지 이미지 url 리스트.</param>
+            <param name="execParams">뱃지 영역 클릭시 이동할 앱스킴.</param>
+            <param name="webUrl">뱃지 영역 클릭시 이동할 웹싸이트 url.</param>
+            <param name="extras">사전에 약속된 추가 정보.</param>
+            <param name="callback"></param>
+        </member>
+        <member name="T:Kakaogame.SDK.Kakao.KGGameShopPayment">
+            <summary>
+            KGGameShopPayment class allows you to proceed the game item purchase on KakaoGameShop
+            when you want to use game shop payment while your game does not use Kakao authentication.
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGGameShopPayment.StartPayment(System.String,System.String,Kakaogame.SDK.Kakao.KGResultWithOrderCallback)">
+            <summary>
+            The game Item purchase is performed.
+            </summary>
+            <param name="itemCode">Item code for payment.</param>
+            <param name="developerPayload">The data passing from game server to payment server via this client API for verifying user's purchase result data.</param>
+            <param name="callback">callback.</param>
+        </member>
+        <member name="M:Kakaogame.SDK.Kakao.KGGameShopPayment.ShowPaymentListView(Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            View the item payment history.
+            </summary>
+            <param name="callback">callback.</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Kakaogame.SDK.Kakao.KGGameShopPayment.LoadIncompleteOrders(Kakaogame.SDK.Kakao.KGResultWithOrderListCallback)" -->
+        <member name="M:Kakaogame.SDK.Kakao.KGGameShopPayment.CompleteOrder(System.String,System.String,Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            Report the item order that has been paid.
+            Check the order completion using 'startPayment' or 'loadIncompleteOrders', pay the game item, and then call 'completeOrder'.
+            </summary>
+            <param name="orderId">Order Id.</param>
+            <param name="orderToken">Order Token.</param>
+            <param name="callback">callback.</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Kakaogame.SDK.Kakao.KGGameShopPayment.LoadCoinBalance(Kakaogame.SDK.Kakao.KGResultWithCoinBalanceCallback)" -->
+        <member name="M:Kakaogame.SDK.Kakao.KGGameShopPayment.SetPhase(System.String,Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            Set the phase of the payment process.(real, qa)
+            </summary>
+            <param name="phase">Phase.</param>
+            <param name="callback">callback.</param>
+        </member>
+        <member name="F:Kakaogame.SDK.Facebook.KGFacebookHTTPMethod.Get">
+            <summary>
+            Get Method
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.Facebook.KGFacebookHTTPMethod.Post">
+            <summary>
+            Post Method
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.Facebook.KGFacebookHTTPMethod.Delete">
+            <summary>
+            Delete Method
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.Facebook.KGFacebookActionType.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.Facebook.KGFacebookActionType.Send">
+            <summary>
+            The user is sending an object to the friends
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.Facebook.KGFacebookActionType.AskFor">
+            <summary>
+            The user is asking for an object from friends
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.Facebook.KGFacebookActionType.Turn">
+            <summary>
+            It is the turn of the friends to play against the user in a match
+            </summary>
+        </member>
+        <member name="T:Kakaogame.SDK.Facebook.KGFacebook">
+            <summary>
+            KGFacebook클래스는 페이스북 관련 기능을 제공한다.
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.Facebook.KGFacebook.ExecuteGraphRequest(System.String,System.Collections.Generic.Dictionary{System.String,System.String},Kakaogame.SDK.Facebook.KGFacebookHTTPMethod,Kakaogame.SDK.Facebook.KGResultWithResultDataCallback)">
+            <summary>
+            페이스북 그래프 API를 통해 데이터를 요청한다.
+            </summary>
+            <param name="graphPath">그래프 API</param>
+            <param name="parameters">키/밸류 스타일의 파라미터</param>
+            <param name="method">HTTP 메서드.(GET, POST, DELETE)</param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.Facebook.KGFacebook.ShowGameRequestDialog(System.Collections.Generic.List{System.String},System.String,System.String,Kakaogame.SDK.Facebook.KGFacebookActionType,System.String,System.String,Kakaogame.SDK.Facebook.KGResultWithFacebookIdsCallback)">
+            <summary>
+            유저에게 페이스북 게임 요청을 전달하는 다이얼로그를 띄운다.
+            </summary>
+            <param name="recipients">메시지를 수신할 페이스북 유저 아이디 목록</param>
+            <param name="message">최대 60자 이하의 다이얼로그에 표시될 메시지</param>
+            <param name="objectId">그래프 오브젝트 ID</param>
+            <param name="actionType">요청의 액션 타입</param>
+            <param name="data">요청에 추가될 255이하 데이터 문자열.</param>
+            <param name="title">다이얼로그 타이틀</param>
+            <param name="callback"></param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990401b03a588ca48ba2068f530fad1c, type: 3}
+  m_Name: under_attack_gedang_kr
+  m_EditorClassIdentifier: 
+  _Offset: {x: 10, y: 0}
+  _XRandomNum: 0.25
+  _Font: {fileID: 12800000, guid: 70e516a88e4c1844988a86d876f02797, type: 2}
+  _FontScale: 0.033333335
+  _IsOnTopLayer: 0
+  _BGType: -1
+  _MotionList:
+  - {fileID: 11400000, guid: 6e7cb8022d72e6b4db43d37b2911a9ef, type: 2}
+  - {fileID: 11400000, guid: 9d4c47e4726e0f94680497894b3a5412, type: 2}
+  - {fileID: 11400000, guid: ff5e86d6e4b9fcb42ae67f6048cd9a6d, type: 2}

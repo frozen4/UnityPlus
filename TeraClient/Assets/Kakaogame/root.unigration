@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-16"?>
+<UnigrationData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <nodes>
+    <UnigrationNode>
+      <name>KakaogameSDK</name>
+      <container>Kakaogame.SDK.Editor.Migration</container>
+      <path>Assets/Kakaogame</path>
+      <version>2.6.6</version>
+    </UnigrationNode>
+  </nodes>
+</UnigrationData>

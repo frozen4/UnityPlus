@@ -1,0 +1,68 @@
+{
+	"google": 
+		{
+			"urlScheme": "com.googleusercontent.apps.276931680433-e91tesf96i5ebr7pj6tsu5jrt2gg9cp8",
+			"clientID": "276931680433-e91tesf96i5ebr7pj6tsu5jrt2gg9cp8.apps.googleusercontent.com",
+			"permissions": 
+				[
+					"https://wwww.googleapis.com/auth/plus.stream.read",
+					"https://wwww.googleapis.com/auth/plus.stream.write"
+				],
+			"webappClientId": "292799216207-mn5cdr9chr0b2b8sth1mrl3eu808b6up.apps.googleusercontent.com"
+		},
+	"facebook": 
+		{
+			"appKey": "266586680428939",
+			"appTitle": "Facebook Login",
+			"permissions": 
+				[
+					"user_friends",
+					"user_photos"
+				]
+		},
+	"usePush": true,
+	"useKakao": true,
+	"useFacebook": false,
+	"useFacebookNative": false,
+	"useFacebookPackage": true,
+	"useGoogle": true,
+	"useGoogleNative": false,
+	"useGooglePackage": true,
+	"configuration": 
+		{
+			"appId": "182242",
+			"appSecret": "f22c5de0ce71698cc5d52c0612843327",
+			"appVersion": "1.0.0",
+			"market": "googlePlay",
+			"debugLevel": "Error",
+			"isCustomMarket": false,
+			"serverType": "qa"
+		},
+	"editorSDKConfiguration": 
+		{
+			"useCustomDeviceKey": false,
+			"deviceKey": "DEVICE_KEY",
+			"useKakaoEditorLogin": true,
+			"javascriptKey": "e24af8e533238f09e0226ba80214b4fe"
+		},
+	"etcSDKConfiguration": 
+		{
+			"receiverNames": 
+				[],
+			"receiverValues": 
+				[]
+		},
+	"urlPromotionConfiguration": 
+		{
+			"useURLPromotion": true
+		},
+	"sdkDevelopConfiguration": 
+		{
+			"useIOSTestAppAutoSetting": true
+		},
+	"useSimulation": false,
+	"simPath": "",
+	"permissions": 
+		[],
+	"customManifest": false
+}

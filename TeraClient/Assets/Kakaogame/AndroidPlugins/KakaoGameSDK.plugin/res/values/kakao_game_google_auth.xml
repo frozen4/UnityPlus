@@ -1,0 +1,10 @@
+
+<resources>
+	<string-array name="google_pemissions">
+<item>https://wwww.googleapis.com/auth/plus.stream.read</item>
+<item>https://wwww.googleapis.com/auth/plus.stream.write</item>
+</string-array>
+
+	<string name="kg_google_app_id">292799216207</string>
+	<string name="kg_google_web_app_client_id">292799216207-mn5cdr9chr0b2b8sth1mrl3eu808b6up.apps.googleusercontent.com</string>
+</resources>	

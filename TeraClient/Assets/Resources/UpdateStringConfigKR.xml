@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 配置各种语言需要的更新文字 -->
+
+<UpdateStringConfig>
+    <SystemRequire_Memory text="시스템 메모리가 {0}MB보다 부족하여 정상적으로 작동되지 않을 수도 있습니다, 계속하시겠습니까?" />
+    <SystemRequire_Space text="남은 저장 공간이 {0}MB보다 부족하여 게임을 실행할 수 없습니다." />
+
+    <UpdateState_Success text="업데이트 완료, 잠시만 기다려 주세요..." />
+    <UpdateState_UpdateVersionFileErr text="업데이트 파일 오류" />
+    <UpdateState_OpenPackFileErr text="파일 압축 해제 오류" />
+    <UpdateState_DiskSpaceFullErr text="저장 공간 부족" />
+    <UpdateState_GetLocalVersionErr text="클라이언트 버전을 불러올 수 없습니다." />
+    <UpdateState_GetNewVersionErr text="서버 버전 획득 불가. 네트워크 연결을 확인해주세요." />
+    <UpdateState_NetworkErr text="네트워크 오류" />
+    <UpdateState_NetConnectionErr text="네트워크 연결불가" />
+    <UpdateState_NetUnstable text="네트워크 오류 발생, 잠시후에 시도해주세요..." />
+    <UpdateState_DownloadCheck text="업데이트 진행하시겠습니까, 예상 리소스 용량은" />
+    <UpdateState_LocalVersionTooOldErr text="클라이언트 버전이 낮습니다." />
+    <UpdateState_ServerMaintananceErr text="서버에서 업그레이드 버전을 찾을 수 없습니다." />
+    <UpdateState_AutoUpdateErr text="자동 업데이트 오류" />
+    <UpdateState_UnknownErr text="알 수 없는 오류" />
+    <UpdateState_DownloadingErrAutoRetry text="다운로드 오류. 재시도 자동 진행중..." />
+    <UpdateStatus_Start text="업데이트 시작" />
+    <UpdateStatus_TryGetLocalVersion text="클라이언트 버전 획득중..." />
+    <UpdateStatus_TryCheckFreeSpace text="저장 공간 확인중..." />
+    <UpdateStatus_TryGetNewVersion text="서버 버전 불러오는 중..." />
+    <UpdateStatus_TryDNSResolving text="서버 접속 시도중..." />
+    <UpdateStatus_SuccessGetVersions text="버전 획득 성공" />
+    <UpdateStatus_BeginUpdate text="업데이트 알림" />
+    <UpdateStatus_LastWritePackErr text="업데이트 설치 오류. 프로그램을 재실행하여 업데이트 해주세요" />
+    <UpdateStatus_Downloading text="다운로드 진행" />
+    <UpdateStatus_WritingPack text="업데이트 설치 중, 잠시만 기다려 주세요..." />
+    <UpdateStatus_DownloadingServerList text="서버리스트 다운로드..." />
+    <UpdateStatus_CheckingExistPack text="다운로드 파일 확인중,잠시만 기다려 주세요..."/>
+    <UpdateStatus_PrepareWritingPack text="업데이트 설치 준비 중, 잠시만 기다려 주세요..." />
+
+    <!-- <UpdateString_CurrentVersion text="현재 버전" /> -->
+    <UpdateString_CurrentVersion text="Ver." />
+    <UpdateString_ServerVersion text="서버 버전" />
+    <UpdateString_Yes text="네" />
+    <UpdateString_No text="아니오" />
+    <UpdateString_Ok text="확인" />
+    <UpdateString_Cancel text="취소" />
+    <UpdateString_HasErrorNotWifi text="wifi 환경이 아닙니다. 계속 다운로드 하시겠습니까？" />
+    <UpdateString_HasErrorRetry text="오류 발생, 재시도 하시겠습니까?" />
+    <UpdateString_HasError text="오류" />
+    <UpdateString_HasFatalErrorNeedReinstall text="게임 버전이 낮습니다. 마켓으로 이동하여 최신 버전을 다운받으세요." />
+    <UpdateString_HasFatalErrorNeedCleanUp text="오류가 발생했습니다. 다시 한 번 업데이트 해주세요."/>
+    <UpdateString_HasFatalError text="치명적인 오류" />
+    <UpdateString_PrepareForFirstTimeUse text="초기 실행을 위해 준비중입니다..." />
+    <UpdateString_EnsureEnoughSpaceMB text="디바이스에 충분한 저장 공간을 확보해주세요" />
+    <UpdateString_TextUpdate text="업데이트 중입니다. 잠시만 기다려주세요."/>
+    <UpdateString_FileSize text="파일 크기:"/>
+    <UpdateString_DownloadSpeed text="다운로드 속도:"/>
+    <UpdateString_VideoTitle text="영상 전시"/>
+    <UpdateString_PictureTitle text="게임 가이드"/>
+    <UpdateStatus_WifiTips text="용량이 크니 WIFI 환경에서의 다운로드를 추천드립니다." />
+
+    <PlatformSDKString_InitFailedTitle text="오류"/>
+    <PlatformSDKString_ErrorCode text="(에러코드 : {0})"/>
+    <PlatformSDKString_UnknownErr text="알 수 없는 오류가 발생했습니다."/>
+    <PlatformSDKString_NetworkFailure text="네트워크 상태가 불안합니다. 통신환경을 확인 후 다시 시도해주세요."/>
+    <PlatformSDKString_ServerTimeout text="응답 시간이 초과되었습니다. 다시 시도해주세요"/>
+    <PlatformSDKString_InitializationFailed text="초기화 실패, 앱 종류 후 재실행 해주세요."/>
+</UpdateStringConfig>

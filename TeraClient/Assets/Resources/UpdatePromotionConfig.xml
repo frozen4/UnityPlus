@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 配置更新阶段推广的内容 -->
+<!-- Video放在StreamAssets文件夹下，Picture放在Resourcers文件夹下 -->
+<UpdatePromotionConfig>
+  <Video path="TERA_Open.mp4" />
+  <Video path="logo.mp4" />
+  <Picture path="PromotionImages/Test1.png" />
+  <Picture path="PromotionImages/Test2.png" />
+</UpdatePromotionConfig>

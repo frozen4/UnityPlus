@@ -1,0 +1,6 @@
+<UnigrationNode>
+  <name>KakaogameSDK</name>
+  <container>Kakaogame.SDK.Editor.Migration</container>
+  <path>Assets/Kakaogame</path>
+  <version>2.6.6</version>
+</UnigrationNode>

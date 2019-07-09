@@ -1,0 +1,7 @@
+
+<resources>
+<string-array name="kakao_game_sdk_android_permissions">
+<!-- KakaoGameSDK UserDefinedPermissions -->
+<!-- /KakaoGameSDK UserDefinedPermissions -->
+</string-array>
+</resources>

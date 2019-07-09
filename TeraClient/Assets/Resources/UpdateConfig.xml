@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 配置各个渠道服务器地址，和更新需要最小剩余空间 -->
+
+<!-- dl.lantugame.com -->
+<!-- 111.205.196.85 -->
+<!-- 172.16.200.104 -->
+<UpdateConfig>
+  <cn>
+      <UpdateServer url="http://10.35.49.163/meteorite/meteorite/Tera/cn/" />
+		  <ClientServer url="http://10.35.49.163/meteorite/meteorite/Tera/cn/clientserver/" />
+	</cn>
+
+  <korea>
+      <UpdateServer url="http://10.35.49.163/meteorite/meteorite/Tera/korea/" />
+      <ClientServer url="http://10.35.49.163/meteorite/meteorite/Tera/korea/clientserver/" />
+  </korea>
+  
+	<cn-dev>
+      <UpdateServer url="http://10.35.49.163/meteorite/meteorite/Tera/cn-dev/" />
+		  <ClientServer url="http://10.35.49.163/meteorite/meteorite/Tera/cn-dev/clientserver/" />                                                                                                                                                                                                                                                                                                     
+	</cn-dev>
+
+  <cn_dev>
+    <UpdateServer url="http://cdnxx.longtugame.com/meteorite/Tera/cn_dev/" />
+    <ClientServer url="http://cdnxx.longtugame.com/meteorite/Tera/cn_dev/clientserver/" />
+  </cn_dev>
+  
+  <cn-deploy>
+	    <UpdateServer url="http://cdnxx.longtugame.com/meteorite/Tera/cn-deploy/" />
+	    <ClientServer url="http://cdnxx.longtugame.com/meteorite/Tera/cn-deploy/clientserver/" />
+	</cn-deploy>
+  
+  <cn-test>
+      <UpdateServer url="http://10.35.49.163/meteorite/meteorite/Tera/cn-test/" />
+		  <ClientServer url="http://10.35.49.163/meteorite/meteorite/Tera/cn-test/clientserver/" />
+	</cn-test>
+
+  <kakao-deploy>
+	    <UpdateServer url="http://scdn.l2games.cn/lg-alpha/TERA20190330/" />
+	    <ClientServer url="http://scdn.l2games.cn/lg-alpha/TERA20190330/clientserver/" />
+	</kakao-deploy>
+
+	<kakao-dev>
+      <UpdateServer url="http://10.35.49.163/meteorite/meteorite/Tera/kakao-dev/" />
+		  <ClientServer url="http://10.35.49.163/meteorite/meteorite/Tera/kakao-dev/clientserver/" />
+	</kakao-dev>
+  
+	<longtu-dev>
+      <UpdateServer url="http://10.35.49.163/meteorite/meteorite/Tera/longtu-dev/" />
+		  <ClientServer url="http://10.35.49.163/meteorite/meteorite/Tera/longtu-dev/clientserver/" />
+	</longtu-dev>
+  
+  <longtu-deploy>
+      <UpdateServer url="http://cdnxx.longtugame.com/meteorite/Tera/longtu-deploy/" />
+      <UpdateServer2 url="http://cdnxx2.longtugame.com/meteorite/Tera/longtu-deploy/" />
+      <UpdateServer3 url="http://resxx.longtugame.com/meteorite/Tera/longtu-deploy/" />
+      <ClientServer url="http://cdnxx.longtugame.com/meteorite/Tera/longtu-deploy/clientserver/" />
+	</longtu-deploy>
+	
+	<longtu-green-dev>
+      <UpdateServer url="http://10.35.49.163/meteorite/meteorite/Tera/longtu-green-dev/" />
+		  <ClientServer url="http://10.35.49.163/meteorite/meteorite/Tera/longtu-green-dev/clientserver/" />
+	</longtu-green-dev>
+  
+  <longtu-green-deploy>
+      <UpdateServer url="http://cdnxx.longtugame.com/meteorite/Tera/longtu-green-deploy/" />
+		  <ClientServer url="http://cdnxx.longtugame.com/meteorite/Tera/longtu-green-deploy/clientserver/" />
+	</longtu-green-deploy>
+
+  <longtu-testin>
+      <UpdateServer url="http://cdnxx.longtugame.com/meteorite/Tera/longtu-testin/" />
+      <UpdateServer2 url="http://cdnxx2.longtugame.com/meteorite/Tera/longtu-testin/" />
+      <UpdateServer3 url="http://resxx.longtugame.com/meteorite/Tera/longtu-testin/" />
+      <ClientServer url="http://cdnxx.longtugame.com/meteorite/Tera/longtu-testin/clientserver/" />
+  </longtu-testin>
+  
+</UpdateConfig>

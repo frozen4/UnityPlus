@@ -1,0 +1,57 @@
+Tera新的UI列表使用说明
+
+GNewListLoop 循环列表 对应GUnlimitedList
+GNewList 不循环列表 对应GLimitedList
+
+
+实现上优化了内存空间管理，和滚动时的运算
+优化了局部数据更新复杂度
+
+不含动画，没有添加startDirection
+
+属性：
+
+不要尝试在运行时改变属性，除非你很清楚你在干什么
+
+    int _numberOfRow	限制行数
+    int _numberOfColumn 限制列数
+
+    Vector2 _spacing 元素排列间距
+    Direction _Direction 列表延伸方向
+    RectTransform _cellRect 列表元素模板
+
+    Align _Align 非延伸方向上的对齐方式
+    bool _inverseDirection 延伸方向反转
+
+    bool isItemAnimated 是否使用动画（没用）
+    
+事件：
+		OnInitItem 显示元素回调
+		OnSelectItem 点击元素回调
+		OnSelectItemButton 点击元素下属按钮回调
+		
+
+脚本接口：
+
+	void SetItemCount(int count)
+	设置数据个数，用于通知数据整体刷新表格元素 
+
+    void Repaint()
+	整体刷新表格元素 
+
+    void RefreshItem(int index)
+	刷新制定index的元素， 会触发Lua的OnInitItem
+
+    void AddItem(int index, int count)
+	在index处，插入count个元素，会导致其后的元素发生更新
+	循环列表不会更新超出视野（设置意义上）的元素
+
+    void RemoveItem(int index, int count)
+	在index处，移除count个元素，会导致其后的元素发生更新
+	循环列表不会更新超出视野（设置意义上）的元素
+
+    GameObject GetItem(int index)
+	获取index处的元素，可能为空；
+	当越界或处于循环列表视野外（设置意义上）时返回null；
+
+ps:此文档为临时使用，后期还需要整合到组件的文档中。

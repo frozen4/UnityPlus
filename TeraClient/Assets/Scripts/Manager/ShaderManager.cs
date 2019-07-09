@@ -2,47 +2,84 @@
 using Common;
 using UnityEngine;
 using System;
+using LuaInterface;
+using System.Collections;
 
 public class ShaderManager : Singleton<ShaderManager>
 {
     private readonly Dictionary<string, Shader> _ShaderMap = new Dictionary<string, Shader>();
     private readonly HashSet<string> _MissingShaderSet = new HashSet<string>();
 
+    private Shader _MobileCamtransOpaqueShader = null;
+
+    public Shader MobileCamtransOpaqueShader
+    {
+        get { return _MobileCamtransOpaqueShader; }
+    }
+
+    private Shader _MobileCamtransShader = null;
+
+    public Shader MobileCamtransShader
+    {
+        get { return _MobileCamtransShader; }
+    }
     //private ShaderVariantCollection _ShaderCollection = null;
 
-    public void Init(string shaderBundleName, string shaderListPath)
+    private bool _IsLoading = false;
+    private AssetBundle _AssetBundle = null;
+
+    public void LoadAssets()
     {
         Action<UnityEngine.Object> callback = (asset) =>
         {
+            _IsLoading = false;
+            _AssetBundle = null;
+
             var bundle = asset as AssetBundle;
             if (bundle == null)
             {
                 HobaDebuger.LogError("Failed to load AssetBundle: shaders");
                 return;
             }
-
-            if (false)
-            {
-                ShaderVariantCollection shaderCollection = bundle.LoadAsset<ShaderVariantCollection>("svc1");
-                if (null != shaderCollection)
-                {
-                    HobaDebuger.LogWarningFormat("SVC WarmUp: {0} shaders, {1} variants", shaderCollection.shaderCount, shaderCollection.variantCount);
-                    shaderCollection.WarmUp();
-                }
-            }
-            else
-            {
-                bundle.LoadAllAssets();
-                Shader.WarmupAllShaders();
-                HobaDebuger.LogWarningFormat("Skip SVC WarmUp!");
-            }
-
-            var shaderListObj = bundle.LoadAsset(shaderListPath) as GameObject;
-
-            BuildShaderList(shaderListObj);
+            _AssetBundle = bundle;
         };
 
-        CAssetBundleManager.AsyncLoadBundle(shaderBundleName, callback, true);
+        var bundleName = "shader";
+        _IsLoading = true;
+        _AssetBundle = null;
+        CAssetBundleManager.AsyncLoadBundle(bundleName, callback);
+    }
+
+    public IEnumerable Init()
+    {
+        while (_IsLoading)
+        {
+            yield return null;
+        }
+
+        if (_AssetBundle != null)
+        {
+            if (EntryPoint.Instance.GameCustomConfigParams.ShaderWarmUp)
+            {
+                ShaderVariantCollection shaderCollection = _AssetBundle.LoadAsset<ShaderVariantCollection>("svc");
+                yield return null;
+
+                if (null != shaderCollection)
+                {
+                    shaderCollection.WarmUp();
+                    yield return null;
+                }
+            }
+
+            var shaderListPath = "Assets/Outputs/Shader/ShaderList.prefab";
+            var shaderListObj = _AssetBundle.LoadAsset(shaderListPath) as GameObject;
+            yield return null;
+
+            BuildShaderList(shaderListObj);
+            _MobileCamtransOpaqueShader = FindShader("TERA/Environment/MobileCamtransOpaque");
+            _MobileCamtransShader = FindShader("TERA/Environment/MobileCamtrans");
+            yield return null;
+        }
     }
 
     private void BuildShaderList(GameObject shaderListObj)
@@ -96,6 +133,7 @@ public class ShaderManager : Singleton<ShaderManager>
 
         if (!_MissingShaderSet.Contains(name))
         {
+            LuaDLL.HOBA_LogString(HobaText.Format("ShaderManager.FindShader Failed, Shader Missing! {0}", name));
             _MissingShaderSet.Add(name);
         }
         return null;

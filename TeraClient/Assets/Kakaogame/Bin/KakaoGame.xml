@@ -1,0 +1,1765 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KakaoGame</name>
+    </assembly>
+    <members>
+        <member name="T:Kakaogame.SDK.Internal.IRequestable">
+            <summary>
+            인터페이스브로커 구현체 인터페이스
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.Internal.IRequestable.SynchronousRequest``1(Kakaogame.SDK.Internal.KGRequestContext{``0},Kakaogame.SDK.Internal.KGRawRequest)">
+            <summary>
+            동기 요청을 수행한다.
+            </summary>
+            <param name="req">JSON string</param>
+            <returns>JSON string</returns>
+        </member>
+        <member name="M:Kakaogame.SDK.Internal.IRequestable.AsynchronousRequest``1(Kakaogame.SDK.Internal.KGRequestContext{``0},Kakaogame.SDK.Internal.KGRawRequest,System.Action{Kakaogame.SDK.Internal.KGRawResult})">
+            <summary>
+            비동기 요청을 수행한다.
+            </summary>
+            <param name="req">JSON string</param>
+            <param name="callback">응답을 받을 콜백</param>
+        </member>
+        <member name="M:Kakaogame.SDK.Internal.IRequestable.RegisterNotiHandler(System.String,System.Action{Kakaogame.SDK.Internal.KGRawResult})">
+            <summary>
+            채널 핸들러를 등록한다.
+            </summary>
+            <param name="uri">채널 uri</param>
+            <param name="callback">메세지가 올 때 마다 호출될 콜백</param>
+        </member>
+        <member name="M:Kakaogame.SDK.Internal.IRequestable.UnregisterNotiHandler(System.String)">
+            <summary>
+            채널 핸들러를 등록 취소한다.
+            </summary>
+            <param name="uri">채널 uri</param>
+        </member>
+        <member name="P:Kakaogame.SDK.Internal.IRequestable.isAsyncSupported">
+            <summary>
+            비동기 요청 지원 여부
+            각각의 구현체는 자신이 비동기 요청이 가능한지 알려주어야 한다.
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.Internal.KGRawRequest.BuildForProtocolV1">
+            <summary>
+            V1 프로토콜에 알맞는 요청 Json String을 빌드한다.
+            </summary>
+            <returns>Json String</returns>
+        </member>
+        <member name="M:Kakaogame.SDK.Internal.KGRawRequest.BuildForProtocolV2">
+            <summary>
+            V2 프로토콜에 알맞는 요청 Json String을 빌드한다.
+            </summary>
+            <returns>Json String</returns>
+        </member>
+        <member name="T:Kakaogame.SDK.Internal.KGRawResult">
+            <summary>
+            가공되기 이전의 Result를 다룬다.
+            (code, desc는 파싱되었지만 content는 파싱되지 않은 상태의)
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.Internal.KGRawResult.CreateFromException(System.Exception)">
+            <summary>
+            익셉션으로부터 RawResult를 생성한다
+            </summary>
+            <param name="e">익셉션</param>
+            <returns>생성된 RawResult</returns>
+        </member>
+        <member name="M:Kakaogame.SDK.Internal.Async.EnsureWorkerThread">
+            <summary>
+            동기 API 호출 시, 호출된 스레드가 메인 스레드가 아닐 경우
+            경고를 출력한다.
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.Internal.Async.RunAsync(System.Func{Kakaogame.Base.KGApiResult},System.Action{Kakaogame.Base.KGApiResult})">
+            <param name="task">비동기로 수행할 작업</param>
+            <param name="callback">비동기 작업이 완료되면 결과를 받을 콜백</param>
+        </member>
+        <member name="T:Kakaogame.SDK.Internal.InterfaceBroker">
+            <summary>
+            런타임에 플랫폼별 실제 구현으로 분기/프록시해주는 래핑 클래스
+            </summary>
+            <summary>
+            래핑 메소드확장 구현 클래스
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.Internal.InterfaceBroker.Initialize">
+            <summary>
+            플랫폼 별 인터페이스 브로커 초기화
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.Internal.InterfaceBroker.Request``1(Kakaogame.SDK.Internal.KGRequestContext{``0},Kakaogame.SDK.Internal.KGRawRequest,System.Action{Kakaogame.SDK.Internal.KGRawResult})">
+            <summary>
+            인터페이스 브로커 요청을 수행한다.
+            비동기 요청이 가능한 구현체에서는 비동기로 동작한다.
+            </summary>
+            <param name="request"></param>
+            <param name="_callback"></param>
+        </member>
+        <member name="T:Kakaogame.SDK.KGGoogleGamesAchievements">
+            <summary>
+            KGGoogleGamesAchievements클래스는 구글게임즈 업적 관련 기능을 제공한다. 
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGGoogleGamesAchievements.Reveal(System.String)">
+            <summary>
+            아이디에 해당하는 도전과제 항목을 유저에게 드러내 보인다.
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGGoogleGamesAchievements.Unlock(System.String)">
+            <summary>
+            아이디에 해당하는 도전과제 항목을 달성 처리한다.
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGGoogleGamesAchievements.Increment(System.String,System.Int32)">
+            <summary>
+            아이디에 해당하는 도전과제 항목의 달성을 위한 스텝을 증가시킨다.
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGGoogleGamesAchievements.SetSteps(System.String,System.Int32)">
+            <summary>
+            아이디에 해당하는 도전과제 항목의 달성을 위한 스텝을 설정한다.
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGGoogleGamesAchievements.ShowAchievementView">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Kakaogame.SDK.KGGoogleGames">
+            <summary>
+            KGGoogleGames클래스는 구글게임즈 인증 관련 기능을 제공한다. 
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGGoogleGames.isLoggedIn">
+            <summary>
+            구글게임즈 인증 여부를 반환한다.
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGGoogleGames.Login(System.Action{Kakaogame.SDK.KGResult})">
+            <summary>
+            구글게임즈에 로그인을 요청한다.
+            </summary>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGGoogleGames.Logout(System.Action{Kakaogame.SDK.KGResult})">
+            <summary>
+            구글게임즈로부터 로그아웃을 요청한다.
+            </summary>
+            <param name="callback"></param>
+        </member>
+        <member name="T:Kakaogame.SDK.KGAppOption">
+            <summary>
+            KGAppOption클래스는 앱 옵션 정보를 제공한다.
+            </summary>
+            <example>
+            게임 어드민에 등록된 게임 서버와, CDN 주소를 가져오는 예제입니다. <para/> 
+            만약 어드민에 리뷰 버전이 설정되어 있고, 현재 클라이언트가 리뷰 버전이라면
+            별도로 설정된 리뷰용 게임서버 주소 / 리뷰용 CDN 주소를 가져옵니다.
+            <code>
+            var gameServerAddr = KGAppOption.gameServerAddress;
+            var cdnAddr = KGAppOption.cdnAddress;
+            </code>
+            미리 정의된 키 이외의, 다른 값을 가져오는 방법입니다.
+            <code>
+            var timeout = int.TryParse(KGAppOption.GetValue("timeout"));
+            </code>
+            </example>
+        </member>
+        <member name="P:Kakaogame.SDK.KGAppOption.isInReview">
+            <summary>
+            현재의 앱이 심의중인지 여부를 반환한다. <para />
+            앱 버전, 마켓 정보에 따라 심의중 여부를 어드민에서 설정할 수 있다.
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGAppOption.gameServerAddress">
+            <summary>
+            접속할 게임 서버의 주소를 반환한다.
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGAppOption.cdnAddress">
+            <summary>
+            접속할 CDN의 주소를 반환한다.
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGAppOption.GetValue(System.String)">
+            <summary>
+            어드민에 등록된 값을 직접 KEY를 통해 가져온다.<para/> 
+            어드민에서 키와 밸류에 대한 설정이 가능하다. 동적으로 변경이 필요한 데이터에 대해서는 어드민에서 설정하고, 아래 API를 통해, 가져올 수 있다.
+            </summary>
+            <param name="key">가져올 키</param>
+            <returns></returns>
+        </member>
+        <member name="M:Kakaogame.SDK.KGAppOption.ShowUpdateRecommendedPopupWithTitleMessage(System.String,System.String,System.String,Kakaogame.SDK.KGResultWithIsUpdateRequired)">
+            <summary>
+            권장 업데이트 팝업을 띄운다.
+            </summary>
+            <param name="titleMessage">팝업 타이틀 문구.</param>
+            <param name="updateButton">팝업 업데이트 버튼 문구.</param>
+            <param name="laterButton">팝업 나중에 버튼 문구.</param>
+            <param name="callback"></param>
+        </member>
+        <member name="T:Kakaogame.SDK.KGFriendLeaderboard">
+            <summary>
+            KGFriendLeaderboard클래스는 IDP 친구 리더보드 기능을 제공한다.
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGFriendLeaderboard.LoadFriendRankings(System.String,Kakaogame.SDK.KGResultWithFriendRankingDataCallback)">
+            <summary>
+            현재 시즌의 IDP 친구들(나 포함)의 랭킹 정보를 조회한다.
+            </summary>
+            <param name="leaderboardId">리더보드 아이디</param>
+            <param name="callback">[rankingInfos, totalPlayerCount]</param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGFriendLeaderboard.LoadLastSeasonFriendRankings(System.String,Kakaogame.SDK.KGResultWithFriendRankingDataCallback)">
+            <summary>
+            이전 시즌의 IDP 친구들(나 포함)의 랭킹 정보를 조회한다.
+            </summary>
+            <param name="leaderboardId">리더보드 아이디</param>
+            <param name="callback">[rankingInfos, totalPlayerCount]</param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGFriendLeaderboard.LoadPlayersRankings(System.Collections.Generic.List{System.String},System.String,Kakaogame.SDK.KGResultWithFriendRankingDataCallback)">
+            <summary>
+            현재 시즌의 playerId 리스트의 랭킹 정보를 조회한다.
+            </summary>
+            <param name="playerIds">playerId 리스트</param>
+            <param name="leaderboardId">리더보드 아이디</param>
+            <param name="callback">[rankingInfos, totalPlayerCount]</param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGFriendLeaderboard.LoadLastSeasonPlayersRankings(System.Collections.Generic.List{System.String},System.String,Kakaogame.SDK.KGResultWithFriendRankingDataCallback)">
+            <summary>
+            이전 시즌의 playerId 리스트의 랭킹 정보를 조회한다.
+            </summary>
+            <param name="playerIds">playerId 리스트</param>
+            <param name="leaderboardId">리더보드 아이디</param>
+            <param name="callback">[rankingInfos, totalPlayerCount]</param>
+        </member>
+        <member name="T:Kakaogame.SDK.KGFriendRankingInfo">
+            <summary>
+            KGFriendRankingInfo클래스는 친구 랭킹 정보를 제공한다.
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGFriendRankingInfo.player">
+            <summary>
+            플레이어 객체
+            </summary>
+        </member>
+        <member name="T:Kakaogame.SDK.KGInvitation">
+            <summary>
+            KGInvitation class는 
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGInvitation.ShowShareView(Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            
+            </summary>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGInvitation.ShowRewardView(Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            
+            </summary>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGInvitation.LoadBadgeInfo(Kakaogame.SDK.KGResultWitNewBadgeCallback)">
+            <summary>
+            
+            </summary>
+            <param name="callback">[hasNewBadge]</param>
+        </member>
+        <member name="T:Kakaogame.SDK.KGLeaderboard">
+            <summary>
+            KGLeaderboard클래스는 리더보드 기능을 제공한다.
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGLeaderboard.ReportScore(System.String,System.Int64,Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            리더보드에 게임 점수를 등록한다
+            </summary>
+            <param name="leaderboardId">대상 리더보드</param>
+            <param name="score">등록할 점수</param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGLeaderboard.AccumulateScore(System.String,System.Int64,Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            리더보드에 게임 점수를 누적한다
+            </summary>
+            <param name="leaderboardId">대상 리더보드</param>
+            <param name="score">누적할 점수</param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGLeaderboard.SaveRankingProperty(System.String,System.Object,Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            랭킹 속성 정보를 저장한다.
+            </summary>
+            <param name="key">키</param>
+            <param name="value">값</param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGLeaderboard.SaveRankingProperties(System.Collections.Generic.Dictionary{System.String,System.Object},Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            여러개의 랭킹 속성 정보를 저장한다.
+            </summary>
+            <param name="properties">정보 목록</param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGLeaderboard.LoadMyRanking(System.String,Kakaogame.SDK.KGResultWithMyRankingDataCallback)">
+            <summary>
+            이번 시즌 내 랭킹을 가져온다.
+            </summary>
+            <param name="leaderboardId">리더보드 아이디</param>
+            <param name="callback">[rankingInfo, totalPlayerCount]</param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGLeaderboard.LoadLastSeasonMyRanking(System.String,Kakaogame.SDK.KGResultWithMyRankingDataCallback)">
+            <summary>
+            지난 시즌 내 랭킹을 가져온다.
+            </summary>
+            <param name="leaderboardId">리더보드 아이디</param>
+            <param name="callback">[rankingInfo, totalPlayerCount]</param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGLeaderboard.LoadRankings(System.String,System.Int32,System.Int32,Kakaogame.SDK.KGResultWithRankingDataCallback)">
+            <summary>
+            전체 랭킹을 가져온다.
+            </summary>
+            <param name="leaderboardId">리더보드 아이디</param>
+            <param name="beginRanking">가져올 시작 랭킹 (1부터 시작)</param>
+            <param name="endRanking">가져올 마지막 등수. (시작 등수보다 크거나 같고, 1000아래의 값)</param>
+            <param name="callback">[rankingInfos, totalPlayerCount]</param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGLeaderboard.LoadLastSeasonRankings(System.String,System.Int32,System.Int32,Kakaogame.SDK.KGResultWithRankingDataCallback)">
+            <summary>
+            지난 시즌 전체 랭킹을 가져온다.
+            </summary>
+            <param name="leaderboardId">리더보드 아이디</param>
+            <param name="beginRanking">가져올 시작 랭킹 (1부터 시작)</param>
+            <param name="endRanking">가져올 마지막 등수. (시작 등수보다 크거나 같고, 1000아래의 값)</param>
+            <param name="callback">[rankingInfos, totalPlayerCount]</param>
+        </member>
+        <member name="T:Kakaogame.SDK.KGLog">
+            <summary>
+            KGLog클래스는 게임 로그를 서버에 전송 기능을 제공한다.
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGLog.WriteActionLog(System.Collections.Generic.Dictionary{System.String,System.Object},Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            게임의 액션 로그를 서버로 전송한다.
+            </summary>
+            <param name="logBody">로그 dictionary</param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGLog.WriteNetworkLog(System.Collections.Generic.Dictionary{System.String,System.Object},Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            게임의 네트워크 로그를 서버로 전송한다.
+            </summary>
+            <param name="logBody">로그 dictionary</param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGLog.WriteRoundLog(System.Collections.Generic.Dictionary{System.String,System.Object},Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            게임의 라운드 로그를 서버로 전송한다.
+            </summary>
+            <param name="logBody">로그 dictionary</param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGLog.WriteItemLog(System.Collections.Generic.Dictionary{System.String,System.Object},Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            게임의 아이템 로그를 서버로 전송한다.
+            </summary>
+            <param name="logBody">로그 dictionary</param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGLog.WriteResourceLog(System.Collections.Generic.Dictionary{System.String,System.Object},Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            게임의 리소스 로그를 서버로 전송한다.
+            </summary>
+            <param name="logBody">로그 dictionary</param>
+            <param name="callback"></param>
+        </member>
+        <member name="T:Kakaogame.SDK.KGRankingInfo">
+            <summary>
+            KGRankingInfo클래스는 랭킹 정보를 제공한다.
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGRankingInfo.isLocalPlayer">
+            <summary>
+            이 랭킹 정보가, 현재 로그인된 플레이어의 정보인지 여부
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGRankingInfo.playerId">
+            <summary>
+            플레이어 아이디
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGRankingInfo.rankingProperties">
+            <summary>
+            랭킹 속성
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGRankingInfo.rank">
+            <summary>
+            등수, (0일 경우 시즌에 참여한적 없음)
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGRankingInfo.score">
+            <summary>
+            등록된 점수
+            </summary>
+        </member>
+        <member name="T:Kakaogame.SDK.KGSupport">
+            <summary>
+            KGSupport클래스는 고객 응대에 필요한 다양한 뷰를 제공한다.
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGSupport.ShowCSView(Kakaogame.SDK.KGResultWithDeepLinkUrlCallback)">
+            <summary>
+            고객센터 뷰를 띄운다. (네이티브 웹뷰)
+            </summary>
+            <param name="callback">[deepLinkUrl]</param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGSupport.ShowNoticeView(System.String,Kakaogame.SDK.KGResultWithDeepLinkUrlCallback)">
+            <summary>
+            공지사항 뷰를 띄운다. (네이티브 웹뷰)
+            </summary>
+            <param name="noticeKey">노티스 키</param>
+            <param name="callback">[deepLinkUrl]</param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGSupport.ShowNoticeView(Kakaogame.SDK.KGResultWithDeepLinkUrlCallback)">
+            <summary>
+            공지사항 뷰를 띄운다. (네이티브 웹뷰)
+            </summary>
+            <param name="callback">[deepLinkUrl]</param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGSupport.ShowNoticeViewForOneDay(Kakaogame.SDK.KGResultWithDeepLinkUrlCallback)">
+            <summary>
+            공지사항 뷰를 띄운다. (하루에 한번만 노출된다. 네이티브 웹뷰)
+            </summary>
+            <param name="callback">[deepLinkUrl]</param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGSupport.ShowNoticeViewForOneDay(System.String,Kakaogame.SDK.KGResultWithDeepLinkUrlCallback)">
+            <summary>
+            공지사항 뷰를 띄운다. (하루에 한번만 노출된다. 네이티브 웹뷰)
+            </summary>
+            <param name="noticeKey">노티스 키</param>
+            <param name="callback">[deepLinkUrl]</param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGSupport.ShowInAppWebView(System.String,System.Action{Kakaogame.SDK.KGResult,System.String})">
+            <summary>
+            현재 앱 위에 표시되는 웹뷰를 띄운다.
+            </summary>
+            <param name="url">웹 URL</param>
+            <param name="callback">[deepLinkUrl]</param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGSupport.ShowCommunityView(Kakaogame.SDK.KGResultWithDeepLinkUrlCallback)">
+            <summary>
+             커뮤니티(게임의 공식 커뮤니티 사이트) 뷰를 띄운다.
+            <param name="callback">[deepLinkUrl]</param>
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGSupport.ShowCommunityView(System.String,Kakaogame.SDK.KGResultWithDeepLinkUrlCallback)">
+            <summary>
+             커뮤니티(게임의 공식 커뮤니티 사이트) 뷰를 띄운다.
+            <param name="pageCode">페이지 코드</param>
+            <param name="callback">[deepLinkUrl]</param>
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGSupport.ShowCommunityView(System.Int64,Kakaogame.SDK.KGResultWithDeepLinkUrlCallback)">
+            <summary>
+             커뮤니티(게임의 공식 커뮤니티 사이트) 뷰를 띄운다.
+            <param name="articleId">아티클 아이디</param>
+            <param name="callback">[deepLinkUrl]</param>
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGSupport.ShowGachaOddsView(Kakaogame.SDK.KGResultWithDeepLinkUrlCallback)">
+            <summary>
+            가챠 확률 공지 뷰를 띄운다.
+            <param name="callback">[deepLinkUrl]</param>
+            </summary>
+        </member>
+        <member name="T:Kakaogame.SDK.KGApplication">
+            <summary>
+            KGApplication클래스는 안드로이드 퍼미션 관련 기능을 제공한다. (Android Only)
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGApplication.sdkVersion">
+            <summary>
+            KakaoGameSDK 버전 정보를 가져온다.
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGApplication.configuration">
+            <summary>
+            Unity 에디터 환경에서 설정했던 SDK 설정 정보를 가져온다.
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGApplication.Awake">
+            <summary>
+            </summary>
+            <remarks>
+            이 메소드는 유니티에 의해 항상 메인 스레드에서 실행된다.
+            </remarks>
+        </member>
+        <member name="M:Kakaogame.SDK.KGApplication.Initialize">
+            <summary>
+            SDK를 초기화합니다.
+            이 API는 반드시 메인 스레드에서 호출되어야 합니다.
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGApplication.RequestPermission(System.String,Kakaogame.SDK.KGResultCallbackWithPermissionGranted)">
+            <summary>
+            앱에 특정 퍼미션 권한을 요청한다.
+            </summary>
+            <param name="permission">퍼미션 이름</param>
+            <param name="callback">[granted]</param>
+            <example>
+            <code>
+            KGApplication.RequestPermission(
+                "android.permission.CAMERA",
+                (result, granted) => {
+                    if (granted) 
+                        ; // 퍼미션 허용됨
+                    else
+                        ; // 퍼미션 거부됨
+                });
+            </code>
+            </example>
+        </member>
+        <member name="M:Kakaogame.SDK.KGApplication.CheckPermission(System.String,Kakaogame.SDK.KGResultCallbackWithPermissionGranted)">
+            <summary>
+            앱에 특정 퍼미션 권한이 있는지 확인한다.
+            </summary>
+            <param name="permission">퍼미션 이름</param>
+            <param name="callback">[granted]</param>
+            <example>
+            <code>
+            KGApplication.CheckPermission(
+                "android.permission.CAMERA",
+                (result, granted) => {
+                    if (granted) 
+                        ; // 퍼미션 허용됨
+                    else
+                        ; // 퍼미션 거부됨
+                });
+            </code>
+            </example>
+        </member>
+        <member name="M:Kakaogame.SDK.KGApplication.RequestPermissions(System.Collections.Generic.List{System.String},Kakaogame.SDK.KGResultCallbackWithPermissionGranted)">
+            <summary>
+            앱에 특정 퍼미션들의 권한을 요청한다.
+            </summary>
+            <param name="permissions">퍼미션 이름 목록</param>
+            <param name="callback">[granted]</param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGApplication.CheckPermissions(System.Collections.Generic.List{System.String},Kakaogame.SDK.KGResultCallbackWithPermissionGranted)">
+            <summary>
+            앱에 특정 퍼미션들의 권한이 있는지 확인한다.
+            </summary>
+            <param name="permissions">퍼미션 이름 목록</param>
+            <param name="callback">[granted]</param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGApplication.RequestPermissionsWithDescriptionPopup(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.String,Kakaogame.SDK.KGResultCallbackWithPermissionGranted)">
+            <summary>
+            앱에 특정 퍼미션들의 권한이 있는지 확인한다.
+            </summary>
+            <param name="permissions">필수 퍼미션 이름 목록</param>
+            <param name="optionalPermissions">옵션 퍼미션 이름 목록</param>
+            <param name="iconResourceId">팝업에 노출될 아이콘 리소스 이름</param>
+            <param name="callback">[granted]</param> 
+        </member>
+        <member name="M:Kakaogame.SDK.KGApplication.RequestPermissionsWithDescriptionPopup(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Boolean,Kakaogame.SDK.KGPermissionTheme,Kakaogame.SDK.KGResultCallbackWithPermissionGranted)">
+            <summary>
+            앱에 특정 퍼미션들의 권한이 있는지 확인한다.
+            </summary>
+            <param name="permissions">필수 퍼미션 이름 목록</param>
+            <param name="optionalPermissions">옵션 퍼미션 이름 목록</param>
+            <param name="optionalGuarantee">선택 권한에 대해서도 전부 받아지기를 희망하는 경우 true.</param>
+            <param name="theme">팝업에 노출될 아이콘 리소스 이름</param>
+            <param name="callback">[granted]</param> 
+        </member>
+        <member name="T:Kakaogame.SDK.KGSession">
+            <summary>
+            KGSession클래스는 카카오 게임 서비스로의 로그인, 로그아웃, 탈퇴, 계정 연결, 연결 중단, 재연결등의 기능을 제공한다
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGSession.isLoggedIn">
+            <summary>
+            현재 세션의 플랫폼 로그인 여부
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGSession.accessToken">
+            <summary>
+            현재 세션의 플랫폼 Access Token
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGSession.Login(Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            카카오 게임 서비스의 로그인을 요청한다.
+            </summary>
+            <example>
+            <code>
+            KGSession.Login(
+                (result) => {
+                    if (result.isSuccess) {
+                        // 로그인 성공
+                    }
+                    else {
+                        // 로그인 실패
+                    }
+                });
+            </code>
+            </example>
+        </member>
+        <member name="M:Kakaogame.SDK.KGSession.Authorize(Kakaogame.SDK.KGIdpProfile,System.Action{Kakaogame.SDK.KGResult})">
+            <summary>
+            SDK 외부에서 수행된 IDP 인증 정보를 통해 플랫폼 로그인을 수행한다.
+            </summary>
+            <param name="account">플랫폼 로그인에 사용될 IDP인증 정보</param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGSession.Connect(Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            디바이스 로그인된 계정에 다른 IDP 계정 연결을 요청한다.
+            디바이스 로그인 계정만 다른 IDP로 계정 연결이 가능하다.만약 디바이스 로그인 상태가 아니라면, 계정 연결에 실패한다.
+            이미 사용중인 IDP 계정으로 연결을 시도한 경우, 계정 연결에 실패한다.
+            </summary>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGSession.Unauthorize(Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            플랫폼 인증 로그아웃을 수행한다.
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGSession.Logout(Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            카카오 게임 서비스의 로그아웃을 요청한다.
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGSession.Unregister(Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            카카오 게임 서비스의 탈퇴를 요청한다.
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGSession.Start(Kakaogame.SDK.KGResultWithIsAuthorized)">
+            <summary>
+            SDK를 초기화한다.
+            만약 이전에 인증했던 정보가 있을 경우 자동 로그인도 수행한다.
+            <para/>
+            이 API는 반드시 메인 스레드에서 호출되어야 합니다.
+            </summary>
+            <param name="callback">[isAuthorized]
+            <para/> * isAuthorized : 자동로그인이 성공한 상태이면 true, 이외의 경우 false
+            </param>
+            <example>
+            <code>
+            KGSession.Start(
+                (result, isAuthorized) => {
+                    if (result.isSuccess) {
+                        // SDK 초기화 성공
+                        if (isAuthorized) {
+                            // 자동 로그인 데이터 존재함
+                            // 게임 화면으로 바로 이동
+                        }
+                        else {
+                            // 자동 로그인 만료되었거나, 로그인 정보 없음
+                            // 로그인 화면으로 이동 
+                        }
+                    }
+                    else {
+                        // API 실행 실패
+                    }
+                });
+            </code>
+            </example>
+        </member>
+        <member name="M:Kakaogame.SDK.KGSession.Resume(Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            카카오 게임 서비스의 연결 복구를 요청한다.
+            앱이 백그라운드에서 포그라운드로 전환될 때, 호출하도록 한다.
+            </summary>
+            <example>
+            <code>
+            KGSession.Resume(
+                (result) => {
+                    if (result.isSuccess) {
+                        // 게임 계속 진행
+                    }
+                    else {
+                        // 에러 발생
+                    }
+                });
+            </code>
+            아래 예제는 Unity에서 앱 전환 이벤트를 구독하는 방법입니다.
+            <code>
+            // 아래 메소드를 MonoBehaviour를 상속받은 클래스 아래에 작성합니다.
+            void OnApplicationPause(bool paused) {
+                if (paused)
+                    ; // KakaoGameSDK Pause
+                else
+                    ; // KakaoGameSDK Resume
+            }
+            </code>
+            </example>
+            <seealso cref="M:Kakaogame.SDK.KGSession.Pause(Kakaogame.SDK.KGResultCallback)"/>
+        </member>
+        <member name="M:Kakaogame.SDK.KGSession.Resume(Kakaogame.SDK.KGIdpProfile,System.Action{Kakaogame.SDK.KGResult})">
+            <summary>
+            앱이 백그라운드에서 포그라운드로 돌아올 때 SDK를 Resume시킨다.
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGSession.Pause(Kakaogame.SDK.KGResultCallback)">
+             <summary>
+            카카오 게임 서비스의 연결 중단을 요청한다.
+             앱이 포그라운드에서 백그라운드로 전환될 때, 호출하도록 한다.
+             </summary>
+             <example>
+             <code>
+             KGSession.Pause(
+                 (result) => {
+                     // Pause의 경우 별도의 처리는 필요하지 않습니다.
+                 });
+             </code>
+             </example>
+             <seealso cref="M:Kakaogame.SDK.KGSession.Resume(Kakaogame.SDK.KGResultCallback)"/>
+        </member>
+        <member name="M:Kakaogame.SDK.KGSession.RegisterOnlinePushListener(System.Action{System.Collections.Generic.Dictionary{System.String,System.Object}})">
+            <summary>
+            온라인 푸시 리스너를 등록한다.
+            등록된 리스너를 통해, 카카오 게임 서비스로 부터 전달되는 데이터를 받는다.
+            </summary>
+            <param name="listener">OnlinePush를 받을 리스너</param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGSession.UnregisterOnlinePushListener(System.Action{System.Collections.Generic.Dictionary{System.String,System.Object}})">
+            <summary>
+            등록된 온라인 푸시 리스너를 삭제한다.
+            </summary>
+            <param name="listener">기존에 등록된 온라인 푸시 리스너</param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGSession.Request(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object},System.Int64,System.Action{Kakaogame.SDK.KGResult,System.Collections.Generic.Dictionary{System.String,System.Object}})">
+            <summary>
+            플랫폼 서버로 직접 요쳥을 보낸다.
+            </summary>
+            <param name="uri">요청을 보낼 주소</param>
+            <param name="headerDic">헤더</param>
+            <param name="bodyDic">바디</param>
+            <param name="timeout">타임아웃 (ms)</param>
+            <param name="callback">[result, response]</param>
+        </member>
+        <member name="T:Kakaogame.SDK.KGCoupon">
+            <summary>
+            KGCoupon클래스는 쿠폰 기능을 제공한다.
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGCoupon.KGCouponResultCode.CouponInvalid">
+            <summary>유효하지 않은 쿠폰</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGCoupon.KGCouponResultCode.CouponUsed">
+            <summary>이미 사용된 쿠폰</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGCoupon.KGCouponResultCode.CouponSoldout">
+            <summary>전체 수량이 모두 소진됨</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGCoupon.KGCouponResultCode.CouponExpired">
+            <summary>기간 만료된 쿠폰</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGCoupon.KGCouponResultCode.CouponExceed">
+            <summary>계정당 사용횟수 초과</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGCoupon.KGCouponResultCode.CouponNotOwner">
+            <summary>다른 플레이어에게 지정된 쿠폰</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGCoupon.KGCouponResultCode.CouponServerError">
+            <summary>서버 에러</summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGCoupon.ShowCouponPopup(Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            SDK에서 제공하는 UI를 이용해 쿠폰 번호를 입력할 수 있는
+            팝업 윈도우를 표시한다.
+            </summary>
+            <example>
+            <code>
+            KGCoupon.ShowCouponPopup(
+                (result) => {
+                    if (result.isSuccess)
+                        ; // 유저가 입력한 쿠폰이 사용 성공처리됨
+                    else
+                        ; // 유저가 쿠폰입력 창을 닫음
+                          // 별도의 에러는 처리하지 않으셔도 됩니다.
+                });
+            </code>
+            </example>
+        </member>
+        <member name="M:Kakaogame.SDK.KGCoupon.UseCoupon(System.String,Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            지정된 번호의 쿠폰을 사용한다.
+            </summary>
+            <param name="couponCode">쿠폰 코드</param>
+        </member>
+        <member name="F:Kakaogame.SDK.KGInfodesk.KGInfodeskAppUpdateStatus.Latest">
+            <summary>최신 버전 이용 중</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGInfodesk.KGInfodeskAppUpdateStatus.UpdateRecommended">
+            <summary>최신 버전이 아니고, 필수 업데이트가 필요하지 않은 버전을 이용중</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGInfodesk.KGInfodeskAppUpdateStatus.UpdateRequired">
+            <summary>최신 버전이 아니고, 필수 업데이트가 필요한 버전을 이용중</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGInfodesk.KGInfodeskAppServiceStatus.Ready">
+            <summary>오픈 준비중 상태</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGInfodesk.KGInfodeskAppServiceStatus.Open">
+            <summary>서비스 중 상태</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGInfodesk.KGInfodeskAppServiceStatus.Close">
+            <summary>서비스 종료 상태</summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGInfodesk.currentInfodesk">
+            <summary>
+            인포데스크의 현재 스냅샷을 가져온다.
+            만약 아직 SDK가 Start되지 않았거나, Start에 실패하여 인포데스크를
+            가져올 수 없는 경우 null을 반환한다.
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGInfodesk.appLatestVersion">
+            <summary>
+            어드민에 등록된 앱의 최신 버전
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGInfodesk.marketUrl">
+            <summary>
+            어드민에 등록된 마켓 주소
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGInfodesk.appOption">
+            <summary>
+            인포데스크에 등록된 앱의 옵션들
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGInfodesk.RegisterWhitelist(System.String)">
+            <summary>
+            현재 기기를 화이트리스트에 등록한다.
+            화이트리스트에 등록된 기기들은 테스터로 등록되어, 점검 여부와 관계 없이
+            앱을 이용할 수 있게 된다.
+            </summary>
+            <param name="deviceNickname">어드민에 보여질 기기의 닉네임</param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGInfodesk.RegisterWhitelist(System.String,System.Action{Kakaogame.SDK.KGResult})">
+            <summary>
+            현재 기기를 화이트리스트에 등록한다.
+            화이트리스트에 등록된 기기들은 테스터로 등록되어, 점검 여부와 관계 없이
+            앱을 이용할 수 있게 된다.
+            </summary>
+            <param name="deviceNickname">어드민에 보여질 기기의 닉네임</param>
+        </member>
+        <member name="F:Kakaogame.SDK.KGItemState.Unconfirmed">
+            <summary>미수령 상태</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGItemState.Confirmed">
+            <summary>수령 완료</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGItemState.Expired">
+            <summary>만료된 아이템</summary>
+        </member>
+        <member name="T:Kakaogame.SDK.KGItem">
+            <summary>
+            KGItem클래스는 아이템 관련 정보를 제공한다.
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGItem.itemId">
+            <summary>
+            아이템의 인스턴스 식별자
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGItem.itemCode">
+            <summary>
+            아이템 종류 식별 코드
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGItem.quantity">
+            <summary>
+            수량
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGItem.validityTime">
+            <summary>
+            유효시간
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGItem.expiryTime">
+            <summary>
+            만료 시간
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGItem.state">
+            <summary>
+            아이템 상태
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGMessageState.Unread">
+            <summary>
+            읽지 않음
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGMessageState.Read">
+            <summary>
+            읽음
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGMessageState.Expired">
+            <summary>
+            기간 만료됨
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGMessageState.Deleted">
+            <summary>
+            삭제됨
+            </summary>
+        </member>
+        <member name="T:Kakaogame.SDK.KGMessage">
+            <summary>
+            KGMessage클래스는 메시지 정보를 제공한다.
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGMessage.PageKeyInit">
+            <summary>
+            아이템 조회를 시작할 때 전달해야 하는 페이지 키
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGMessage.PageKeyEnd">
+            <summary>
+            더 이상 조회할 아이템이 없을 때 반환되는 페이지 키
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGMessage.messageId">
+            <summary>
+            메세지 식별자
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGMessage.messageBoxId">
+            <summary>
+            메세지 박스의 아이디
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGMessage.state">
+            <summary>
+            메세지 상태
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGMessage.senderId">
+            <summary>
+            보낸 사람의 식별자
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGMessage.title">
+            <summary>
+            타이틀
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGMessage.body">
+            <summary>
+            메세지 내용
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGMessage.items">
+            <summary>
+            첨부된 아이템 목록
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGMessage.readTime">
+            <summary>
+            메시지를 읽은 시각. Epoch time(단위:ms).
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGMessage.expiryTime">
+            <summary>
+            메시지의 만료 시각. Epoch time(단위:ms).
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGMessage.resourceMap">
+            <summary>
+            메타 데이터
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGMessage.LoadMessages(System.String,Kakaogame.SDK.KGMessageState,System.Int64,System.Int32,Kakaogame.SDK.KGResultWithMessagesCallback)">
+            <summary>
+            자신에게 도착한 메일을 가져온다.
+            </summary>
+            <param name="messageBoxId">메세지 박스 아이디</param>
+            <param name="states">가져올 메세지 상태, 복수 지정 가능</param>
+            <param name="nextPageKey">
+            처음 조회할 경우는 KGMessage.PageKeyInit을 넣는다.
+            조회하면, 다음 페이지 키를 완료핸들러를 통해 받는다.
+            이 값을 넣으면 이어서 조회할 수 있다.
+            </param>
+            <param name="count">가져올 갯수</param>
+            <param name="callback">[mails, nextPageKey, maxCount, totalCount]</param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGMessage.LoadUnreadMessageCount(System.String,Kakaogame.SDK.KGResultWithMessageCountCallback)">
+            <summary>
+            안읽음 상태의 메세지 갯수를 가져온다.
+            </summary>
+            <param name="messageBoxId"></param>
+            <param name="callback">[unreadMessageCount]</param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGMessage.MarkAsReadMessages(System.Collections.Generic.List{Kakaogame.SDK.KGMessage},Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            메세지들을 읽음 처리한다.
+            </summary>
+            <param name="messages">읽음 처리할 메세지들</param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGMessage.DeleteMessages(System.Collections.Generic.List{Kakaogame.SDK.KGMessage},Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            메세지들을 삭제처리한다.
+            </summary>
+            <param name="messages">삭제할 메세지들의 목록</param>
+            <param name="callback"></param>
+        </member>
+        <member name="T:Kakaogame.SDK.KGLocalPlayer">
+            <summary>
+            KGLocalPlayer클래스는 로컬 플레이어의 정보를 제공한다.
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGLocalPlayer.currentPlayer">
+            <summary>
+            현재 로컬 플레이어 정보를 가져온다.
+            <para/>
+            만약 플랫폼 로그인이 수행되지 않았거나, 로그인에 실패하여 결과를 가져올 수 없는 경우 null
+            을 리턴한다.
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGLocalPlayer.SaveCustomProperty(System.String,System.String,Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            로컬 플레이어의 게임별 속성을 키/값 형태로 저장한다.
+            </summary>
+            <param name="key">키</param>
+            <param name="val">값</param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGLocalPlayer.SaveCustomProperties(System.Collections.Generic.Dictionary{System.String,System.String},Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            여러개의 속성을 저장한다.
+            </summary>
+            <param name="properties">키,값 속성 목록</param>
+            <param name="callback"></param>
+        </member>
+        <member name="T:Kakaogame.SDK.KGPlayer">
+            <summary>
+            KGPlayer클래스는 플레이어의 정보를 제공한다.
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGPlayer.NZPlayerResultCode.PlayerPunishment">
+            <summary>유져가 제제 중의 상태</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGPlayer.NZPlayerResultCode.PlayerUnregistered">
+            <summary>유져가 탈퇴 처리 중의 상태</summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGPlayer.playerId">
+            <summary>
+            플랫폼에서 발급된 플레이어의 식별자 아이디
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGPlayer.idpProfile">
+            <summary>
+            IDP 프로필 정보
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGPlayer.GetCustomProperty(System.String)">
+            <summary>
+            커스텀 속성 키에 해당하는 설정 값을 반환한다
+            </summary>
+            <param name="key">가져올 키</param>
+            <returns>값</returns>
+        </member>
+        <member name="M:Kakaogame.SDK.KGPlayer.LoadFriendPlayers(Kakaogame.SDK.KGResultWithPlayersCallback)">
+            <summary>
+            현재 앱을 플레이한 친구(내가 인증한 IDP의 친구)들의 플레이어 정보 목록을 조회한다.
+            </summary>
+            <param name="callback">[players]</param>
+            <example>
+            <code>
+            KGPlayer.LoadFriendPlayers(
+                (result, players) => {
+                    if (result.isSuccess) {
+                        foreach (var player in players) {
+                            var playerId = player.playerId; // 친구의 플레이어 아이디
+                        }
+                    }
+                    else {
+                        // 친구목록 가져오기 실패
+                    }
+                });
+            </code>
+            </example>
+        </member>
+        <member name="M:Kakaogame.SDK.KGPlayer.LoadPlayers(System.Collections.Generic.List{System.String},Kakaogame.SDK.KGResultWithPlayerMapCallback)">
+            <summary>
+            playerId 리스트들의 플레이어 정보 목록을 조회한다.
+            </summary>
+            <param name="playerIds">playerId 리스트</param>
+            <param name="callback">[players]</param>
+        </member>
+        <member name="F:Kakaogame.SDK.KGPromotionType.Starting">
+            <summary>앱 시작 시 보여져야 하는 프로모션</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGPromotionType.Ending">
+            <summary>앱 종료 시 보여져야 하는 프로모션</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGPromotionType.Hidden">
+            <summary>자동으로 보여지지 않고 수동으로 표시해야 하는 프로모션</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGPromotionApplyType.None">
+            <summary>응모가 필요 없는 프로모션</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGPromotionApplyType.Click">
+            <summary>클릭 시 응모되어야 하는 프로모션</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGPromotionApplyType.Show">
+            <summary>노출 시 응모되어야 하는 프로모션</summary>
+        </member>
+        <member name="T:Kakaogame.SDK.KGPromotion">
+            <summary>
+            KGPromotion클래스는 프로모션 UI를 제공한다.
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGPromotion.ShowStartingPromotionPopups(Kakaogame.SDK.KGResultWithDeepLinkUrlCallback)">
+            <summary>
+            SDK에서 제공하는 UI로 시작 화면에 보여져야 하는 프로모션들을 표시한다.
+            </summary>
+            <param name="callback">[deepLinkUrl]</param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGPromotion.ShowEndingPromotionPopups(Kakaogame.SDK.KGResultWithDeepLinkUrlCallback)">
+            <summary>
+            SDK에서 제공하는 UI로 게임 종료 프로모션을 표시한다.
+            </summary>
+            <param name="callback">[deepLinkUrl]</param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGPromotion.LoadPromotions(Kakaogame.SDK.KGPromotionType,System.Action{Kakaogame.SDK.KGResult,System.Collections.Generic.List{Kakaogame.SDK.KGPromotion}})">
+            <summary>
+            지정된 타입의 프로모션들의 정보를 가져온다.
+            </summary>
+            <param name="type">가져올 프로모션 타입</param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGPromotion.LoadEndingPromotion(System.Action{Kakaogame.SDK.KGResult,Kakaogame.SDK.KGPromotion})">
+            <summary>
+            종료 시에 나타나도록 설정된 프로모션의 정보를 가져온다.
+            <para />
+            promotion : 종료 시 나타나는 프로모션
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGPromotion.Apply(System.Action{Kakaogame.SDK.KGResult})">
+            <summary>
+            프로모션에 응모한다.
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGPromotion.sequence">
+            <summary>
+            프로모션의 표시 순서
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGPushOption.Player">
+            <summary>
+            사용자 푸시 동의 옵션
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGPushOption.Night">
+            <summary>
+            야간 푸시 동의 옵션
+            </summary>
+        </member>
+        <member name="T:Kakaogame.SDK.KGPush">
+            <summary>
+            KGPush클래스는 푸시 수신 옵션 설정 및 조회 기능을 제공한다.
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGPush.IsEnablePush(Kakaogame.SDK.KGPushOption)">
+            <summary>
+            특정 푸시 옵션의 설정 상태를 가져온다.
+            </summary>
+            <param name="pushOption">조회할 푸시 옵션의 이름</param>
+            <returns>
+            enable 상태이면 true, 
+            disable 상태이면 false
+            </returns>
+        </member>
+        <member name="M:Kakaogame.SDK.KGPush.EnablePush(Kakaogame.SDK.KGPushOption,System.Boolean,Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            특정 푸시 옵션의 설정을 켜거나 끈다.
+            </summary>
+            <param name="pushOption">켜고 끌 푸시 옵션의 이름</param>
+            <param name="enable">푸시 설정 여부</param>
+            <param name="callback"></param>
+            <example>
+            <code>
+            KGPush.EnablePush(
+                KGPushOption.Player, true,
+                (result) => {
+                    if (result.isSuccess) {
+                        // 푸시 구독 등록 성공
+                    }
+                    else {
+                        // 에러
+                    }
+                });
+            </code>
+            </example>
+        </member>
+        <member name="T:Kakaogame.SDK.KGResult">
+            <summary>
+            KGResult는 API 실행 결과를 제공한다.
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGResult.isSuccess">
+            <summary>
+            API 호출이 성공했는지 여부
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGResult.code">
+            <summary>
+            API 실행 결과를 나타내는 코드
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGResult.description">
+            <summary>
+            API 실행 결과를 나타내는 메세지
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGResult.message">
+            <summary>
+            SDK에서 제공하는, 유저에게 노출해야 할 메세지
+            </summary>
+        </member>
+        <member name="T:Kakaogame.SDK.KGResultCode">
+            <summary>
+            에러 코드의 값들을 제공한다.
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.Success">
+            <summary>성공</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.BadRequest">
+            <summary>잘못된 인자 요청</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.AuthFailure">
+            <summary>IDP 인증 실패</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.Forbidden">
+            <summary>
+            허용되지 않는 요청
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.NotFound">
+            <summary>
+            지원하지 않는 기능
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.NotExistData">
+            <summary>
+            존재하지 않는 데이터 요청
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.AlreadyUsedIDPAccount">
+            <summary>
+            이미 존재하는 계정에 Connect 시도
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.ConflictData">
+            <summary>
+            데이터 중복
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.InternalError">
+            <summary>
+            서버 내부 오류
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.ServiceUnavailable">
+            <summary>점검 중</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.NetworkFailure">
+            <summary>네트워크가 연결되어 있지 않음</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.ServerTimeout">
+            <summary>서버 요청 시간 초과</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.ServerException">
+            <summary>서버 동작 중 익셉션 발생</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.ServerInvalidResponse">
+            <summary>서버가 잘못된 응답</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.ServerConnectionFailed">
+            <summary>연결 실패</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.InitializationFailed">
+            <summary>초기화 실패</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.NotInitialized">
+            <summary>SDK가 초기화되지 않음</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.NotAuthorized">
+            <summary>인증되지 않은 상태</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.InvalidParameter">
+            <summary>요청한 파라미터가 잘못됨</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.ClientException">
+            <summary>SDK 처리 중 익셉션 발생</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.InvalidState">
+            <summary>잘못된 상태</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.InProgress">
+            <summary>진행 중 </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.IdpAuthFailure">
+            <summary>IDP 인증 실패</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.NotSupported">
+            <summary>지원되지 않는 기능</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.ExceedMonthlyUsage">
+            <summary>월 사용량 초과</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.ExceedDailyUsage">
+            <summary>일 사용량 초과</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.ExceedMaxUploadSize">
+            <summary>업로드 용량 초과</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.ExceedMaxUploadNumber">
+            <summary>업로드 개수 초과</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.MessageSettingDisabled">
+            <summary>받는 사람이 메세지 거부 상태</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.KakaoTalkNotInstalled">
+            <summary>카카오톡이 설치되어 있지 않은 상태</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.NotKakaoTalkUser">
+            <summary>카카오톡 유저가 아님</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.UnderAgePlayer">
+            <summary>미성년자 유저</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.UserCanceled">
+            <summary>유저의 동작 취소</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.AppTerminate">
+            <summary>앱 종료 ,점검 시 </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.Failure">
+            <summary>이유가 명시되지 않은 실패</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.GameshopPaymentServerUnstable">
+            <summary>카카오 페이먼트 서버의 응답이 없거나 연결이 불안정한 경우</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.GameshopInvalidOrderToken">
+            <summary>잘못된 아이템 주문 토큰인 경우</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.GameshopCompleteOrderFailed">
+            <summary>아이템 주문완료에 실패한 경우</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.GameshopInvalidAccessToken">
+            <summary>access_token 인증에 실패한 경우</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGResultCode.GameshopAlreadyCompletedOrder">
+            <summary>이미 완료된 아이템 주문 건에 대해 완료 요청을 한 경우</summary>
+        </member>
+        <member name="F:Kakaogame.SDK.Editor.KGSharedData._google">
+            <summary>
+            <para>구글 IDP 데이터 주입을 위한 정보</para>
+               <para>- Client ID</para>
+               <para>- URL Scheme</para>
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.Editor.KGSharedData._facebook">
+            <summary>
+            <para>구글 IDP 데이터 주입을 위한 정보</para>
+               <para>- Client ID</para>
+               <para>- URL Scheme</para>
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.Editor.KGSharedData._usePush">
+            <summary>
+            푸시 서비스를 사용할 것인지 여부를 나타낸다
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.Editor.KGSharedData._useKakao">
+            <summary>
+            카카오톡 IDP 인증을 사용할 것인지 여부를 나타낸다
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.Editor.KGSharedData._useFacebook">
+            <summary>
+            페이스북 IDP 인증을 사용할 것인지 여부를 나타낸다
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.Editor.KGSharedData._useGoogle">
+            <summary>
+            구글 플러스 IDP 인증을 사용할 것인지 여부를 나타낸다
+            </summary>
+        </member>
+        <member name="T:Kakaogame.SDK.KGAppleGameCenterProfile">
+            <summary>
+            KGAppleGameCenterProfile클래스는 애플 게임센터 프로필 정보를 제공한다.
+            </summary>
+        </member>
+        <member name="T:Kakaogame.SDK.KGGuestProfile">
+            <summary>
+            KGGuestProfile클래스는 게스트 인증된 프로필 정보를 제공한다.
+            </summary>
+        </member>
+        <member name="T:Kakaogame.SDK.KGFacebookProfile">
+            <summary>
+            KGFacebookProfile클래스는 페이스북 프로필 정보를 제공한다.
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGFacebookProfile.name">
+            <summary>
+            페이스북 이름.
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGFacebookProfile.profileImageUrl">
+            <summary>
+            페이스북 프로필 이미지 URL.
+            </summary>
+        </member>
+        <member name="T:Kakaogame.SDK.KGGoogleProfile">
+            <summary>
+            KGGoogleProfile클래스는 구글 프로필 정보를 제공한다.
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGIdpCode.Guest">
+            <summary>
+            게스트
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGIdpCode.Kakao">
+            <summary>
+            카카오
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGIdpCode.Facebook">
+            <summary>
+            페이스북
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGIdpCode.Google">
+            <summary>
+            구글
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGIdpCode.AppleGameCenter">
+            <summary>
+            애플 게임 센터
+            </summary>
+        </member>
+        <member name="T:Kakaogame.SDK.KGIdpCodeString">
+            <summary>
+            KGIdpCodeString클래스는 Idp code의 string정보를 제공한다.
+            </summary>
+        </member>
+        <member name="T:Kakaogame.SDK.KGIdpProfile">
+            <summary>
+            KGIdpProfile클래스는 IDP 프로필 정보를 제공한다.
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGIdpProfile.idpAccessToken">
+            <summary> 
+            IDP에서 발급된 Access Token
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGIdpProfile.idpUserId">
+            <summary>
+            IDP에서 발급된 유저 식별자 코드
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGIdpProfile.idpCodeEnum">
+            <summary>
+            해당 프로파일의 IDP 종류
+            </summary>
+            <seealso cref="T:Kakaogame.SDK.KGIdpCodeString"/>
+            <example>
+            <code>
+            KGIdpProfile profile;
+            
+            if (profile.idpCode == KGIdpCode.Kakao)
+                ; // Kakao User
+            else if (profile.idpCode == KGIdpCode.Facebook)
+                ; // Facebook User
+            /* .... */
+            </code>
+            </example>
+        </member>
+        <member name="M:Kakaogame.SDK.KGIdpProfile.RefreshLocalIdpProfile(Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            현재 로그인된 IDP 계정의 정보를 갱신한다.
+            </summary>
+            <param name="callback"></param>
+        </member>
+        <member name="T:Kakaogame.SDK.KGSystem">
+            <summary>
+            KGSystem클래스는 시스템에 대한 정보를 제공한다.
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGSystem.deviceId">
+            <summary>
+            현재 기기 아이디
+            (Android : AndroidID를 암호화한 값)
+            (iOS : ZinnySDK에서 발급한 디바이스 식별 키)
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGSystem.networkType">
+            <summary>
+            현재 기기의 네트워크 연결 상태
+            ("wifi", "cellular", "unknown")
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGSystem.isNetworkConnected">
+            <summary>
+            현재 기기의 네트워크 연결 여부
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGSystem.countryCode">
+            <summary>
+            현재 기기에 설정된 국가 코드.
+            (ISO 3166-1 alpha-2)
+            정보가 없을 경우 "zz"
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGSystem.languageCode">
+            <summary>
+            현재 기기에 설정된 언어 코드.
+            (ISO 639-1)
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGSystem.deviceModel">
+            <summary>
+            현재 기기 모델명
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGSystem.osName">
+            <summary>
+            현재 기기의 OS.
+            ("android", "ios")
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGOSType.Unknown">
+            <summary>
+            알 수 없음
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGOSType.Android">
+            <summary>
+            Android
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGOSType.iOS">
+            <summary>
+            iOS
+            </summary>
+        </member>
+        <member name="T:Kakaogame.SDK.KGKakaoProfile">
+            <summary>
+            KGKakaoProfile클래스는 카카오 프로필 정보를 제공한다.
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGKakaoProfile.nickname">
+            <summary>
+            카카오 프로필 별명
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGKakaoProfile.thumbnailImageUrl">
+            <summary>
+            카카오 썸네일 이미지 URL
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGKakaoProfile.profileImageUrl">
+            <summary>
+            카카오 프로필 이미지 URL
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGKakaoProfile.countryISO">
+            <summary>
+            컨트리 코드
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGKakaoProfile.kakaoTalkOS">
+            <summary>
+            사용중인 카카오톡의 OS
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGKakaoProfile.remainingInviteCount">
+            <summary>
+            오늘 보낼 수 있는 남은 초대 수
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGKakaoProfile.remainingGroupMessageCount">
+            <summary>
+            오늘 보낼 수 있는 남은 그룹 메시지 수
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGKakaoProfile.isAllowedMessage">
+            <summary>
+            메세지 수신 여부
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGKakaoProfile.isAppRegistered">
+            <summary>
+            앱 가입 여부
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGKakaoProfile.serviceUserId">
+            <summary>
+            IDP 서비스유저ID
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGKakaoProfile.uuid">
+            <summary>
+            UUID값
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGKakaoProfile.ci">
+            <summary>
+            UUID값
+            </summary>
+        </member>
+        <member name="P:Kakaogame.SDK.KGKakaoProfile.isRecommended">
+            <summary>
+            추천친구 여부
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGKakaoProfile.LoadRecommendedInvitableFriendProfiles(System.Int32,System.Int32,System.Int32,Kakaogame.SDK.KGResultCallbackWithKakaoProfiles)">
+            <summary>
+            현재 앱을 플레이한 적이 없는 카카오 친구들의 프로필 정보 목록(초대에 응할 가능성이 높은 순으로 정렬된 목록)을 조회한다.
+            </summary>
+            <param name="offset">조회할 오프셋. 0부터 시작.</param>    
+            <param name="limit">가져올 최대 갯수</param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGKakaoProfile.LoadInvitableFriendProfiles(System.Int32,System.Int32,System.Int32,Kakaogame.SDK.KGResultCallbackWithKakaoProfiles)">
+            <summary>
+            현재 앱을 플레이한 적이 없는 카카오 친구들의 프로필 정보 목록(초대에 응할 가능성이 높은 순으로 정렬된 목록)을 조회한다.
+            </summary>
+            <param name="recommendLimit">최대 추천 친구 수.</param>
+            <param name="offset">조회할 오프셋. 0부터 시작.</param>
+            <param name="limit">가져올 최대 갯수</param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGKakaoProfile.RequestAgeVerification(Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            본인인증 요청을 시도한다.
+            </summary>
+            <param name="callback"></param>
+        </member>
+        <member name="F:Kakaogame.SDK.KGKakaoAuthType.KakaoTalk">
+            <summary>
+            카카오톡으로 로그인(톡 미설치시 카카오계정으로 로그인) 인증 타입
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGKakaoAuthType.KakaoWeb">
+            <summary>
+            카카오계정으로 로그인 인증 타입
+            </summary>
+        </member>
+        <member name="F:Kakaogame.SDK.KGKakaoAuthType.KakaoAllType">
+            <summary>
+            카카오톡 / 카카오계정 선택 가능한 로그인 인증 타입
+            </summary>
+        </member>
+        <member name="T:Kakaogame.SDK.KGSessionForCustomUI">
+            <summary>
+            KGSessionForCustomUI클래스는 커스텀 UI 개발을 위한 카카오 게임 서비스로의 로그인, 로그아웃, 탈퇴, 계정 연결의 기능을 제공한다.
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGSessionForCustomUI.Login(Kakaogame.SDK.KGIdpCode,Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            입력받은 idpCode에 맞는 Custom UI 로그인을 요청한다.
+            </summary>
+            <param name="idpCode">IDP 코드</param>
+            <param name="callback"></param>
+            <example>
+            // 카카오 idp로 custom UI Login을 요청한다.
+            <code>
+            KGSessionForCustomUI.Login(KGIdpCodeKakao, (result) => 
+            {
+            	if (result.isSuccess) {
+            		// 로그인 성공
+            	}
+            	else {
+            		// 로그인 실패
+            	}
+            });
+            </code>
+            </example>
+        </member>
+        <member name="M:Kakaogame.SDK.KGSessionForCustomUI.LoginKakao(Kakaogame.SDK.KGKakaoAuthType,Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            카카오 계정으로 로그인할 때 원하는 타입으로 로그인을 요청한다.
+            </summary>
+            <param name="authType">로그인을 수행할 타입 코드</param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGSessionForCustomUI.Connect(Kakaogame.SDK.KGIdpCode,Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            디바이스 로그인된 계정에 다른 IDP 계정 연결을 요청한다.
+            디바이스 로그인 계정만 다른 IDP로 계정 연결이 가능하다.만약 디바이스 로그인 상태가 아니라면, 계정 연결에 실패한다.
+            이미 사용중인 IDP 계정으로 연결을 시도한 경우, 계정 연결에 실패한다.
+            </summary>
+            <param name="idpCode">IDP 코드</param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGSessionForCustomUI.ConnectKakao(Kakaogame.SDK.KGKakaoAuthType,Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            디바이스/구글 로그인된 계정에 카카오 IDP 계정에 원하는 타입으로 연결을 요청한다.
+            디바이스/구글 로그인 계정만 카카오 IDP로 계정 연결이 가능하다. 만약 디바이스/구글 로그인 상태가 아니라면, 계정 연결에 실패한다.
+            이미 사용중인 IDP 계정으로 연결을 시도한 경우, 계정 연결에 실패한다.
+            </summary>
+            <param name="authType">로그인을 수행할 타입 코드</param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Kakaogame.SDK.KGSessionForCustomUI.Logout(Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            CustomUI Login 서비스의 로그아웃을 요청한다.
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGSessionForCustomUI.Unregister(Kakaogame.SDK.KGResultCallback)">
+            <summary>
+            CustomUI Login 서비스의 탈퇴를 요청한다.
+            </summary>
+        </member>
+        <member name="T:Kakaogame.SDK.KGGoogleGamesLeaderboards">
+            <summary>
+            KGGoogleGamesLeaderboards클래스는 구글게임즈 리더보드 관련 기능을 제공한다. 
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGGoogleGamesLeaderboards.SubmitScore(System.String,System.Int64,System.String)">
+            <summary>
+            리더보드에 스코어를 올린다.
+            <param name="id">리더보드 아이디</param>
+            <param name="score">점수</param>
+            </summary>
+        </member>
+        <member name="M:Kakaogame.SDK.KGGoogleGamesLeaderboards.ShowLeaderboardView(System.String,System.Int32)">
+            <summary>
+            리더보드 화면을 보여준다.
+            <param name="id">리더보드 아이디</param>
+            <param name="timeSpan">리더보드 시간 주기</param>
+            </summary>
+        </member>
+        <member name="P:Kakaogame.Internal.Services.Crashlytics.isTestPlayer">
+            <summary>
+            테스트 플레이어 여부를 Crashlytics에 기록한다.
+              (테스트앱 설치되어 잇는 사람)
+            </summary>
+        </member>
+        <member name="T:Kakaogame.Internal.Logger">
+            <summary>
+            코드 블럭의 진입점과 종료점에 자동으로 로그를 남긴다.
+            </summary>
+            <example>
+            using(new Logger()){
+                /* ... */
+            }
+            </example>
+        </member>
+    </members>
+</doc>

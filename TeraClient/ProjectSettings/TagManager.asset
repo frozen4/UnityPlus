@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Team
+  - Enemy
+  - Friend
+  - _Property_
+  - _UI_
+  - _UIDrag_
+  - _UIPage_
   layers:
   - Default
   - TransparentFX
@@ -13,31 +20,58 @@ TagManager:
   - UI
   - 
   - 
+  - Terrain
+  - Buildings
+  - Player
+  - NPC
+  - Blockable
+  - Clickable
+  - Background
+  - Shadow
+  - HostPlayer
+  - EntityAttached
+  - Fx
+  - UIScene
+  - Reflection
+  - ClientBlockable
+  - CameraCollision
+  - CameraTrans
   - 
+  - TopPate
+  - NpcServe
+  - CG
+  - CGUI
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Unblockable
+  - Invisible
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BOTTOMMOST
+    uniqueID: 1137211993
+    locked: 0
+  - name: BOTTOM
+    uniqueID: 1611439201
+    locked: 0
+  - name: NORMAL
+    uniqueID: 3695927729
+    locked: 0
+  - name: UPPER
+    uniqueID: 1775751325
+    locked: 0
+  - name: TOP
+    uniqueID: 3814087411
+    locked: 0
+  - name: GUIDE
+    uniqueID: 395963229
+    locked: 0
+  - name: TOPMOST
+    uniqueID: 1987358641
+    locked: 0
+  - name: POWERSAVING
+    uniqueID: 2842090801
+    locked: 0
+  - name: DEBUG
+    uniqueID: 3275541985
     locked: 0

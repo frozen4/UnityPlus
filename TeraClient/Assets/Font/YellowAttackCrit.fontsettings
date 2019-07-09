@@ -1,0 +1,189 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!128 &12800000
+Font:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: YellowAttackCrit
+  serializedVersion: 5
+  m_LineSpacing: 0.1
+  m_DefaultMaterial: {fileID: 2100000, guid: f579189d98c06664c9290a36bec23262, type: 2}
+  m_FontSize: 0
+  m_Texture: {fileID: 0}
+  m_AsciiStartOffset: 0
+  m_Tracking: 1
+  m_CharacterSpacing: 0
+  m_CharacterPadding: 1
+  m_ConvertCase: 0
+  m_CharacterRects:
+  - serializedVersion: 2
+    index: 48
+    uv:
+      serializedVersion: 2
+      x: 0.7636719
+      y: 0.7988281
+      width: 0.21289062
+      height: 0.20117188
+    vert:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 109
+      height: -103
+    advance: 109
+    flipped: 0
+  - serializedVersion: 2
+    index: 49
+    uv:
+      serializedVersion: 2
+      x: 0.7714844
+      y: 0.5957031
+      width: 0.12109375
+      height: 0.20117188
+    vert:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 62
+      height: -103
+    advance: 62
+    flipped: 0
+  - serializedVersion: 2
+    index: 50
+    uv:
+      serializedVersion: 2
+      x: 0.5859375
+      y: 0.59375
+      width: 0.18359375
+      height: 0.20117188
+    vert:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 94
+      height: -103
+    advance: 94
+    flipped: 0
+  - serializedVersion: 2
+    index: 51
+    uv:
+      serializedVersion: 2
+      x: 0.19140625
+      y: 0.796875
+      width: 0.18945312
+      height: 0.203125
+    vert:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 97
+      height: -104
+    advance: 97
+    flipped: 0
+  - serializedVersion: 2
+    index: 52
+    uv:
+      serializedVersion: 2
+      x: 0
+      y: 0.5917969
+      width: 0.20507812
+      height: 0.20117188
+    vert:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 105
+      height: -103
+    advance: 105
+    flipped: 0
+  - serializedVersion: 2
+    index: 53
+    uv:
+      serializedVersion: 2
+      x: 0.57421875
+      y: 0.796875
+      width: 0.1875
+      height: 0.203125
+    vert:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 96
+      height: -104
+    advance: 96
+    flipped: 0
+  - serializedVersion: 2
+    index: 54
+    uv:
+      serializedVersion: 2
+      x: 0.20703125
+      y: 0.59375
+      width: 0.18945312
+      height: 0.20117188
+    vert:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 97
+      height: -103
+    advance: 97
+    flipped: 0
+  - serializedVersion: 2
+    index: 55
+    uv:
+      serializedVersion: 2
+      x: 0.3984375
+      y: 0.59375
+      width: 0.18554688
+      height: 0.20117188
+    vert:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 95
+      height: -103
+    advance: 95
+    flipped: 0
+  - serializedVersion: 2
+    index: 56
+    uv:
+      serializedVersion: 2
+      x: 0.3828125
+      y: 0.796875
+      width: 0.18945312
+      height: 0.203125
+    vert:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 97
+      height: -104
+    advance: 97
+    flipped: 0
+  - serializedVersion: 2
+    index: 57
+    uv:
+      serializedVersion: 2
+      x: 0
+      y: 0.7949219
+      width: 0.18945312
+      height: 0.20507812
+    vert:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 97
+      height: -105
+    advance: 97
+    flipped: 0
+  m_KerningValues: []
+  m_PixelScale: 0.1
+  m_FontData: 
+  m_Ascent: 0
+  m_Descent: 0
+  m_DefaultStyle: 0
+  m_FontNames: []
+  m_FallbackFonts: []
+  m_FontRenderingMode: 0
+  m_UseLegacyBoundsCalculation: 0

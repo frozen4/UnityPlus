@@ -1,0 +1,46 @@
+{
+	"google": 
+		{
+			"urlScheme": "",
+			"clientID": "",
+			"permissions": 
+				[
+				],
+			"androidClientID": "",
+			"webappClientId": ""
+		},
+	"facebook": 
+		{
+			"appKey": "",
+			"appTitle": "",
+			"permissions": 
+				[
+				]
+		},
+	"usePush": true,
+	"useKakao": true,
+	"useFacebook": false,
+	"useFacebookNative": false,
+	"useGoogle": false,
+	"useGoogleNative": false,
+	"configuration": 
+		{
+			"appId": "",
+			"appSecret": "",
+			"appVersion": "",
+			"market": "googlePlay",
+			"debugLevel": "Verbose",
+			"isCustomMarket": false,
+			"serverType": "qa"
+		},
+	"editorSDKConfiguration": 
+		{
+			"useCustomDeviceKey": false,
+			"deviceKey": "DEVICE_KEY"
+		},
+	"useSimulation": false,
+	"simPath": "",
+	"permissions": 
+		[],
+	"customManifest": false
+}

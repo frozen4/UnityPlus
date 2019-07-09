@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 配置各种语言需要的更新文字 -->
+
+<UpdateStringConfig>
+    <SystemRequire_Memory text="System memory is less than {0} MB. Game may not work properly，Continue?" />
+    <SystemRequire_Space text="System free storage is less than {0} MB. Game may not work properly" />
+
+    <UpdateState_Success text="Starting Game, Please Wait..." />
+    <UpdateState_UpdateVersionFileErr text="Update Version File Error" />
+    <UpdateState_OpenPackFileErr text="Open Pack File Error" />
+    <UpdateState_DiskSpaceFullErr text="Disk Space Not Enough" />
+    <UpdateState_GetLocalVersionErr text="Get Local Version Error" />
+    <UpdateState_GetNewVersionErr text="Can Not Get Server Version. Please Check Network Connection" />
+    <UpdateState_NetworkErr text="Network Error" />
+    <UpdateState_NetConnectionErr text="Network Connection Error" />
+    <UpdateState_NetUnstable text="Network Downloading is Unstable, Please Try Later..." />
+    <UpdateState_DownloadCheck text="Need Updating, estimated download size is " />
+    <UpdateState_LocalVersionTooOldErr text="Local Version Too old" />
+    <UpdateState_ServerMaintananceErr text="Can Not Update to Server Version" />
+    <UpdateState_AutoUpdateErr text="Auto Update Error" />
+    <UpdateState_UnknownErr text="Unknown Error" />
+    <UpdateState_DownloadingErrAutoRetry text="Downloading Error, AutoRetry Later..." />
+    <UpdateStatus_Start text="Checking Update..." />
+    <UpdateStatus_TryGetLocalVersion text="Getting Local Version..." />
+    <UpdateStatus_TryCheckFreeSpace text="Checking Free Space..." />
+    <UpdateStatus_TryGetNewVersion text="Getting Server Version..." />
+    <UpdateStatus_TryDNSResolving text="Try Connecting..." />
+    <UpdateStatus_SuccessGetVersions text="Get Versions Success" />
+    <UpdateStatus_BeginUpdate text="Begin Update..." />
+    <UpdateStatus_LastWritePackErr text="Writing Pack Err Last Time. Please Restart" />
+    <UpdateStatus_Downloading text="Downloading" />
+    <UpdateStatus_WritingPack text="Writing Pack, Please Wait..." />
+    <UpdateStatus_DownloadingServerList text="Downloading ServerList" />
+    <UpdateStatus_CheckingExistPack text="Checking Exsit Pack..."/>
+    <UpdateStatus_PrepareWritingPack text="Preparing Writing Pack..." />
+    <UpdateString_CurrentVersion text="Current Version" />
+    <UpdateString_ServerVersion text="Server Version" />
+    <UpdateString_Yes text="Yes" />
+    <UpdateString_No text="No" />
+    <UpdateString_Ok text="Ok" />
+    <UpdateString_Cancel text="Cancel" />
+    <UpdateString_HasErrorNotWifi text="No Wifi Network, Continue Downloading?" />
+    <UpdateString_HasErrorRetry text="Has Error, Retry?" />
+    <UpdateString_HasError text="Has Error" />
+    <UpdateString_HasFatalErrorNeedReinstall text="Has Fatal Error, App Needs Reinstall!" />
+    <UpdateString_HasFatalErrorNeedCleanUp text="Has Fatal Error, Update Needs Cleaning Up!"/>
+    <UpdateString_HasFatalError text="Has Fatal Error"/>
+    <UpdateString_PrepareForFirstTimeUse text="Prepare For The First Time Use..."/>
+    <UpdateString_EnsureEnoughSpaceMB text= "Please Ensure Device Has Enough Storage Space" />
+    <UpdateString_TextUpdate text="Updating，Please do not close..."/>
+    <UpdateString_FileSize text="File Size:"/>
+    <UpdateString_DownloadSpeed text="Download Speed:"/>
+    <UpdateString_VideoTitle text="Video"/>
+    <UpdateString_PictureTitle text="Guide"/>
+    <UpdateStatus_WifiTips text="Download In WIFI Environment Recommended"/>
+
+    <PlatformSDKString_InitFailedTitle text="Error"/>
+    <PlatformSDKString_ErrorCode text="(ErrorCode：{0})"/>
+    <PlatformSDKString_UnknownErr text="Platform Unknown Error."/>
+    <PlatformSDKString_NetworkFailure text="Network unstable, Please check the network status before trying again."/>
+    <PlatformSDKString_ServerTimeout text="Response timeout, Please try again."/>
+    <PlatformSDKString_InitializationFailed text="Initialization failed, Please close the app and restart."/>
+</UpdateStringConfig>

@@ -1,0 +1,113 @@
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kakaogame.sdk"
+    android:versionCode="1"
+    android:versionName="0.0.0" >
+
+
+<!-- KakaoGameSDK Permission(Common) Start -->
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+<!-- KakaoGameSDK Permission(Common) End -->
+
+<!-- KakaoGameSDK Permission(Push) Start -->
+<uses-permission android:name="android.permission.USE_CREDENTIALS" />
+<uses-permission android:name="android.permission.WAKE_LOCK" />
+<uses-permission android:name="android.permission.VIBRATE" />
+<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+<permission
+	android:name="com.kakaogames.tera.beta.permission.C2D_MESSAGE"
+	android:protectionLevel="signature" />
+<uses-permission android:name="com.kakaogames.tera.beta.permission.C2D_MESSAGE" />
+<!-- KakaoGameSDK Permission(Push) End -->
+
+<!-- KakaoGameSDK Permission(Google) Start -->
+<uses-permission android:name="android.permission.USE_CREDENTIALS" />
+<!-- KakaoGameSDK Permission(Google) End -->
+
+<!-- KakaoGameSDK Permission(Kakao) Start -->
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+<!-- KakaoGameSDK Permission(Kakao) End -->
+
+
+	<application>
+		<!-- KakaoGameSDK Invite Start -->
+		 <receiver
+			 android:name="com.kakaogame.invite.KGInstallReferrerReceiver"
+			 android:exported="true" >
+			 <intent-filter>
+			 <action android:name="com.android.vending.INSTALL_REFERRER" />
+			 </intent-filter>
+			 		</receiver>
+		 <!-- KakaoGameSDK Invite End -->
+		<activity
+            android:name="com.kakaogame.KGAuthActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+		<activity android:name="com.kakao.gameshop.sdk.KakaoPaymentActivity"
+          android:launchMode="singleTop"
+          android:windowSoftInputMode="adjustResize"
+          android:screenOrientation="portrait"/>
+ 		<activity android:name="com.kakao.gameshop.sdk.KakaoPaymentListActivity"
+          android:windowSoftInputMode="adjustResize"
+          android:launchMode="singleTop"
+          android:screenOrientation="portrait"/>
+
+ 		<activity android:name="com.kakao.gameshop.sdk.ResultOfBankaActivity"
+                  android:launchMode="singleTask">
+    		<intent-filter>
+        		<data android:scheme="kakaogameshop20150801" android:host="success_order" />
+        		<data android:scheme="kakaogameshop20150801" android:host="cancel_order" />
+        		<action android:name="android.intent.action.VIEW" />
+        		<category android:name="android.intent.category.BROWSABLE" />
+        		<category android:name="android.intent.category.DEFAULT" />
+    		</intent-filter>
+		</activity>
+
+			
+<!-- KakaoGameSDK Kakao Start -->
+<meta-data
+	android:name="com.kakao.sdk.AppKey"
+	android:value="@string/kakao_app_key" >
+</meta-data>
+
+<activity
+     android:name="com.kakao.reach.ingame.ui.IngameWebViewActivity"
+     android:configChanges="orientation|screenSize|keyboardHidden"
+     android:screenOrientation="sensor" />
+ <activity
+     android:name="com.kakao.reach.ingame.ui.PlusFriendActivity"
+     android:configChanges="orientation|screenSize|keyboardHidden"
+     android:screenOrientation="portrait" />
+<!-- KakaoGameSDK Kakao End -->
+			
+<!-- KakaoGameSDK Google Start -->
+<activity
+	android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+	android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+	android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+<!-- KakaoGameSDK Google End -->
+			
+			
+<!-- KakaoGameSDK Push Start -->
+<service
+    android:name="com.kakaogame.push.KGFirebaseMsgService">
+    <intent-filter>
+        <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+    </intent-filter>
+</service>
+
+<service
+    android:name="com.kakaogame.push.KGFirebaseInstanceIdService">
+    <intent-filter>
+        <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+    </intent-filter>
+</service>
+<!-- KakaoGameSDK Push End -->
+	</application>
+
+</manifest>
